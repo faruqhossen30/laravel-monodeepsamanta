@@ -13,8 +13,11 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @stack('style')
     </head>
-    <body class="font-sans antialiased">
+    <body class="bg-white">
+        @include('layouts.header')
         @yield('content')
+        @stack('script')
     </body>
 </html>

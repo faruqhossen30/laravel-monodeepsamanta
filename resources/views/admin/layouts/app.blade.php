@@ -13,7 +13,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    @stack('style')
 </head>
 
 <body class="bg-gray-50 dark:bg-slate-900">
@@ -29,6 +29,7 @@
     </div>
     <!-- End Content -->
     <!-- ========== END MAIN CONTENT ========== -->
+    @stack('script')
     <script>
         const HSThemeAppearance = {
             init() {
@@ -117,5 +118,4 @@
         })
     </script>
 </body>
-
 </html>

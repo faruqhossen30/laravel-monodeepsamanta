@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PortfoliopageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homepage');
 })->name('homepage');
+
+Route::get('portfolio', [PortfoliopageController::class, 'index'])->name('portfoliopage');
 
 
 
