@@ -9,3 +9,22 @@
     @apply text-[#FF003A]
 }
 
+.btn{
+    @apply border py-2 px-8 rounded-md font-normal text-gray-800 text-base hover:bg-black hover:text-white transition m-1
+}
+.socialIcon{
+    @apply  p-3 hover:scale-105 hover:bg-red-500 transition bg-black text-white rounded-full mx-1
+}
+.contact_btn{
+    @apply block w-full bg-black hover:bg-red-500 text-white text-center text-base py-2 rounded-md my-3
+}
+.img_card{
+    @apply font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer
+}
+.footer_social_icon{
+   @apply text-4xl bg-white text-black px-4 p-3 rounded-full hover:bg-red-500 hover:text-white transition duration-300
+}
+/*portfullio page component class */
+.galarybtn{
+    @apply border px-6 py-1 rounded hover:bg-black hover:text-white  transition
+}

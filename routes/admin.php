@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Blog\BlogcategoryController;
 use App\Http\Controllers\Admin\Blog\BlogController;
+use App\Http\Controllers\Admin\Portfolio\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,4 +13,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::resource('blogcategory', BlogcategoryController::class);
     Route::resource('blog', BlogController::class);
+    Route::resource('portfolio', PortfolioController::class);
 });

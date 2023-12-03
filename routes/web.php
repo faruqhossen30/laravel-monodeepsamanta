@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AboutpageController;
+use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\PortfoliopageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServicepageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +23,9 @@ Route::get('/', function () {
 })->name('homepage');
 
 Route::get('portfolio', [PortfoliopageController::class, 'index'])->name('portfoliopage');
+Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
+Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
+Route::get('about-me', [AboutpageController::class, 'index'])->name('aboutpage');
 
 
 

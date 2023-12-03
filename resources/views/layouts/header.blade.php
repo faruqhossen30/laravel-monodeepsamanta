@@ -1,12 +1,14 @@
 <header class="bg-white sticky top-0 z-10 mt-4">
     <div class="flex items-center max-w-7xl mx-auto justify-between bg-white">
         <div class="flex items-center space-x-4 p-2 bg-white">
-            <a class="flex-none text-xl font-semibold dark:text-white" href="#">
+            <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
                 <img src="./img/logo.webp" alt="" class="w-14 h-14">
             </a>
             <div>
                 <div class="flex items-center space-x-2">
-                    <h2 class="text-lg font-bold">Monodeep Samanta</h2>
+                    <a href="{{route('homepage')}}">
+                        <h2 class="text-lg font-bold">Monodeep Samanta</h2>
+                    </a>
                     <div class="hidden md:flex items-center space-x-2">
                         <button type="button"
                             class="py-1 px-2 inline-flex items-center gap-x-2 text-xs font-bold rounded-md border border-gray-200 bg-black text-white hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
@@ -130,28 +132,28 @@
 {{-- Offcanvas end --}}
 <section class="bg-white border-b m-2">
     <nav class="max-w-7xl mx-auto bg-white flex space-x-6">
-        <a href="#"
+        <a href="{{route('homepage')}}"
             class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-primary font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 border-b-2 border-b-[#FF003A]">
             Home
         </a>
 
-        <a href="#"
-            class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
-            Home
-        </a>
-        <a href="#"
+        <a href="{{route('portfoliopage')}}"
             class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Portfolio
         </a>
-        <a href="#"
+        <a href="{{route('aboutpage')}}"
             class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             About Me
+        </a>
+        <a href="{{route('servicepage')}}"
+            class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            Searvice
         </a>
         <a href="#"
             class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Reviews
         </a>
-        <a href="#"
+        <a href="{{route('blogpage')}}"
             class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Blog
         </a>

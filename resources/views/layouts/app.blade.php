@@ -14,10 +14,18 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @stack('style')
+        <style>
+            *{
+                font-family: "Roboto Flex", Sans-serif
+            }
+        </style>
     </head>
     <body class="bg-white">
         @include('layouts.header')
-        @yield('content')
+        <div class="max-w-7xl mx-auto">
+            @yield('content')
+        </div>
+        @include('layouts.footer')
         @stack('script')
     </body>
 </html>
