@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,6 +22,17 @@ class AdminSeeder extends Seeder
             'email'=>'admin@gmail.com',
             'password'=>Hash::make('123')
         ]);
+
+        $cats = ['one','two','three','four','five'];
+
+        foreach($cats as $cat){
+            Category::create([
+                'name'=> $cat,
+                'slug'=>$cat,
+                'user_id'=>1
+
+            ]);
+        }
 
     }
 }

@@ -1,13 +1,13 @@
 @extends('admin.layouts.app')
 @section('title', 'Home Page')
 @section('content')
-<x-dashboard.breadcrumb title="Portfolios"  route="portfolio.index" />
+    <x-dashboard.breadcrumb title="Portfolios" route="portfolio.index" />
     <div class="bg-white dark:bg-gray-800 dark:text-slate-400 p-2">
         <div class="flex flex-col">
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <div class="border rounded-lg divide-y divide-gray-200 dark:border-gray-700 dark:divide-gray-700">
-                        <div class="flex justify-between py-3 px-4">
+                        <div class="flex justify-between py-3 px-2">
                             <div class="relative max-w-xs">
                                 <label for="hs-table-with-pagination-search" class="sr-only">Search</label>
                                 <input type="text" name="hs-table-with-pagination-search"
@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <a href="{{ route('portfolio.create') }}"
-                                class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                class="py-1 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -43,6 +43,9 @@
                                             class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name
                                         </th>
                                         <th scope="col"
+                                            class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">Photo
+                                        </th>
+                                        <th scope="col"
                                             class="px-2 py-3 text-right text-xs font-medium text-gray-500 uppercase">Action
                                         </th>
                                     </tr>
@@ -52,13 +55,18 @@
                                     @foreach ($portfolios as $item)
                                         <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
                                             <td
-                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{$categories->firstItem() + $loop->index}}</td>
+                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                                {{ $portfolios->firstItem() + $loop->index }}</td>
                                             <td
                                                 class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                                {{$item->name}}</td>
+                                                {{ $item->title }}</td>
+                                            <td
+                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                                <img src="{{asset('uploads/portfolio/'.$item->thumbnail)}}" class="h-6 w-auto" alt="">
+                                            </td>
 
                                             <td class="px-3 py-2 whitespace-nowrap text-right text-sm font-medium">
-                                                <x-table.action_button route="portfolio" :id="$item->id"/>
+                                                <x-table.action_button route="portfolio" :id="$item->id" />
                                             </td>
                                         </tr>
                                     @endforeach
@@ -68,7 +76,7 @@
                             </table>
                         </div>
                         <div class="px-2 py-4">
-                            {{$portfolios->links()}}
+                            {{ $portfolios->links() }}
                         </div>
                     </div>
                 </div>
