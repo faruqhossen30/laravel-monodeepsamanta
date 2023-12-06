@@ -9,4 +9,9 @@ class PortfolioCategory extends Model
 {
     use HasFactory;
     protected $fillable = ['portfolio_id','category_id'];
+
+    public function category()
+    {
+        return $this->hasOne(Category::class);
+    }
 }

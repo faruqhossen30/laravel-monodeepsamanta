@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutpageController;
 use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\PortfoliopageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewpageController;
 use App\Http\Controllers\ServicepageController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,7 @@ Route::get('portfolio', [PortfoliopageController::class, 'index'])->name('portfo
 Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
 Route::get('about-me', [AboutpageController::class, 'index'])->name('aboutpage');
+Route::get('reviews', [ReviewpageController::class, 'index'])->name('reviewpage');
 
 
 

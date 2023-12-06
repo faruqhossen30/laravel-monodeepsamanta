@@ -149,7 +149,7 @@
             class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Searvice
         </a>
-        <a href="#"
+        <a href="{{route('reviewpage')}}"
             class="inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Reviews
         </a>

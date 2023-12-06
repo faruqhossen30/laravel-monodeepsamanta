@@ -12,10 +12,6 @@ class Portfolio extends Model
 
     public function categories()
     {
-        return $this->hasMany(PortfolioCategory::class);
-    }
-    public function categoryIds()
-    {
-        $data = $this->hasMany(PortfolioCategory::class);
+        return $this->belongsToMany(Category::class, 'portfolio_categories');
     }
 }
