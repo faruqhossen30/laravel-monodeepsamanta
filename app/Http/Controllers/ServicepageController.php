@@ -9,6 +9,7 @@ class ServicepageController extends Controller
 {
     public function index(): View
     {
+
         return View('servicepage');
     }
 }

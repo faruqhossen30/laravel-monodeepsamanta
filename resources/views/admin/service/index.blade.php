@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('title', 'Home Page')
 @section('content')
-<x-dashboard.breadcrumb title="Blog List"  route="blog.index" />
+    <x-dashboard.breadcrumb title="Blog List" route="service.index" />
     <div class="bg-white dark:bg-gray-800 dark:text-slate-400 p-2">
         <div class="flex flex-col">
             <div class="-m-1.5 overflow-x-auto">
@@ -22,10 +22,10 @@
                                     </svg>
                                 </div>
                             </div>
-                            <a href="{{ route('blog.create') }}"
-                                class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                            <a href="{{ route('service.create') }}"
+                                class="py-1 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -40,7 +40,8 @@
                                         <th scope="col"
                                             class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">S.N</th>
                                         <th scope="col"
-                                            class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">Photo</th>
+                                            class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">Photo
+                                        </th>
                                         <th scope="col"
                                             class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">Title
                                         </th>
@@ -51,20 +52,22 @@
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 
-                                    @foreach ($blogs as $blog)
+                                    @foreach ($servies as $service)
                                         <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
                                             <td
-                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{$blogs->firstItem() + $loop->index}}</td>
-                                                <td
                                                 class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                                <img src="{{asset('uploads/blog/'.$blog->thumbnail)}}" class="h-6 w-auto" alt="">
+                                                {{ $servies->firstItem() + $loop->index }}</td>
+                                            <td
+                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                                <img src="{{ asset('uploads/service/' . $service->thumbnail) }}"
+                                                    class="h-6 w-auto" alt="">
                                             </td>
                                             <td
                                                 class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                                {{$blog->title}}</td>
+                                                {{ $service->title }}</td>
 
                                             <td class="px-3 py-2 whitespace-nowrap text-right text-sm font-medium">
-                                                <x-table.action_button route="blog" :id="$blog->id"/>
+                                                <x-table.action_button route="blog" :id="$service->id" />
                                             </td>
                                         </tr>
                                     @endforeach
@@ -74,7 +77,7 @@
                             </table>
                         </div>
                         <div class="px-2 py-4">
-                            {{$blogs->links()}}
+                            {{ $servies->links() }}
                         </div>
                     </div>
                 </div>
