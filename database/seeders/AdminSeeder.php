@@ -3,10 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\ReviewType;
+use App\Models\Service\Feature;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AdminSeeder extends Seeder
 {
@@ -23,14 +26,43 @@ class AdminSeeder extends Seeder
             'password'=>Hash::make('123')
         ]);
 
-        $cats = ['one','two','three','four','five'];
+        $cats = ['Apps','Dashboard','Landing Page','Website'];
 
         foreach($cats as $cat){
             Category::create([
                 'name'=> $cat,
-                'slug'=>$cat,
+                'slug'=> Str::slug($cat, '-'),
                 'user_id'=>1
 
+            ]);
+        }
+        $features = [
+            'Delivery Time',
+            'Number Of Revisions',
+            'Number Of Intial Cocepts',
+            'Printible Resolution File',
+            '3D Mockup',
+            'Source Files',
+            'Vector File',
+            'Social Media Kit',
+            'Staionery Design',
+            'Favicon'
+        ];
+
+        foreach($features as $feature){
+            Feature::create([
+                'title'=> $feature,
+                'value'=> 'none',
+                'user_id'=>1
+            ]);
+        }
+
+        $reviewstype = ['Google Reviews', 'Fiverr','99Design'];
+        foreach($reviewstype as $review){
+            ReviewType::create([
+                'name'=> $review,
+                'slug'=> Str::slug($review, '-'),
+                'user_id'=>1
             ]);
         }
 

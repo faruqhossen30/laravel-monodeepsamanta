@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('title', 'Home Page')
 @section('content')
-    <x-dashboard.breadcrumb title="Blog Category" route="blogcategory.index" />
+    <x-dashboard.breadcrumb title="Portfolio List" route="portfolio.index" />
     <div class="bg-white dark:bg-gray-800 dark:text-slate-400 p-2">
         @if ($errors->any())
             <div class="alert alert-danger">

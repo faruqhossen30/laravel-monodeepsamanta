@@ -54,7 +54,7 @@ class PortfolioController extends Controller
         }
         $data = [
             'title' => $request->title,
-            'slug' => $request->title,
+            'slug' => Str::slug($request->title, '-'),
             'user_id' => Auth::user()->id,
             'thumbnail' => $thumbnailname
         ];
@@ -109,7 +109,7 @@ class PortfolioController extends Controller
         $thumbnailname = null;
         $data = [
             'title' => $request->title,
-            'slug' => $request->title,
+            'slug' => Str::slug($request->title, '-'),
             'user_id' => Auth::user()->id
         ];
 

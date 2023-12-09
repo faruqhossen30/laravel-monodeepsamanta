@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class AboutpageController extends Controller
 {
-    public function index(): View
+    public function index():View
     {
-        return View('aboutpage');
+        return view('aboutpage');
     }
 }

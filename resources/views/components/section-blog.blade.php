@@ -1,3 +1,9 @@
+@php
+    use App\Models\Blog;
+    $posts = Blog::latest()->take(4)->get();
+
+@endphp
+
 <div class="flex items-center space-x-2 py-2">
     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path
@@ -12,59 +18,21 @@
 </div>
 <div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card -->
-        <a class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-            href="#">
-            <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
-                <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
-                    src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
-                    alt="Image Description">
-                <span
-                    class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-gray-900">
-                    Sponsored
-                </span>
-            </div>
+        @foreach ($posts as $post)
+            <a class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="#">
+                <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
+                    <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
+                        src="{{ asset('uploads/blog/' . $post->thumbnail) }}" alt="Image Description">
 
-            <div class="mt-7">
-                <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200">
-                    Studio by Preline
-                </h3>
-            </div>
-        </a>
-        <!-- End Card -->
+                </div>
 
-        <!-- Card -->
-        <a class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-            href="#">
-            <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
-                <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
-                    src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                    alt="Image Description">
-            </div>
-
-            <div class="mt-7">
-                <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200">
-                    What are the principles of UX strategy?
-                </h3>
-            </div>
-        </a>
-        <!-- End Card -->
-        <!-- Card -->
-        <a class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-            href="#">
-            <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
-                <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
-                    src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                    alt="Image Description">
-            </div>
-
-            <div class="mt-7">
-                <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200">
-                    What are the principles of UX strategy?
-                </h3>
-            </div>
-        </a>
-        <!-- End Card -->
-
+                <div class="mt-7">
+                    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200">
+                        {{ $post->title }}
+                    </h3>
+                </div>
+            </a>
+        @endforeach
     </div>
 </div>

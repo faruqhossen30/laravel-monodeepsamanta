@@ -17,33 +17,30 @@
     </section>
 
     <section class="p-2 md:p-0">
-        @foreach ([1, 1, 1, 1, 1, 1, 1] as $review)
-            <div class="md:flex py-2">
+        @foreach ($reviews as $review)
+
+            <div class="md:flex py-4">
                 <div class="flex space-x-3">
                     <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
                         <span class="font-bold">PM</span>
                     </div>
                     <div class="space-y-2">
-                        <h3 class="font-bold text-lg">Peter Mark</h3>
+                        <h3 class="font-bold text-lg">{{$review->name}}</h3>
                         <div class="flex items-center space-x-2 font-bold">
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16"
                                 height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path
                                     d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                             </svg>
-                            <p>5.0</p>
-                            <p class="text-gray-500">Jan 10, 2023</p>
+                            <p>{{$review->rating}}</p>
+                            <p class="text-gray-500">{{$review->date->format('d M, Y')}}</p>
                         </div>
                         <div>
-                            <p>The usability testing part was so cool. He went through the interactive elements and
-                                collected
-                                real-time feedback. Identifying accurate user behavior, Monodeep was fixing the pain points
-                                one
-                                after another. The final product was a distinguished piece of art.</p>
+                            <p>{{$review->review}}</p>
                         </div>
                         <div class="flex space-x-2 py-2 items-center">
                             <p class="text-sm">Originally Posted on:</p>
-                            <a href="#" class="flex text-primary font-bold ">Google Review
+                            <a href="{{$review->review_url}}" class="flex text-primary font-bold ">{{$review->type->name}}
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -57,7 +54,7 @@
 
                 <div>
                     <div class="flex justify-center">
-                        <img src="{{ asset('uploads/review/Starbucks-UI-Design-Thumbnail.webp') }}" alt="">
+                        <img src="{{ asset('uploads/review/'.$review->thumbnail ) }}" alt="">
                     </div>
                     <div class="text-center">
                         <a href="#" class="text-primary font-bold text-center">Similar Works
@@ -66,6 +63,7 @@
                     </div>
                 </div>
             </div>
+            <hr>
         @endforeach
 
     </section>

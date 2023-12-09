@@ -3,7 +3,7 @@
 @section('content')
     <x-section-aboutme />
     <x-section-chat/>
-    <x-section-portfolio />
+    <x-section-portfolio/>
 
 
 @endsection

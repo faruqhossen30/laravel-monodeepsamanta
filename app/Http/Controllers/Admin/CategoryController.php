@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -41,7 +42,7 @@ class CategoryController extends Controller
 
         $data = [
             'name' => $request->name,
-            'slug' => $request->name,
+            'slug' => Str::slug($request->name, '-'),
             'user_id' => Auth::user()->id,
             'thumbnail' => $thumbnailname
         ];
@@ -80,7 +81,7 @@ class CategoryController extends Controller
 
         $data = [
             'name' => $request->name,
-            'slug' => $request->name,
+            'slug' => Str::slug($request->name, '-'),
             'user_id' => Auth::user()->id
         ];
         Category::firstwhere('id', $id)->update($data);

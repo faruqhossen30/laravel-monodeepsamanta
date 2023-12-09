@@ -53,7 +53,7 @@ class BlogController extends Controller
         }
         $data = [
             'title' => $request->title,
-            'slug' => $request->title,
+            'slug' => Str::slug($request->title, '-'),
             'description' => $request->description,
             'thumbnail' => $thumbnailname,
             'category_id' => $request->category_id,

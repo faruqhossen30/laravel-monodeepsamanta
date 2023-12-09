@@ -56,7 +56,7 @@ class ReviewController extends Controller
 
         $data = [
             'name' => $request->name,
-            'slug' => $request->name,
+             'slug' => Str::slug($request->name, '-'),
             'rating' => $request->rating,
             'date' => $request->date,
             'review' => $request->review,
@@ -108,7 +108,7 @@ class ReviewController extends Controller
         $thumbnailname = null;
         $data = [
             'name' => $request->name,
-            'slug' => $request->name,
+             'slug' => Str::slug($request->name, '-'),
             'rating' => $request->rating,
             'date' => $request->date,
             'review' => $request->review,

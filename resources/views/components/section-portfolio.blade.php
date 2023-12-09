@@ -1,3 +1,10 @@
+@php
+    use App\Models\Portfolio;
+    $portfolios = Portfolio::latest()
+        ->take(4)
+        ->get();
+
+@endphp
 <div class="flex justify-between items-center">
     <div class="flex items-center space-x-2 py-2">
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
@@ -11,7 +18,7 @@
         </svg>
         <h3 class=" text-2xl font-extrabold">Check Out My Portfolio</h3>
     </div>
-    <a href="#" class="text-primary font-bold flex space-x-2">
+    <a href="{{route('portfoliopage')}}" class="text-primary font-bold flex space-x-2">
         <span>See All Portfolios</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-6 h-6">
@@ -21,7 +28,7 @@
     </a>
 </div>
 <div class=" grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-5">
-    @foreach ([1, 1, 1, 1] as $item)
+    @foreach ($portfolios as $portfolio)
         <!--Image Card Start-->
         <div class="group font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
             <!--layer start-->
@@ -29,11 +36,11 @@
                 class="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-gray-800 opacity-70 hidden  group-hover:block transition z-10">
             </div>
             <!--layer end-->
-            <img class="group-hover:scale-110 group-hover:rotate-3 transition duration-500" src="img/appui.webp"
-                alt="">
+            <img class="max-h-80 group-hover:scale-110 group-hover:rotate-3 transition duration-500  object-cover"
+                src="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}" alt="">
             <div class="absolute group-hover:bottom-6 group-hover:left-6 hidden group-hover:block bottom-0 z-20">
-                <h1 class="text-2xl">App UI</h1>
-                <a href="#" class="hover:text-red-500 transition ">See All <i
+                <a href="{{route('singleportfolio', $portfolio->slug)}}"><h1 class="text-2xl">{{ $portfolio->title }}</h1></a>
+                <a href="{{ route('portfoliopage') }}" class="hover:text-red-500 transition ">See All <i
                         class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>

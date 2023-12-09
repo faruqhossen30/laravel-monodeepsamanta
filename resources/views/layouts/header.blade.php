@@ -2,7 +2,7 @@
     <div class="flex items-center max-w-7xl mx-auto justify-between bg-white">
         <div class="flex items-center space-x-4 p-2 bg-white">
             <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
-                <img src="./img/logo.webp" alt="" class="w-14 h-14">
+                <img src="{{asset('img/logo.webp')}}" alt="" class="w-14 h-14">
             </a>
             <div>
                 <div class="flex items-center space-x-2">

@@ -13,20 +13,25 @@ class PortfoliopageController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function index(Request $request)
+    public function index(Request $request): View
     {
-        // $portfolios = [1,2,3,4,5,6];
-        $portfolios = Portfolio::with(['categories'=>fn ($q) => $q])->get();
 
+        $portfolios = Portfolio::with(['categories' => fn ($q) => $q])->get();
         $data = PortfolioCategory::get()->pluck('category_id')->toArray();
         $ids = array_values(array_unique($data));
-
         $categories = Category::whereIn('id', $ids)->get();
 
 
+        return view('portfoliopage', compact('portfolios', 'categories'));
+    }
+    /**
+     * Display the user's profile form.
+     */
+    public function singlePortfolio(Request $request, $slug):View
+    {
 
-        // return $portfolios;
-
-        return view('portfoliopage', compact('portfolios','categories'));
+        $portfolio = Portfolio::firstWhere('slug', $slug);
+        // return $portfolio;
+        return view('single.portfolio', compact('portfolio'));
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Service;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Service\Service;
+use App\Models\Service\ServiceFeature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -36,6 +37,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->all();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -53,7 +55,7 @@ class ServiceController extends Controller
         }
         $data = [
             'title' => $request->title,
-            'slug' => $request->title,
+            'slug' => Str::slug($request->title, '-'),
             'description' => $request->description,
             'thumbnail' => $thumbnailname,
             'category_id' => $request->category_id,
@@ -63,7 +65,24 @@ class ServiceController extends Controller
             'meta_keyword' => $request->meta_keyword
         ];
 
-        $porfolio = Service::create($data);
+        $service = Service::create($data);
+
+        if(!empty($request->featuredetails)){
+            $starter = $request->starter;
+            $standard = $request->standard;
+            $advanced = $request->advanced;
+
+
+            foreach($request->featuredetails as  $index => $feature){
+                ServiceFeature::create([
+                    'service_id' => $service->id,
+                    'feature' => $feature,
+                    'starter' => $starter[$index],
+                    'standard' => $standard[$index],
+                    'advanced' => $advanced[$index]
+                ]);
+            }
+        }
 
         Session::flash('create');
         return redirect()->route('service.index');
