@@ -13,6 +13,12 @@ class Service extends Model
     public function user(){
         return $this->hasOne(User::class,'id','user_id');
     }
+    public function features(){
+        return $this->hasMany(ServiceFeature::class);
+    }
+    public function faqs(){
+        return $this->hasMany(ServiceFaq::class);
+    }
     public function package(){
         return $this->hasOne(ServicePackage::class);
     }

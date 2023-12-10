@@ -24,7 +24,7 @@ class ServicepackageController extends Controller
     public function create($id)
     {
         $service = Service::firstWhere('id', $id);
-        $package = ServicePackage::firstWhere('id', $id);
+        $package = ServicePackage::firstWhere('service_id', $id);
 
         // return $package;
         return view('admin.service.package.create', compact('service','package'));

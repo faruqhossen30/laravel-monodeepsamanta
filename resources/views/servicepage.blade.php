@@ -23,7 +23,7 @@
                 <a href="{{route('singleservice', $service->slug)}}" class="text-xl font-bold">
                     <h3>{{$service->title}}</h3>
                 </a>
-                <a href="#" class="text-primary text-lg font-semobold">
+                <a href="{{route('singleservice', $service->slug)}}" class="text-primary text-lg font-semobold">
                     <h2>Starting at ${{$service->package->starter_price ?? ''}}</h2>
                 </a>
             </div>
