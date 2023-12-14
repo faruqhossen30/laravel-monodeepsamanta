@@ -19,7 +19,7 @@
     <section class="p-2 md:p-0">
         @foreach ($reviews as $review)
 
-            <div class="md:flex py-4">
+            <div class="md:flex justify-between py-4">
                 <div class="flex space-x-3">
                     <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
                         <span class="font-bold">PM</span>
@@ -54,7 +54,7 @@
 
                 <div>
                     <div class="flex justify-center">
-                        <img src="{{ asset('uploads/review/'.$review->thumbnail ) }}" alt="">
+                        <img src="{{ asset('uploads/review/'.$review->thumbnail ) }}" class="max-h-44" alt="">
                     </div>
                     <div class="text-center">
                         <a href="#" class="text-primary font-bold text-center">Similar Works

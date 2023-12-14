@@ -1,3 +1,10 @@
+@php
+    use App\Models\Service\Service;
+    $services = Service::with('package')->latest()
+        ->take(8)
+        ->get();
+
+@endphp
 <div>
     <div class="flex items-center space-x-2 py-2">
         <svg class="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
@@ -8,19 +15,19 @@
 </div>
 
 <div class="grid grid-cols-12 gap-5">
-    @foreach ([1, 1, 1, 1,3,3] as $item)
+    @foreach ($services as $service)
         <!--Image Card Start-->
         <div class="group border p-2 col-span-12 md:col-span-6 lg:col-span-4">
             <div class="font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
-                <img class="group-hover:scale-110 group-hover:rotate-3 transition duration-500" src="img/service.webp"
+                <img src="{{asset('uploads/service/'.$service->thumbnail)}}" class="group-hover:scale-110 group-hover:rotate-3 transition duration-500"
                     alt="">
             </div>
             <div class="p-1">
-                <a href="#" class="text-xl font-bold">
-                    <h3>Landing Page Design for Ads Campaign</h3>
+                <a href="{{route('singleservice', $service->slug)}}" class="text-xl font-bold">
+                    <h3>{{$service->title}}</h3>
                 </a>
-                <a href="#" class="text-primary text-lg font-semobold">
-                    <h2>Starting at $350</h2>
+                <a href="{{route('singleservice', $service->slug)}}" class="text-primary text-lg font-semobold">
+                    <h2>Starting at ${{$service->package->starter_price ?? ''}}</h2>
                 </a>
             </div>
         </div>

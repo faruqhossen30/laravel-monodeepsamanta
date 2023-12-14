@@ -62,7 +62,7 @@ class ReviewController extends Controller
             'review' => $request->review,
             'thumbnail' => $thumbnailname,
             'review_type_id' => $request->review_type_id,
-            'revie_url' => $request->revie_url,
+            'review_url' => $request->review_url,
             'user_id' => Auth::user()->id
         ];
 
@@ -113,7 +113,7 @@ class ReviewController extends Controller
             'date' => $request->date,
             'review' => $request->review,
             'review_type_id' => $request->review_type_id,
-            'revie_url' => $request->revie_url
+            'review_url' => $request->review_url
         ];
 
         if ($request->file('thumbnail')) {

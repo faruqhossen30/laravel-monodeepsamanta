@@ -3,7 +3,7 @@
     <div class="text-center">
       <div class="flex justify-center">
         <a href="{{route('homepage')}}">
-            <img src="./img/footer-logo.webp" alt="">
+            <img src="{{asset('img/footer-logo.webp')}}" alt="">
         </a>
       </div>
       <!-- End Col -->

@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
+        <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @stack('style')
         <style>
@@ -26,6 +26,8 @@
             @yield('content')
         </div>
         @include('layouts.footer')
+        <!-- Scripts -->
         @stack('script')
+        <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script>
     </body>
 </html>

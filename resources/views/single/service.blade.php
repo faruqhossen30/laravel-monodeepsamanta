@@ -4,9 +4,30 @@
 
     <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 lg:col-span-8">
-            <div>
-                <img class="w-full" src="{{ asset('uploads/service/' . $service->thumbnail) }}" alt="">
-            </div>
+            @if ($service->sliders->count())
+                <div class="owl-carousel owl-theme">
+                    @foreach ($service->sliders as $key => $slider)
+                        <div class="item" data-hash="{{$key}}">
+                            <img src="{{ asset('uploads/service/slider/'.$slider->thumbnail) }}"
+                                alt="">
+                        </div>
+                    @endforeach
+
+                </div>
+                <div class="flex space-x-2">
+                    @foreach ($service->sliders as $key => $slider)
+                        <a href="#{{$key}}">
+                            <img src="{{ asset('uploads/service/slider/'.$slider->thumbnail) }}"
+                                alt="" class="w-32">
+                        </a>
+                    @endforeach
+
+                </div>
+
+
+            @endif
+
+
             <div>
                 {!! $service->description !!}
             </div>
@@ -121,16 +142,16 @@
                         <div class="flex items-center space-x-1">
                             <span class="text-md font-bold">Save up to 10% with <span class="text-primary">Subscribe to
                                     save</span></span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-4 h-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                             </svg>
                         </div>
                         <p class="py-1">{{ $service->package->starter_short_description }}</p>
                         <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-6 h-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -233,7 +254,24 @@
 @endsection
 
 @push('style')
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 @endpush
 
 @push('script')
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            loop: false,
+            center: true,
+            autoplay: true,
+            loop: true,
+            margin: 10,
+            URLhashListener: true,
+            autoplayHoverPause: true,
+            startPosition: 'URLHash'
+        });
+    </script>
 @endpush

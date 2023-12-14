@@ -104,11 +104,11 @@
 </header>
 {{-- Offcanvas end --}}
 <div id="hs-overlay-top"
-    class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform max-h-40 h-full w-full z-[60] bg-white border-b dark:bg-gray-800 dark:border-gray-700 hidden"
+    class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform h-full w-full z-[60] bg-white border-b dark:bg-gray-800 dark:border-gray-700 hidden max-h-96"
     tabindex="-1">
     <div class="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
         <h3 class="font-bold text-gray-800 dark:text-white">
-            Offcanvas title
+
         </h3>
         <button type="button"
             class="flex justify-center items-center w-7 h-7 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
@@ -123,10 +123,26 @@
         </button>
     </div>
     <div class="p-4">
-        <p class="text-gray-800 dark:text-gray-400">
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
-            etc.
-        </p>
+        <ul class="flex flex-col divide-y divide-gray-200 dark:divide-gray-700">
+            <a href="{{route('homepage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+              Home
+            </a>
+            <a href="{{route('portfoliopage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+              Portfolio
+            </a>
+            <a href="{{route('aboutpage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+              About Me
+            </a>
+            <a href="{{route('servicepage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+              Service
+            </a>
+            <a href="{{route('reviewpage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+              Reviews
+            </a>
+            <a href="{{route('blogpage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+              Blog
+            </a>
+          </ul>
     </div>
 </div>
 {{-- Offcanvas end --}}

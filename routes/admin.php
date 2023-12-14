@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Service\FeatureController;
 use App\Http\Controllers\Admin\Service\ServiceController;
 use App\Http\Controllers\Admin\Service\ServicefaqController;
 use App\Http\Controllers\Admin\Service\ServicepackageController;
+use App\Http\Controllers\Admin\Service\ServicesliderController;
 use App\Http\Controllers\ServicepageController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('service/{id}/create-package', [ServicepackageController::class, 'create'])->name('service.package.create');
     Route::post('service/{id}/create-package', [ServicepackageController::class, 'store'])->name('service.package.store');
+
+    Route::get('service/{id}/create-slider', [ServicesliderController::class, 'create'])->name('service.slider.create');
+    Route::post('service/{id}/create-slider', [ServicesliderController::class, 'store'])->name('service.slider.store');
 });
