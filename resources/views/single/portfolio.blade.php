@@ -3,9 +3,9 @@
 @section('content')
 
 <div>
-    <h3 class="p-2 text-xl font-bold">Raiffeisen Bank App Redesign</h3>
+    <h3 class="py-2 text-3xl font-bold">Raiffeisen Bank App Redesign</h3>
     <div>
-        <img src="{{asset('uploads/portfolio/'.$portfolio->thumbnail)}}" alt="">
+        <img src="{{asset('uploads/portfolio/image/'.$portfolio->portfolio_image)}}" class="w-full h-auto" alt="">
     </div>
 </div>
 

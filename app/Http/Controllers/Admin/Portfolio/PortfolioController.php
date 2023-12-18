@@ -52,11 +52,20 @@ class PortfolioController extends Controller
             $thumbnailname = Str::uuid() . '.' . $extension;
             Image::make($imagethumbnail)->save('uploads/portfolio/' . $thumbnailname);
         }
+
+        $portfolio_image = null;
+        if ($request->file('portfolio_image')) {
+            $imagethumbnail = $request->file('portfolio_image');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $portfolio_image = Str::uuid() . '.' . $extension;
+            Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $portfolio_image);
+        }
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
             'user_id' => Auth::user()->id,
-            'thumbnail' => $thumbnailname
+            'thumbnail' => $thumbnailname,
+            'portfolio_image' => $portfolio_image
         ];
 
         $porfolio = Portfolio::create($data);
@@ -107,6 +116,7 @@ class PortfolioController extends Controller
 
 
         $thumbnailname = null;
+        $portfolio_image = null;
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
@@ -119,6 +129,15 @@ class PortfolioController extends Controller
             $thumbnailname = Str::uuid() . '.' . $extension;
             Image::make($imagethumbnail)->save('uploads/portfolio/' . $thumbnailname);
             $data['thumbnail'] = $thumbnailname;
+        }
+
+
+        if ($request->file('portfolio_image')) {
+            $imagethumbnail = $request->file('portfolio_image');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $portfolio_image = Str::uuid() . '.' . $extension;
+            Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $portfolio_image);
+            $data['portfolio_image'] = $portfolio_image;
         }
 
 

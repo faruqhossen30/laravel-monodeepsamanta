@@ -4,7 +4,7 @@
             <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
                 <img src="{{asset('img/logo.webp')}}" alt="" class="w-14 h-14">
             </a>
-            <div>
+            <div class="space-y-2">
                 <div class="flex items-center space-x-2">
                     <a href="{{route('homepage')}}">
                         <h2 class="text-lg font-bold">Monodeep Samanta</h2>
@@ -63,7 +63,7 @@
                     </div>
 
                 </div>
-                <p class="font-bold text-sm">Multi Award Winning United Kingdom Designer </p>
+                <p class="font-normal text-md text-gray-600">Multi Award Winning United Kingdom Designer </p>
             </div>
         </div>
         <div>
@@ -146,31 +146,31 @@
     </div>
 </div>
 {{-- Offcanvas end --}}
-<section class="bg-white border-b m-2">
+<section class="bg-white border-b m-2 mb-10">
     <nav class="max-w-7xl mx-auto bg-white flex space-x-6">
         <a href="{{route('homepage')}}"
-            class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 " >
+            class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 " >
             Home
         </a>
 
         <a href="{{route('portfoliopage')}}"
-            class="@if(request()->routeIs('portfoliopage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('portfoliopage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Portfolio
         </a>
         <a href="{{route('aboutpage')}}"
-            class="@if(request()->routeIs('aboutpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('aboutpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             About Me
         </a>
         <a href="{{route('servicepage')}}"
-            class="@if(request()->routeIs('servicepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('servicepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Searvice
         </a>
         <a href="{{route('reviewpage')}}"
-            class="@if(request()->routeIs('reviewpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('reviewpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Reviews
         </a>
         <a href="{{route('blogpage')}}"
-            class="@if(request()->routeIs('blogpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 font-bold hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('blogpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
             Blog
         </a>
 

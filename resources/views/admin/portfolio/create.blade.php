@@ -20,8 +20,9 @@
                     <form action="{{ route('portfolio.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <x-form.input label="Portfolio Title" title="title" />
-                        <div class="md:flex md:space-x-6">
+                        <div class="md:flex md:space-x-6 my-2">
                             <div class="max-w-md">
+                                <label for="myDropify" class="py-2">Portfolio Thumbnail</label>
                                 <input class="dropify" type="file" id="myDropify" name="thumbnail">
                             </div>
                             <div class="max-w-md">
@@ -38,6 +39,12 @@
                                 @endforeach
 
                             </div>
+
+                        </div>
+                        <hr>
+                        <div class="py-2">
+                            <label for="myDropify" class="py-2">Portfolio Image</label>
+                            <input class="dropify" type="file" id="myDropify" name="portfolio_image">
                         </div>
                         <x-form.submit_button />
                     </form>

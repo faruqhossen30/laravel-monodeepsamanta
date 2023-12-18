@@ -27,7 +27,7 @@
 
     </a>
 </div>
-<div class=" grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<div class=" grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
     @foreach ($portfolios as $portfolio)
         <!--Image Card Start-->
         <div class="group font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
@@ -36,7 +36,7 @@
                 class="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-gray-800 opacity-70 hidden  group-hover:block transition z-10">
             </div>
             <!--layer end-->
-            <img class="max-h-80 group-hover:scale-110 group-hover:rotate-3 transition duration-500  object-cover"
+            <img class="max-h-96 w-full group-hover:scale-110 group-hover:rotate-3 transition duration-500  object-top"
                 src="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}" alt="">
             <div class="absolute group-hover:bottom-6 group-hover:left-6 hidden group-hover:block bottom-0 z-20">
                 <a href="{{route('singleportfolio', $portfolio->slug)}}"><h1 class="text-2xl">{{ $portfolio->title }}</h1></a>

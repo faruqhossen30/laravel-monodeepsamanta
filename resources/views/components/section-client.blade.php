@@ -1,4 +1,4 @@
-<div class="flex justify-between items-center">
+<div class="hidden lg:flex justify-between items-center">
     <div class="flex items-center space-x-2 py-2">
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
             fill="none">
@@ -20,23 +20,23 @@
 
     </a> --}}
 </div>
-<section class="grid grid-cols-12 gap-4 py-4">
+<section class="hidden lg:grid grid-cols-12 gap-4 py-4">
     <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="w-24" src="{{asset('img/client/nasa.webp')}}" alt="">
+        <img class="p-6 object-center" src="{{asset('img/client/nasa.webp')}}" alt="">
     </div>
     <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="w-24" src="{{asset('img/client/cricket.webp')}}" alt="">
+        <img class="p-6 object-center" src="{{asset('img/client/cricket.webp')}}" alt="">
     </div>
     <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="w-24" src="{{asset('img/client/cloaked.webp')}}" alt="">
+        <img class="p-6 object-center" src="{{asset('img/client/cloaked.webp')}}" alt="">
     </div>
     <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="w-24" src="{{asset('img/client/nasa.webp')}}" alt="">
+        <img class="p-6 object-center" src="{{asset('img/client/nasa.webp')}}" alt="">
     </div>
     <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="w-24" src="{{asset('img/client/nasa.webp')}}" alt="">
+        <img class="p-6 object-center" src="{{asset('img/client/nasa.webp')}}" alt="">
     </div>
     <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="w-24" src="{{asset('img/client/nasa.webp')}}" alt="">
+        <img class="p-6 object-center" src="{{asset('img/client/nasa.webp')}}" alt="">
     </div>
 </section>
