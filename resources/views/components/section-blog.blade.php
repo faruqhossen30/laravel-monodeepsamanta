@@ -1,10 +1,10 @@
 @php
     use App\Models\Blog;
-    $posts = Blog::latest()->take(4)->get();
+    $posts = Blog::latest()->take(3)->get();
 
 @endphp
 
-<div class="flex justify-between items-center">
+<div class="flex justify-between items-center py-3">
     <div class="flex items-center space-x-2 py-2">
         <x-icon.clients />
 
@@ -38,3 +38,4 @@
         @endforeach
     </div>
 </div>
+<div class="h-24"></div>

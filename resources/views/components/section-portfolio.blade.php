@@ -5,13 +5,13 @@
         ->get();
 
 @endphp
-<div class="flex justify-between items-center">
+<div class="lg:flex justify-between items-center">
     <div class="flex items-center space-x-2 py-4">
         <x-icon.thumbnail />
 
         <h3 class="text-[26px] font-bold">Check Out My Portfolio</h3>
     </div>
-    <a href="{{ route('portfoliopage') }}" class="text-primary font-bold flex items-center space-x-2">
+    <a href="{{ route('portfoliopage') }}" class="text-primary font-bold flex items-center space-x-2 pb-4">
         <span class="text-[15px] leading-[15px]">See All Portfolios</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             data-slot="icon" class="w-4 h-4 font-bold">

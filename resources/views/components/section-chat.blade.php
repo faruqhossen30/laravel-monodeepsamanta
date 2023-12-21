@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto py-8 my-10 space-y-2 text-white text-center" style="background-image: url('./img/action-bg.webp')">
+<div class="max-w-[1260px] rounded-md mx-auto py-10 my-10 space-y-2 text-white text-center" style="background-image: url('./img/action-bg.webp')">
     <h5 class="text-4xl font-bold">HAVE A PROJECT</h5>
     <h5 class="text-2xl font-bold">THAT NEEDS SOME SOME</h5>
     <button type="button" class="bg-primary py-2 px-6 inline-flex items-center gap-x-2 text-lg rounded-md text-white font-bold  shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 hover:text-black">
