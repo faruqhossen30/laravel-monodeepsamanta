@@ -3,7 +3,7 @@
 @section('content')
     <section>
         <h1 class="flex items-center text-2xl space-x-2 py-4 my-8 font-bold">
-            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                 fill="none">
                 <path
                     d="M17.334 0.833984H2.66732C1.65898 0.833984 0.833984 1.65898 0.833984 2.66732V19.1673L4.50065 15.5007H17.334C18.3423 15.5007 19.1673 14.6757 19.1673 13.6673V2.66732C19.1673 1.65898 18.3423 0.833984 17.334 0.833984ZM17.334 13.6673H3.73982L2.66732 14.7398V2.66732H17.334V13.6673Z"
@@ -19,7 +19,7 @@
     <section class="p-2 md:p-0">
         @foreach ($reviews as $review)
 
-            <div class="md:flex justify-between py-4">
+            <div class="md:flex justify-between py-12">
                 <div class="flex space-x-3">
                     <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
                         <span class="font-bold">PM</span>
@@ -36,13 +36,14 @@
                             <p class="text-gray-500">{{$review->date->format('d M, Y')}}</p>
                         </div>
                         <div>
-                            <p>{{$review->review}}</p>
+                            <p class="text-[18px] leading-[26px] max-w-4xl">{{$review->review}}</p>
                         </div>
-                        <div class="flex space-x-2 py-2 items-center">
+                        <div class="flex space-x-2 py-4 items-center">
                             <p class="text-sm">Originally Posted on:</p>
-                            <a href="{{$review->review_url}}" class="flex text-primary font-bold ">{{$review->type->name}}
+                            <a href="{{$review->review_url}}" class="flex text-sm leading-[18px] text-primary font-bold items-center space-x-2">
+                                <span>{{$review->type->name}}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                                 </svg>
@@ -54,11 +55,10 @@
 
                 <div>
                     <div class="flex justify-center">
-                        <img src="{{ asset('uploads/review/'.$review->thumbnail ) }}" class="max-h-44" alt="">
+                        <img src="{{ asset('uploads/review/'.$review->thumbnail ) }}" class="max-h-44 max-w-[176px] min-w-[176px]" alt="">
                     </div>
                     <div class="text-center">
                         <a href="#" class="text-primary font-bold text-center">Similar Works
-
                         </a>
                     </div>
                 </div>

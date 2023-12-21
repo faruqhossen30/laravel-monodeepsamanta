@@ -14,8 +14,8 @@
 <div class="grid grid-cols-12 gap-5">
     @foreach ($services as $service)
         <!--Image Card Start-->
-        <div class="group border p-2 col-span-12 md:col-span-6 lg:col-span-4">
-            <div class="font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
+        <div class="group border p-2 col-span-12 md:col-span-6 lg:col-span-4 rounded-sm">
+            <div class="font-bold  relative overflow-hidden text-white shadow cursor-pointer">
                 <img src="{{asset('uploads/service/'.$service->thumbnail)}}" class="group-hover:scale-110 group-hover:rotate-3 transition duration-500"
                     alt="">
             </div>

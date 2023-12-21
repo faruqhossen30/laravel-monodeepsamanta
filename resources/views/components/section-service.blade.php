@@ -5,13 +5,18 @@
         ->get();
 
 @endphp
-<div>
-    <div class="flex items-center space-x-2 py-2">
-        <svg class="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0m0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
-          </svg>
-        <h3 class=" text-2xl font-extrabold">See My Services</h3>
+<div class="flex justify-between items-center">
+    <div class="flex items-center space-x-2 py-3">
+        <x-icon.listcheck />
+        <h3 class="text-[26px] font-bold leading-[39px]">See My Services</h3>
     </div>
+    <a href="{{ route('portfoliopage') }}" class="text-primary font-bold flex items-center space-x-2">
+        <span class="text-[15px] leading-[15px]">See All Services</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            data-slot="icon" class="w-4 h-4 font-bold">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+    </a>
 </div>
 
 <div class="grid grid-cols-12 gap-5">
@@ -36,3 +41,4 @@
 
 
 </div>
+<div class="h-20"></div>

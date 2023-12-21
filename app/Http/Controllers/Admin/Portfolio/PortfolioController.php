@@ -99,8 +99,9 @@ class PortfolioController extends Controller
     {
         $categories = Category::get();
         $portfolio = Portfolio::with('categories')->firstWhere('id', $id);
-        $ids = $portfolio->categories->pluck('category_id')->toArray();
-
+        // $ids = $portfolio->categories->pluck('category_id')->toArray();
+        $ids = $portfolio->categories->pluck('id')->toArray();
+        // return $ids;
         return view('admin.portfolio.edit', compact('categories', 'portfolio','ids'));
     }
 
@@ -112,7 +113,6 @@ class PortfolioController extends Controller
         $request->validate([
             'title' => 'required'
         ]);
-
 
 
         $thumbnailname = null;

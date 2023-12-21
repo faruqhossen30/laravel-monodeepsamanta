@@ -94,7 +94,7 @@
 
 
                                             <td class="px-3 py-2 whitespace-nowrap text-right text-sm font-medium">
-                                                <x-table.action_button route="blog" :id="$service->id" />
+                                                <x-table.action_button route="service" :id="$service->id" />
                                             </td>
                                         </tr>
                                     @endforeach

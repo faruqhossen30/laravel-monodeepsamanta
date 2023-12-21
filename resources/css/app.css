@@ -10,7 +10,7 @@
 }
 
 .btn{
-    @apply border py-2 px-8 rounded-md font-normal text-gray-800 text-base hover:bg-black hover:text-white transition m-1
+    @apply border leading-[26px] py-2 px-8 rounded-md font-normal text-gray-800 text-base hover:bg-black hover:text-white transition m-1
 }
 .socialIcon{
     @apply  p-3 hover:scale-105 hover:bg-red-500 transition bg-black text-white rounded-full mx-1
@@ -27,4 +27,7 @@
 /*portfullio page component class */
 .galarybtn{
     @apply font-bold border px-6 py-1 rounded hover:bg-black hover:text-white text-gray-500  transition
+}
+.menuhover{
+    @apply hover:border-b-2 hover:border-b-[#FF003A] hover:text-[#FF003A]  transition duration-500 font-bold
 }

@@ -4,6 +4,7 @@
 
     <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 lg:col-span-8">
+            <h1 class="text-2xl font-bold">{{$service->title}}</h1>
             @if ($service->sliders->count())
                 <div class="owl-carousel owl-theme">
                     @foreach ($service->sliders as $key => $slider)
@@ -113,6 +114,7 @@
                 </div>
             </div>
         </div>
+        @if ($service->package)
         <div class="col-span-12 lg:col-span-4">
             <div class="border p-2 sticky top-36">
                 <nav class="flex space-x-2" aria-label="Tabs" role="tablist">
@@ -138,7 +140,7 @@
 
                 <div class="mt-3">
                     <div id="equal-width-elements-1" role="tabpanel" aria-labelledby="equal-width-elements-item-1">
-                        <h1 class="text-2xl font-bold">${{ $service->package->starter_price }}</h1>
+                        <h1 class="text-2xl font-bold">${{ optional($service->package)->starter_price }}</h1>
                         <div class="flex items-center space-x-1">
                             <span class="text-md font-bold">Save up to 10% with <span class="text-primary">Subscribe to
                                     save</span></span>
@@ -249,6 +251,8 @@
                 </div>
             </div>
         </div>
+        @endif
+
     </div>
 
 @endsection

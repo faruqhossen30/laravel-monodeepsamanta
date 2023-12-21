@@ -23,7 +23,7 @@
                         <x-form.input label="Portfolio Title" title="title" value="{{$portfolio->title}}" />
                         <div class="md:flex md:space-x-6">
                             <div class="max-w-md">
-                                <input class="dropify" type="file" id="myDropify" name="thumbnail">
+                                <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{asset('uploads/portfolio/image/'.$portfolio->thumbnail)}}">
                             </div>
                             <div class="max-w-md">
                                 <p class=" min-w-max p-2">Select Category</p>
@@ -32,13 +32,17 @@
                                     <div class="flex p-2">
                                         <input type="checkbox" name="categories[]" value="{{$category->id}}" @if (in_array($category->id, $ids)) checked @endif
                                             class="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                            id="hs-checked-checkbox">
+                                            id="hs-checked-checkbox" @if(in_array($category->id ,$ids)) checked @endif>
                                         <label for="hs-checked-checkbox"
                                             class="text-sm text-gray-500 ms-3 dark:text-gray-400">{{$category->name}}</label>
                                     </div>
                                 @endforeach
-
                             </div>
+                        </div>
+                        <hr>
+                        <div class="py-2">
+                            <label for="myDropify" class="py-2">Portfolio Image</label>
+                            <input class="dropify" type="file" id="myDropify" name="portfolio_image">
                         </div>
                         <x-form.submit_button />
                     </form>

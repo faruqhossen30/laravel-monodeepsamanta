@@ -23,6 +23,9 @@
                 <label for="sliders" class="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200">
                     Slider Image
                 </label>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    After update Old images will be remove and new images will be update.
+                  </p>
                 <input id="sliders" type="file" name="thumbnails[]" multiple
                     class="py-2 px-3 pr-11 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                     placeholder="Slider Image">
@@ -31,12 +34,12 @@
                 @enderror
             </div>
 
-            <x-form.submit_button />
+            <x-form.submit_button title="Update" />
         </form>
         @if ($photos->count())
             <div>
                 <h3>Old Image</h3>
-                <div class="">
+                <div class="flex flex-wrap">
                     @foreach ($photos as $photo)
                     <img src="{{asset('uploads/service/slider/'.$photo->thumbnail)}}" class="w-52 p-2" alt="">
 

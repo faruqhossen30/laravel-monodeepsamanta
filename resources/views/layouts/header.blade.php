@@ -1,13 +1,13 @@
-<header class="bg-white sticky top-0 z-10 mt-4">
+<header class="bg-white sticky top-0 z-10 mt-6">
     <div class="flex items-center max-w-7xl mx-auto justify-between bg-white">
-        <div class="flex items-center space-x-4 p-2 bg-white">
+        <div class="flex items-center space-x-6 p-2 bg-white">
             <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
-                <img src="{{asset('img/logo.webp')}}" alt="" class="w-14 h-14">
+                <img src="{{asset('img/logo.webp')}}" alt="" class=" w-12 h-12">
             </a>
             <div class="space-y-2">
                 <div class="flex items-center space-x-2">
                     <a href="{{route('homepage')}}">
-                        <h2 class="text-lg font-bold">Monodeep Samanta</h2>
+                        <h2 class="text-lg font-bold leading-[18px]">Monodeep Samanta</h2>
                     </a>
                     <div class="hidden md:flex items-center space-x-2">
                         <button type="button"
@@ -20,7 +20,7 @@
                             PRO VERIFIED
 
                         </button>
-                        <div class="flex space-x-1">
+                        <div class="flex space-x-2">
                             <a href="">
                                 <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16"
                                     height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -58,12 +58,12 @@
                             </a>
                         </div>
                         <div>
-                            <p>5.0 (153 reviews)</p>
+                            <p class="text-sm leading-[14px] font-medium text-black">5.0 (153 reviews)</p>
                         </div>
                     </div>
 
                 </div>
-                <p class="font-normal text-md text-gray-600">Multi Award Winning United Kingdom Designer </p>
+                <p class="text-sm text-black font-medium leading-[24px]">Multi Award Winning United Kingdom Designer </p>
             </div>
         </div>
         <div>
@@ -74,9 +74,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
         </button>
-            <div class="space-x-2 hidden lg:flex">
+            <div class="space-x-3 hidden lg:flex">
                 <button type="button"
-                    class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-bold rounded-md border border-gray-200 bg-primary text-white hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                    class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-bold rounded-sm bg-primary text-white hover:bg-black disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-send-fill" viewBox="0 0 16 16">
                         <path
@@ -85,17 +85,17 @@
                     Instant Reply
                 </button>
                 <button type="button"
-                    class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-bold rounded-md border border-black bg-white text-black hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                    class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-bold rounded-sm border border-black bg-white hover:bg-black text-black hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                     More About Me
                 </button>
             </div>
-            <div class="hidden md:flex items-center space-y-1 space-x-1">
+            <div class="hidden md:flex items-center justify-end space-y-1 space-x-1">
                 <svg class="text-primary w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                </svg>
-                <span class="text-sm">Average response time 1h</span>
+                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+            </svg>
+            <span class="text-sm py-1">Average response time 1h</span>
             </div>
         </div>
 
@@ -149,28 +149,28 @@
 <section class="bg-white border-b m-2 mb-10">
     <nav class="max-w-7xl mx-auto bg-white flex space-x-6">
         <a href="{{route('homepage')}}"
-            class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 " >
+            class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover" >
             Home
         </a>
 
         <a href="{{route('portfoliopage')}}"
-            class="@if(request()->routeIs('portfoliopage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('portfoliopage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
             Portfolio
         </a>
         <a href="{{route('aboutpage')}}"
-            class="@if(request()->routeIs('aboutpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('aboutpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
             About Me
         </a>
         <a href="{{route('servicepage')}}"
-            class="@if(request()->routeIs('servicepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('servicepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
             Searvice
         </a>
         <a href="{{route('reviewpage')}}"
-            class="@if(request()->routeIs('reviewpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('reviewpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
             Reviews
         </a>
         <a href="{{route('blogpage')}}"
-            class="@if(request()->routeIs('blogpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400">
+            class="@if(request()->routeIs('blogpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
             Blog
         </a>
 

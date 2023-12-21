@@ -101,7 +101,10 @@ class ServiceController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categories = Category::get();
+        $service = Service::with('features')->firstWhere('id', $id);
+        // return $service;
+        return view('admin.service.edit', compact('categories','service'));
     }
 
     /**
@@ -109,7 +112,56 @@ class ServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'category_id' => 'required'
+        ]);
+
+        // return $request->all();
+
+
+
+        $data = [
+            'title' => $request->title,
+            'slug' => Str::slug($request->title, '-'),
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+            'meta_title' => $request->meta_title,
+            'meta_description' => $request->meta_description,
+            'meta_keyword' => $request->meta_keyword
+        ];
+
+        if ($request->file('thumbnail')) {
+            $imagethumbnail = $request->file('thumbnail');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $thumbnailname = Str::uuid() . '.' . $extension;
+            Image::make($imagethumbnail)->save('uploads/service/' . $thumbnailname);
+            $data['thumbnail'] = $thumbnailname;
+        }
+
+        $update = Service::firstWhere('id', $id)->update($data);
+
+        if($update && !empty($request->featuredetails)){
+            ServiceFeature::where('service_id', $id)->delete();
+            $starter = $request->starter;
+            $standard = $request->standard;
+            $advanced = $request->advanced;
+
+
+            foreach($request->featuredetails as  $index => $feature){
+                ServiceFeature::create([
+                    'service_id' => $id,
+                    'feature' => $feature,
+                    'starter' => $starter[$index],
+                    'standard' => $standard[$index],
+                    'advanced' => $advanced[$index]
+                ]);
+            }
+        }
+
+        Session::flash('update');
+        return redirect()->route('service.index');
     }
 
     /**
