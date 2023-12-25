@@ -2,10 +2,10 @@
 @section('title', 'Home Page')
 @section('content')
 
-    <div class="p-4 lg:p-0 md:flex justify-between mt-10 space-x-10">
+    <div class="p-4 lg:p-0 md:flex justify-between mt-16 space-x-10">
         <!--FEATURED WORK section start from here-->
         <div class="md:w-7/12 space-y-4">
-            <p class="text-primary font-bold">FEATURED WORK</p>
+            <p class="text-primary font-extrabold text-[14px] leading-[14px]">FEATURED WORK</p>
             <h2 class="text-2xl font-bold">Creativity by Monodeep Samanta</h2>
             <p class="text-lg">Explore a Gallery of Creativity by Monodeep Samanta: Unveil a collection of exquisite UI/UX
                 design Portfolios. Immerse in a journey of innovation, aesthetics, and User-centric excellence. Discover the

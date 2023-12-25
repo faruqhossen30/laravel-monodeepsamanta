@@ -1,6 +1,6 @@
 <header class="bg-white sticky top-0 z-10 mt-6 border-b-2 lg:border-none">
     <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white">
-        <div class="flex items-center space-x-6 p-2 bg-white">
+        <div class="flex items-center space-x-6 py-2 bg-white">
             <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
                 <img src="{{asset('img/logo.webp')}}" alt="" class=" w-12 h-12">
             </a>
@@ -146,7 +146,7 @@
     </div>
 </div>
 {{-- Offcanvas end --}}
-<section class="hidden md:block bg-white border-b m-2 mb-10">
+<section class="hidden md:block bg-white border-b">
     <nav class="max-w-[1260px] mx-auto bg-white flex space-x-6">
         <a href="{{route('homepage')}}"
             class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover" >

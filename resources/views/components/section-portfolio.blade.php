@@ -6,7 +6,7 @@
 
 @endphp
 <div class="lg:flex justify-between items-center">
-    <div class="flex items-center space-x-2 py-4">
+    <div class="flex items-center space-x-2 py-2 pb-4">
         <x-icon.thumbnail />
 
         <h3 class="text-[26px] font-bold">Check Out My Portfolio</h3>

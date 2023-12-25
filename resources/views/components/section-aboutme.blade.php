@@ -1,5 +1,5 @@
 <div class="hidden lg:block">
-    <section class=" pt-14">
+    <section class="">
         <h1 class="flex items-center text-2xl space-x-2 py-4 mb-2 font-bold">
             <svg class="text-primary w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
