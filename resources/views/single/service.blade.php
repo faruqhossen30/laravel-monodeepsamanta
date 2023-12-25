@@ -256,7 +256,7 @@
                 <div>
                     <ul role="list"
                         class="marker:text-blue-600 space-y-2 text-sm text-black dark:text-gray-400">
-                        <li class="t flex space-x-2">
+                        <li class="flex space-x-2">
                             <span class="ext-black text-[16px] leading-[28px] font-bold">Seller communication level</span>
                             <!-- Rating -->
                             <div class="flex flex-row-reverse justify-end items-center">
@@ -318,7 +318,7 @@
                             </div>
                             <!-- End Rating -->
                         </li>
-                        <li class="t flex space-x-2">
+                        <li class="flex space-x-2">
                             <span class="ext-black text-[16px] leading-[28px] font-medium">Recommend to a friend</span>
                             <!-- Rating -->
                             <div class="flex flex-row-reverse justify-end items-center">
@@ -380,7 +380,7 @@
                             </div>
                             <!-- End Rating -->
                         </li>
-                        <li class="t flex space-x-2">
+                        <li class="flex space-x-2">
                             <span class="ext-black text-[16px] leading-[28px] font-medium">Service as described </span>
                             <!-- Rating -->
                             <div class="flex flex-row-reverse justify-end items-center">
@@ -512,7 +512,7 @@
                             <div class="py-2">
                                 {!! $service->package->starter_full_description !!}
                             </div>
-                            <div class="space-y-1">
+                            <div class="space-y-2">
                                 <button type="button"
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Continue ( ${{ $service->package->starter_price }})
@@ -553,7 +553,7 @@
                             <div class="py-2">
                                 {!! $service->package->standard_short_description !!}
                             </div>
-                            <div class="space-y-1">
+                            <div class="space-y-2">
                                 <button type="button"
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Continue ( ${{ $service->package->standard_price }})
@@ -594,7 +594,7 @@
                             <div class="py-3">
                                 {!! $service->package->advance_full_description !!}
                             </div>
-                            <div class="space-y-1">
+                            <div class="space-y-2">
                                 <button type="button"
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Continue ( ${{ $service->package->advance_price }})
@@ -625,7 +625,6 @@
             </a>
         </div>
     </div>
-
 @endsection
 
 @push('style')
@@ -644,7 +643,6 @@
             autoplay: true,
             dots: false,
             loop: true,
-            nav: true,
             margin: 10,
             URLhashListener: true,
             autoplayHoverPause: true,

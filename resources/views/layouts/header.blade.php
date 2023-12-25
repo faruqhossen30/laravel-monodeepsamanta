@@ -7,7 +7,7 @@
             <div class="space-y-2">
                 <div class="flex items-center space-x-2">
                     <a href="{{route('homepage')}}">
-                        <h2 class="text-lg font-bold leading-[18px]">Monodeep Samanta</h2>
+                        <h2 class="text-lg leading-[21px] font-bold leading-[18px]">Monodeep Samanta</h2>
                     </a>
                     <div class="hidden md:flex items-center space-x-2">
                         <button type="button"
@@ -149,28 +149,28 @@
 <section class="hidden md:block bg-white border-b">
     <nav class="max-w-[1260px] mx-auto bg-white flex space-x-6">
         <a href="{{route('homepage')}}"
-            class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover" >
+            class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2" >
             Home
         </a>
 
         <a href="{{route('portfoliopage')}}"
-            class="@if(request()->routeIs('portfoliopage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
+            class="@if(request()->routeIs('portfoliopage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Portfolio
         </a>
         <a href="{{route('aboutpage')}}"
-            class="@if(request()->routeIs('aboutpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
+            class="@if(request()->routeIs('aboutpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             About Me
         </a>
         <a href="{{route('servicepage')}}"
-            class="@if(request()->routeIs('servicepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
+            class="@if(request()->routeIs('servicepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Searvice
         </a>
         <a href="{{route('reviewpage')}}"
-            class="@if(request()->routeIs('reviewpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
+            class="@if(request()->routeIs('reviewpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Reviews
         </a>
         <a href="{{route('blogpage')}}"
-            class="@if(request()->routeIs('blogpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover">
+            class="@if(request()->routeIs('blogpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Blog
         </a>
 

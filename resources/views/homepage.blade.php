@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Home Page')
 @section('content')
-    <x-section-portfolio />
+    <x-section-portfolio islink="true" />
     <x-section-chat />
     <x-section-aboutme />
 
@@ -43,7 +43,7 @@
         </section>
         <x-section-chat />
     </div>
-    <x-section-service />
+    <x-section-service islink="true" />
     <x-section-video />
 
 

@@ -18,30 +18,30 @@
 
     <section class="p-2 md:p-0">
         @foreach ($reviews as $review)
-
             <div class="md:flex justify-between py-12">
                 <div class="flex space-x-3">
                     <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
                         <span class="font-bold">PM</span>
                     </div>
                     <div class="space-y-2">
-                        <h3 class="font-bold text-lg">{{$review->name}}</h3>
+                        <h3 class="font-bold text-lg">{{ $review->name }}</h3>
                         <div class="flex items-center space-x-2 font-bold">
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16"
                                 height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path
                                     d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                             </svg>
-                            <p>{{$review->rating}}</p>
-                            <p class="text-gray-500">{{$review->date->format('d M, Y')}}</p>
+                            <p>{{ $review->rating }}</p>
+                            <p class="text-gray-500">{{ $review->date->format('d M, Y') }}</p>
                         </div>
                         <div>
-                            <p class="text-[18px] leading-[26px] max-w-4xl">{{$review->review}}</p>
+                            <p class="text-[18px] leading-[26px] max-w-4xl">{{ $review->review }}</p>
                         </div>
                         <div class="flex space-x-2 py-4 items-center">
                             <p class="text-sm">Originally Posted on:</p>
-                            <a href="{{$review->review_url}}" class="flex text-sm leading-[18px] text-primary font-bold items-center space-x-2">
-                                <span>{{$review->type->name}}</span>
+                            <a href="{{ $review->review_url }}"
+                                class="flex text-sm leading-[18px] text-primary font-bold items-center space-x-2">
+                                <span>{{ $review->type->name }}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -55,19 +55,40 @@
 
                 <div>
                     <div class="flex justify-center">
-                        <img src="{{ asset('uploads/review/'.$review->thumbnail ) }}" class="max-h-44 max-w-[176px] min-w-[176px]" alt="">
+                        <img src="{{ asset('uploads/review/' . $review->thumbnail) }}"
+                            class="max-h-44 max-w-[260px] lg:max-w-[194px] min-w-[176px]" alt="">
                     </div>
-                    <div class="text-center">
-                        <a href="#" class="text-primary font-bold text-center">Similar Works
+                    <div class="text-center py-3 flex items-center space-x-2 justify-center group ">
+                        <a href="#" class="text-primary font-bold text-center group-hover:text-black">Similar Works
                         </a>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" data-slot="icon"
+                            class="w-4 h-4 font-bold text-[#FF003A] group-hover:text-black">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
                     </div>
                 </div>
             </div>
             <hr>
+
         @endforeach
 
     </section>
-
+    <div class=" py-16"></div>
+    <x-section-portfolio />
+    <div class="py-6"></div>
+    <div>
+        <x-section-service />
+        <div class="flex justify-center py-10 mb-14">
+            <a href="{{ route('servicepage') }}" class="text-primary font-bold flex items-center space-x-2">
+                <span class="text-[15px] leading-[15px]">See All Services</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
 
 @endsection
 

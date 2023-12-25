@@ -11,6 +11,7 @@
 
         <h3 class="text-[26px] font-bold">Check Out My Portfolio</h3>
     </div>
+    @isset($islink)
     <a href="{{ route('portfoliopage') }}" class="text-primary font-bold flex items-center space-x-2 pb-4">
         <span class="text-[15px] leading-[15px]">See All Portfolios</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -18,6 +19,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>
     </a>
+    @endisset
+
 </div>
 <div class=" grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
     @foreach ($portfolios as $portfolio)
