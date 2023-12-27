@@ -50,7 +50,6 @@ class ServicepackageController extends Controller
             'advance_full_description'   => 'required'
         ]);
 
-        // return $request->all();
 
 
         $data = [

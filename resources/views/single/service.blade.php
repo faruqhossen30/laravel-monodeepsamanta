@@ -6,7 +6,7 @@
         <div class="col-span-12 lg:col-span-8">
             <h1 class="text-[26px] leading-[32px] py-1 mb-4 font-bold">{{ $service->title }}</h1>
             @if ($service->sliders->count())
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme slider">
                     @foreach ($service->sliders as $key => $slider)
                         <div class="item" data-hash="{{ $key }}">
                             <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt="">
@@ -254,8 +254,7 @@
                         class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                 </div>
                 <div>
-                    <ul role="list"
-                        class="marker:text-blue-600 space-y-2 text-sm text-black dark:text-gray-400">
+                    <ul role="list" class="marker:text-blue-600 space-y-2 text-sm text-black dark:text-gray-400">
                         <li class="flex space-x-2">
                             <span class="ext-black text-[16px] leading-[28px] font-bold">Seller communication level</span>
                             <!-- Rating -->
@@ -444,7 +443,9 @@
                         </li>
                     </ul>
                 </div>
-                <textarea class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" rows="6" placeholder="Write your review"></textarea>
+                <textarea
+                    class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    rows="6" placeholder="Write your review"></textarea>
                 <div>
                     <label for="website"
                         class="block text-[15px] leading-[25px] font-normal mb-2 dark:text-white">Website*</label>
@@ -452,9 +453,10 @@
                         class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                 </div>
                 <div>
-                    <button type="button" class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-sm border border-transparent bg-black text-white hover:bg-[#FF003A] disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                    <button type="button"
+                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-sm border border-transparent bg-black text-white hover:bg-[#FF003A] disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                         Submit Review
-                      </button>
+                    </button>
                 </div>
             </div>
         </div>
@@ -497,7 +499,8 @@
                                         d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                 </svg>
                             </div>
-                            <p class="py-2 text-[18px] leading-[26px]">{{ $service->package->starter_short_description }}
+                            <p class="py-2 text-[18px] leading-[26px]">
+                                {{ $service->package->starter_short_description }}
                             </p>
                             <div class="flex items-center space-x-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -618,8 +621,8 @@
         <div class="flex justify-center py-10 mb-14">
             <a href="{{ route('servicepage') }}" class="text-primary font-bold flex items-center space-x-2">
                 <span class="text-[15px] leading-[15px]">See All Services</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                    data-slot="icon" class="w-4 h-4 font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
             </a>
@@ -630,6 +633,43 @@
 @push('style')
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <style type="text/css">
+        .slider {
+            position: relative;
+        }
+
+        .owl-nav .owl-next {
+            position: absolute;
+            top: calc(50% - 20px);
+            right: 0;
+            width: 40px;
+            height: 40px;
+            opacity: .8;
+            border-radius: 50% !important;
+            background-color: black !important;
+            color: white !important;
+        }
+
+        .owl-nav .owl-prev {
+            position: absolute;
+            top: calc(50% - 20px);
+            left: 0;
+            width: 40px;
+            height: 40px;
+            opacity: .8;
+            border-radius: 50% !important;
+            background-color: black !important;
+            color: white !important;
+        }
+        .owl-nav .owl-prev:hover{
+            background-color: #FF003A !important;
+            color: white !important;
+        }
+        .owl-nav .owl-next:hover{
+            background-color: #FF003A !important;
+            color: white !important;
+        }
+    </style>
 @endpush
 
 @push('script')
@@ -644,6 +684,7 @@
             dots: false,
             loop: true,
             margin: 10,
+            nav: true,
             URLhashListener: true,
             autoplayHoverPause: true,
             startPosition: 'URLHash'

@@ -31,9 +31,45 @@
 
 @endsection
 
+
 @push('style')
+    <script src="{{ asset('js/ckeditor.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/ckeditor.css') }}">
+    <style>
+        .ck-editor__editable_inline {
+            height: 300px;
+        }
+
+        .dropify-message p {
+            font-size: 24px
+        }
+    </style>
 @endpush
 
 @push('script')
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{{ asset('plugin/Sortable.min.js') }}"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor2'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor3'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
 @endpush
+

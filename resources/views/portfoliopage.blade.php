@@ -81,7 +81,9 @@
         </div>
         <!--Image Card Parent End Here-->
     </div>
-
+    <x-section-chat />
+    <x-section-service />
+    <div class="pb-[20px]"></div>
 @endsection
 
 @push('style')
