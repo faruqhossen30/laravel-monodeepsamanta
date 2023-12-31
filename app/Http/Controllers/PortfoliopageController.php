@@ -21,7 +21,6 @@ class PortfoliopageController extends Controller
         $ids = array_values(array_unique($data));
         $categories = Category::whereIn('id', $ids)->get();
 
-
         return view('portfoliopage', compact('portfolios', 'categories'));
     }
     /**

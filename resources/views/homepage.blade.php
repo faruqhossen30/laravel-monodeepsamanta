@@ -3,8 +3,8 @@
 @section('content')
     <x-section-portfolio islink="true" />
     <x-section-chat />
+    <div class="hidden lg:block py-12"></div>
     <x-section-aboutme />
-
     <x-section-client />
     <div class="hidden lg:block">
         <section class="grid grid-cols-12 gap-8 py-6">

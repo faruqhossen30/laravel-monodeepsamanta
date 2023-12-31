@@ -42,28 +42,28 @@
                 <div class="flex flex-col">
                     <div class="-m-1.5 overflow-x-auto">
                         <div class="p-1.5 min-w-full inline-block align-middle">
-                            <div class="border overflow-hidden dark:border-gray-700 rounded-2xl">
+                            <div class="border border-gray-100 overflow-hidden dark:border-gray-700 rounded-2xl">
                                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                                    <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                    <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                                         @if ($service->package)
                                             <tr
-                                                class=" odd:bg-white even:bg-gray-50 dark:odd:bg-slate-900 dark:even:bg-slate-800">
+                                                class="divide-x divide-gray-100 odd:bg-white  even:bg-gray-50 dark:odd:bg-slate-900 dark:even:bg-slate-800">
                                                 <td
-                                                    class="px-6 py-4 whitespace-nowrap text-gray-800 dark:text-gray-200 text-start text-[18px] leading-[16px]">
+                                                    class="px-6 py-6 whitespace-nowrap text-gray-800 dark:text-gray-200 text-start text-[18px] leading-[16px]">
                                                     Services Tiers</td>
                                                 <td
-                                                    class="px-6 py-4 whitespace-nowrap text-[18px] leading-[16px] text-gray-800 dark:text-gray-200 text-center">
+                                                    class="px-6 py-6 whitespace-nowrap text-[18px] leading-[16px] text-gray-800 dark:text-gray-200 text-center">
                                                     Starter <p class="py-2">
                                                         ${{ optional($service->package)->starter_price }}</p>
                                                 </td>
                                                 <td
-                                                    class="px-6 py-4 whitespace-nowrap text-[18px] leading-[16px] text-gray-800 dark:text-gray-200 text-center">
+                                                    class="px-6 py-6 whitespace-nowrap text-[18px] leading-[16px] text-gray-800 dark:text-gray-200 text-center">
                                                     Standard <br>
                                                     <p class="py-2">${{ optional($service->package)->standard_price }}
                                                     </p>
                                                 </td>
                                                 <td
-                                                    class="px-6 py-4 whitespace-nowrap text-[18px] leading-[16px] text-gray-800 dark:text-gray-200 text-center">
+                                                    class="px-6 py-6 whitespace-nowrap text-[18px] leading-[16px] text-gray-800 dark:text-gray-200 text-center">
                                                     Advanced <br>
                                                     <p class="py-2">${{ optional($service->package)->advance_price }}
                                                     </p>
@@ -73,19 +73,20 @@
 
                                         @foreach ($service->features as $feature)
                                             <tr
-                                                class="odd:bg-white even:bg-gray-50 dark:odd:bg-slate-900 dark:even:bg-slate-800">
+                                                class="divide-x divide-gray-100 odd:bg-white even:bg-gray-50 dark:odd:bg-slate-900 dark:even:bg-slate-800">
                                                 <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 text-start">
+                                                    class="px-6 py-5 whitespace-nowrap text-[16px] leading-[19px] text-gray-800 dark:text-gray-200 text-start">
                                                     {{ $feature->feature }}</td>
                                                 <td
-                                                    class="text-[18px] leading-[16px] px-6 py-4 whitespace-nowrap text-gray-800 dark:text-gray-200 text-center">
+                                                    class="text-[18px] leading-[16px] px-6 py-5 whitespace-nowrap text-gray-800 dark:text-gray-200 text-center">
                                                     {{ $feature->starter }}</td>
                                                 <td
-                                                    class="text-[18px] leading-[16px] px-6 py-4 whitespace-nowrap text-gray-800 dark:text-gray-200 text-center">
+                                                    class="text-[18px] leading-[16px] px-6 py-5 whitespace-nowrap text-gray-800 dark:text-gray-200 text-center">
                                                     {{ $feature->standard }}</td>
                                                 <td
-                                                    class="text-[18px] leading-[16px] px-6 py-4 whitespace-nowrap text-gray-800 dark:text-gray-200 text-center">
-                                                    {{ $feature->advanced }}</td>
+                                                    class="text-[18px] leading-[16px] px-6 py-5 whitespace-nowrap  dark:text-gray-200 text-center">
+                                                    {{ $feature->advanced }}
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -661,11 +662,13 @@
             background-color: black !important;
             color: white !important;
         }
-        .owl-nav .owl-prev:hover{
+
+        .owl-nav .owl-prev:hover {
             background-color: #FF003A !important;
             color: white !important;
         }
-        .owl-nav .owl-next:hover{
+
+        .owl-nav .owl-next:hover {
             background-color: #FF003A !important;
             color: white !important;
         }
@@ -689,5 +692,16 @@
             autoplayHoverPause: true,
             startPosition: 'URLHash'
         });
+        // $('.owl-carousel').on('changed.owl.carousel', function(event) {
+        //     var current = event.item.index;
+        //     var hash = $(event.target).find(".owl-item").eq(current).find(".item").attr('data-hash');
+        //     $('.' + hash).addClass('active');
+        // });
+
+        // $('.owl-carousel').on('change.owl.carousel', function(event) {
+        //     var current = event.item.index;
+        //     var hash = $(event.target).find(".owl-item").eq(current).find(".item").attr('data-hash');
+        //     $('.' + hash).removeClass('active');
+        // });
     </script>
 @endpush

@@ -90,7 +90,7 @@
                         </a>
                         <a class="inline-flex justify-center items-center w-10 h-10 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
                             href="#">
-                            <img class="h-6 w-6" src="{{ asset('img/icon/500px-monogram.png') }}" alt="">
+                            <img class="h-6 w-6" src="{{ asset('img/icon/500px-monogramwhite.png') }}" alt="">
                         </a>
                         <a href="https://www.linkedin.com/in/monodeepsamanta/" class="inline-flex justify-center items-center w-10 h-10 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
                             >

@@ -10,7 +10,7 @@ class ReviewpageController extends Controller
 {
     public function index():View
     {
-        $reviews = Review::with('type')->paginate(15);
+        $reviews = Review::with('type')->paginate(10);
         // return $reviews;
         return view('reviewpage', compact('reviews'));
     }

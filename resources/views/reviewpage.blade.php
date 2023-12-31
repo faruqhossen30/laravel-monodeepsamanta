@@ -72,10 +72,12 @@
             <hr>
 
         @endforeach
-
+        <div class="pt-5">
+            {{$reviews->links()}}
+        </div>
     </section>
     <div class=" py-16"></div>
-    <x-section-portfolio />
+    <x-section-portfolio islink="true" />
     <div class="py-6"></div>
     <div>
         <x-section-service />
