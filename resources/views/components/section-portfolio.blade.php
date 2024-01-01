@@ -35,7 +35,7 @@
                 src="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}" alt="">
             <div class="absolute group-hover:bottom-6 group-hover:left-6 hidden group-hover:block bottom-0 z-20 space-y-2">
                 <h1 class="text-2xl">{{ $portfolio->title }}</h1>
-                <span class="hover:text-red-500 transition flex items-center space-x-2">
+                <span class="hover:text-[#FF003A] transition flex items-center space-x-2">
                     <span>See All</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">

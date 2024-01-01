@@ -99,11 +99,9 @@ class PortfolioController extends Controller
     public function edit(string $id)
     {
         $categories = Category::get();
-        $portfolio = Portfolio::with('categories')->firstWhere('id', $id);
-        // $ids = $portfolio->categories->pluck('category_id')->toArray();
-        $ids = $portfolio->categories->pluck('id')->toArray();
-        // return $ids;
-        return view('admin.portfolio.edit', compact('categories', 'portfolio','ids'));
+        $portfolio = Portfolio::with('category')->firstWhere('id', $id);
+
+        return view('admin.portfolio.edit', compact('categories', 'portfolio'));
     }
 
     /**

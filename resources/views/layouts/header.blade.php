@@ -1,4 +1,4 @@
-<header class="bg-white sticky top-0 z-10 mt-6 border-b-2 lg:border-none">
+<header class="bg-white sticky top-0 z-50 mt-6 border-b-2 lg:border-none">
     <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white">
         <div class="flex items-center space-x-6 py-2 bg-white">
             <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
@@ -7,18 +7,17 @@
             <div class="space-y-2">
                 <div class="flex items-center space-x-2">
                     <a href="{{route('homepage')}}">
-                        <h2 class="text-lg leading-[21px] font-bold leading-[18px]">Monodeep Samanta</h2>
+                        <h2 class="text-lg font-bold leading-[18px]">Monodeep Samanta</h2>
                     </a>
                     <div class="hidden md:flex items-center space-x-2">
                         <button type="button"
-                            class="py-1 px-2 inline-flex items-center gap-x-2 text-xs font-bold rounded-md border border-gray-200 bg-black text-white hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                            class="py-1 px-2 inline-flex items-center gap-x-2 text-xs font-bold rounded-md border border-gray-200 bg-black text-white disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             PRO VERIFIED
-
                         </button>
                         <div class="flex space-x-2">
                             <a href="">
