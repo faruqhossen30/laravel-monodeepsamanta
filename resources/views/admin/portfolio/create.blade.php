@@ -20,25 +20,25 @@
                     <form action="{{ route('portfolio.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <x-form.input label="Portfolio Title" title="title" />
+                        <div class="py-1">
+                            <label for="category_id">Select Category</label>
+                            <select name="category_id" id="category_id"
+                                class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                <option value="">Review Type</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            @error("category_id")
+                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
                         <div class="md:flex md:space-x-6 my-2">
                             <div class="max-w-md">
                                 <label for="myDropify" class="py-2">Portfolio Thumbnail</label>
                                 <input class="dropify" type="file" id="myDropify" name="thumbnail">
                             </div>
-                            <div class="max-w-md">
-                                <p class=" min-w-max p-2">Select Category</p>
-                                <hr>
-                                @foreach ($categories as $category)
-                                    <div class="flex p-2">
-                                        <input type="checkbox" name="categories[]" value="{{$category->id}}"
-                                            class="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                            id="hs-checked-checkbox">
-                                        <label for="hs-checked-checkbox"
-                                            class="text-sm text-gray-500 ms-3 dark:text-gray-400">{{$category->name}}</label>
-                                    </div>
-                                @endforeach
 
-                            </div>
 
                         </div>
                         <hr>

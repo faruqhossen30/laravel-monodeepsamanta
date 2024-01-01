@@ -1,3 +1,15 @@
+@php
+    function acronym($string = '')
+    {
+        $words = explode(' ', $string);
+        if (!$words) {
+            return false;
+        }
+        $result = '';
+        foreach ($words as $word) $result .= $word[0];
+        return strtoupper($result);
+    }
+@endphp
 @extends('layouts.app')
 @section('title', 'Home Page')
 @section('content')
@@ -18,10 +30,11 @@
 
     <section class="p-2 md:p-0">
         @foreach ($reviews as $review)
+
             <div class="md:flex justify-between py-12">
                 <div class="flex space-x-3">
                     <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
-                        <span class="font-bold">PM</span>
+                        <span class="font-bold">{{acronym($review->name)}}</span>
                     </div>
                     <div class="space-y-2">
                         <h3 class="font-bold text-lg">{{ $review->name }}</h3>
@@ -59,7 +72,7 @@
                             class="max-h-44 max-w-[260px] lg:max-w-[194px] min-w-[176px]" alt="">
                     </div>
                     <div class="text-center py-3 flex items-center space-x-2 justify-center group ">
-                        <a href="#" class="text-primary font-bold text-center group-hover:text-black">Similar Works
+                        <a href="{{route('portfoliocategorypage', $review->category->slug)}}" class="text-primary font-bold text-center group-hover:text-black">Similar Works
                         </a>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" data-slot="icon"

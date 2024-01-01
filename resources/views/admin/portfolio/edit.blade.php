@@ -17,26 +17,30 @@
         <div class="flex flex-col">
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
-                    <form action="{{ route('portfolio.update', $portfolio->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('portfolio.update', $portfolio->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <x-form.input label="Portfolio Title" title="title" value="{{$portfolio->title}}" />
+                        <x-form.input label="Portfolio Title" title="title" value="{{ $portfolio->title }}" />
+
+                        <div class="py-1">
+                            <label for="category_id">Select Category</label>
+                            <select name="category_id" id="category_id"
+                                class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                <option value="">Select Category</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" @if ($category->id == $portfolio->category_id) selected @endif>
+                                        {{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
                         <div class="md:flex md:space-x-6">
                             <div class="max-w-md">
-                                <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{asset('uploads/portfolio/image/'.$portfolio->thumbnail)}}">
-                            </div>
-                            <div class="max-w-md">
-                                <p class=" min-w-max p-2">Select Category</p>
-                                <hr>
-                                @foreach ($categories as $category)
-                                    <div class="flex p-2">
-                                        <input type="checkbox" name="categories[]" value="{{$category->id}}" @if (in_array($category->id, $ids)) checked @endif
-                                            class="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                            id="hs-checked-checkbox" @if(in_array($category->id ,$ids)) checked @endif>
-                                        <label for="hs-checked-checkbox"
-                                            class="text-sm text-gray-500 ms-3 dark:text-gray-400">{{$category->name}}</label>
-                                    </div>
-                                @endforeach
+                                <input class="dropify" type="file" id="myDropify" name="thumbnail"
+                                    data-default-file="{{ asset('uploads/portfolio/image/' . $portfolio->thumbnail) }}">
                             </div>
                         </div>
                         <hr>

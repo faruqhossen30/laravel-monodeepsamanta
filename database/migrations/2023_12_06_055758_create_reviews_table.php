@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->longText('review')->nullable();
             $table->unsignedBigInteger('review_type_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('review_url')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

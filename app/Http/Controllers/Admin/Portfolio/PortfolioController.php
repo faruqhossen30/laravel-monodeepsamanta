@@ -64,6 +64,7 @@ class PortfolioController extends Controller
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
             'user_id' => Auth::user()->id,
+            'category_id' => $request->category_id,
             'thumbnail' => $thumbnailname,
             'portfolio_image' => $portfolio_image
         ];
@@ -120,7 +121,7 @@ class PortfolioController extends Controller
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
-            'user_id' => Auth::user()->id
+            'category_id' => $request->category_id,
         ];
 
         if ($request->file('thumbnail')) {

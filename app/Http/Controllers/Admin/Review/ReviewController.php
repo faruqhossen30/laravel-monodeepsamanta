@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Review;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Review;
 use App\Models\ReviewType;
 use Illuminate\Http\Request;
@@ -29,7 +30,8 @@ class ReviewController extends Controller
     public function create()
     {
         $types = ReviewType::get();
-        return view('admin.review.create', compact('types'));
+        $categories = Category::get();
+        return view('admin.review.create', compact('types','categories'));
     }
 
     /**
@@ -62,6 +64,7 @@ class ReviewController extends Controller
             'review' => $request->review,
             'thumbnail' => $thumbnailname,
             'review_type_id' => $request->review_type_id,
+            'category_id' => $request->category_id,
             'review_url' => $request->review_url,
             'user_id' => Auth::user()->id
         ];
@@ -88,8 +91,8 @@ class ReviewController extends Controller
     {
         $types = ReviewType::get();
         $review = Review::firstWhere('id', $id);
-
-        return view('admin.review.edit', compact('review','types'));
+        $categories = Category::get();
+        return view('admin.review.edit', compact('review','types','categories'));
     }
 
     /**
@@ -113,6 +116,7 @@ class ReviewController extends Controller
             'date' => $request->date,
             'review' => $request->review,
             'review_type_id' => $request->review_type_id,
+            'category_id' => $request->category_id,
             'review_url' => $request->review_url
         ];
 

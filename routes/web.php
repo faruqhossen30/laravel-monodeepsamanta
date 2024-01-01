@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutpageController;
+use App\Http\Controllers\Admin\PortfoliocategorypageController;
 use App\Http\Controllers\BlogpageController;
 use App\Http\Controllers\PortfoliopageController;
 use App\Http\Controllers\ProfileController;
@@ -25,6 +26,7 @@ Route::get('/', function () {
 
 Route::get('portfolio', [PortfoliopageController::class, 'index'])->name('portfoliopage');
 Route::get('portfolio/{slug}', [PortfoliopageController::class, 'singlePortfolio'])->name('singleportfolio');
+Route::get('portfolio/category/{slug}', [PortfoliocategorypageController::class, 'index'])->name('portfoliocategorypage');
 Route::get('about-me', [AboutpageController::class, 'index'])->name('aboutpage');
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
 Route::get('services/{slug}', [ServicepageController::class, 'singleService'])->name('singleservice');

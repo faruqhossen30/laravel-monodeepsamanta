@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Portfolio extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','slug','thumbnail','portfolio_image','user_id', 'edit_user_id'];
+    protected $fillable = ['title','slug','thumbnail','portfolio_image','user_id','category_id', 'edit_user_id'];
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(Category::class, 'portfolio_categories');
+        return $this->hasOne(Category::class, 'id','category_id');
     }
 }

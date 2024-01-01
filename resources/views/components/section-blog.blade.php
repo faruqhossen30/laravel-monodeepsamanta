@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="mt-7">
-                    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 hover:text-[#FF003A]">
                         {{ $post->title }}
                     </h3>
                 </div>

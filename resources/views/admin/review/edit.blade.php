@@ -11,9 +11,10 @@
                     <form action="{{ route('review.update', $review->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <x-form.input label="Buyer Name" title="name" value="{{$review->name}}" />
-                        <x-form.input label="Rating" title="rating" type="number" value="{{$review->rating}}" />
-                        <x-form.input label="Review Date" title="date" type="date" value="{{ $review->date->format('Y-m-d')}}" />
+                        <x-form.input label="Buyer Name" title="name" value="{{ $review->name }}" />
+                        <x-form.input label="Rating" title="rating" type="number" value="{{ $review->rating }}" />
+                        <x-form.input label="Review Date" title="date" type="date"
+                            value="{{ $review->date->format('Y-m-d') }}" />
 
 
                         <div class="py-1">
@@ -22,18 +23,36 @@
                                 class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                                 <option value="">Review Type</option>
                                 @foreach ($types as $type)
-                                    <option value="{{ $type->id }}" @if($type->id == $review->review_type_id) selected @endif>{{ $type->name }}</option>
+                                    <option value="{{ $type->id }}" @if ($type->id == $review->review_type_id) selected @endif>
+                                        {{ $type->name }}</option>
                                 @endforeach
                             </select>
-                            @error("review_type_id")
+                            @error('review_type_id')
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
-                        <x-form.input label="Review URL" title="revie_url" type="text" value="{{$review->review_url}}" />
+                        <div class="py-1">
+                            <label for="category_id">Select Category</label>
+                            <select name="category_id" id="category_id"
+                                class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                <option value="">Review Type</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}"  @if ($category->id == $review->category_id) selected @endif>{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('category_id')
+                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <x-form.input label="Review URL" title="revie_url" type="text"
+                            value="{{ $review->review_url }}" />
                         <div class="py-2">
                             <label for="review">Review Text</label>
-                            <textarea name="review" id="review" class="py-3 text-black px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" rows="5" placeholder="This is a review text."> {{$review->review}}</textarea>
-                            @error("review")
+                            <textarea name="review" id="review"
+                                class="py-3 text-black px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                                rows="5" placeholder="This is a review text."> {{ $review->review }}</textarea>
+                            @error('review')
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
@@ -41,7 +60,8 @@
 
                         <div class="md:flex md:space-x-6">
                             <div class="max-w-md">
-                                <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{asset('uploads/review/'.$review->thumbnail)}}" >
+                                <input class="dropify" type="file" id="myDropify" name="thumbnail"
+                                    data-default-file="{{ asset('uploads/review/' . $review->thumbnail) }}">
                             </div>
                         </div>
 

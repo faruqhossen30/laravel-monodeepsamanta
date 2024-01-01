@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
+            $table->unsignedBigInteger('category_id');
             $table->string('thumbnail')->nullable();
             $table->string('portfolio_image')->nullable();
             $table->unsignedBigInteger('user_id');

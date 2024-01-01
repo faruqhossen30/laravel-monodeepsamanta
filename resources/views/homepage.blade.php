@@ -48,12 +48,19 @@
 
 
     <x-section-testmonial />
+    <div class="py-4"></div>
     <x-section-blog />
 @endsection
 
 @push('style')
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <style>
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background-color: #FF003A;
+        }
+    </style>
 @endpush
 
 @push('script')
@@ -64,7 +71,8 @@
             items: 1,
             dots: true,
             loop: true,
-            margin: 10
+            margin: 10,
+            dots: true
         });
     </script>
 @endpush

@@ -1,5 +1,5 @@
-<div class="max-w-[1260px] rounded-md mx-auto py-10 my-2 space-y-2 text-white text-center" style="background-image: url('./img/action-bg.webp')">
-    <h5 class="font-black text-[40px] leading-[50px] tracking-tight">HAVE A PROJECT</h5>
+<div class="max-w-[1260px] rounded-md mx-auto py-10 my-2 space-y-2 text-white text-center" style="background-image: url('{{asset('img/action-bg.webp')}}')">
+    <h5 class="font-black text-[40px] leading-[50px] tracking-tight mt-2">HAVE A PROJECT</h5>
     <h5 class="text-[24px] leading-[28px] font-black">THAT NEEDS SOME SOME</h5>
     <button type="button" class="bg-primary py-2 px-6 inline-flex items-center gap-x-2 text-lg rounded-md text-white font-bold  shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 hover:text-black">
         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wechat" viewBox="0 0 16 16">
