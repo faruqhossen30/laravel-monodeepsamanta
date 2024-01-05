@@ -1,8 +1,8 @@
 <a href="{{ route('singleportfolio', $portfolio->slug) }}"
-    class="group col-span-4 font-bold relative overflow-hidden text-white rounded-sm shadow cursor-pointer mix {{ $portfolio->category->slug }}">
+    class="group col-span-12 sm:col-span-6 lg:col-span-4 font-bold relative overflow-hidden text-white rounded-sm shadow cursor-pointer mix {{ $portfolio->category->slug }}">
     <!--layer start-->
     <div
-        class="w-full h-full absolute top-0 left-0 bg-gradient-to-t from-gray-800 opacity-70 hidden  group-hover:block transition z-10">
+        class="w-full h-full absolute top-0 left-0 bg-black opacity-50 hidden  group-hover:block transition z-10">
     </div>
 
     <!--layer end-->

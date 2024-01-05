@@ -1,10 +1,9 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', 'Portfolio Page')
 @section('content')
 
     <x-portfolio.creativework />
-
-    <div class="space-x-2 py-4 sticky top-16 z-30 bg-white">
+    <div class="space-x-2 space-y-2 py-4 sticky top-16 z-30 bg-white">
         <button data-filter="*" class="galarybtn gallarybutton">All Capabilities</button>
         @foreach ($categories as $category)
             <button data-filter=".{{ $category->slug }}" class="galarybtn gallarybutton">{{ $category->name }}</button>
@@ -14,8 +13,11 @@
     <div class="overflow-hidden">
         <div class="grid grid-cols-12 gap-3 mixingContainer">
             <!--Image Card Parent Start Here-->
-            <x-portfolio.chatitem />
-            @foreach ($portfolios as $portfolio)
+
+            @foreach ($portfolios as $key => $portfolio)
+                @if ($key == 4 ||$key == 9 || $key == 6)
+                    <x-portfolio.chatitem />
+                @endif
                 <x-portfolio.portfolioitem :portfolio="$portfolio" />
             @endforeach
 
@@ -38,7 +40,7 @@
         var mixer = mixitup('.mixingContainer');
         $(document).ready(function() {
             let gallarybutton = $('.gallarybutton');
-            $(document).on('click', '.gallarybutton', function(){
+            $(document).on('click', '.gallarybutton', function() {
                 $(this).siblings().removeClass('bg-black text-white');
                 $(this).addClass('bg-black text-white')
             })

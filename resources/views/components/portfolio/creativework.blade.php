@@ -1,4 +1,4 @@
-<div class="p-4 lg:p-0 md:flex justify-between mt-16 space-x-10">
+<div class="p-4 lg:p-0 md:flex justify-between mt-16 space-y-10  md:space-x-10">
     <!--FEATURED WORK section start from here-->
     <div class="md:w-7/12 space-y-4">
         <p class="text-primary font-black text-[14px] leading-[14px] tracking-widest">FEATURED WORK</p>

@@ -9,16 +9,16 @@
                 <div class="owl-carousel owl-theme slider">
                     @foreach ($service->sliders as $key => $slider)
                         <div class="item" data-hash="{{ $key }}">
-                            <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt="">
+                            <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""">
                         </div>
                     @endforeach
 
                 </div>
                 <div class="flex space-x-2 py-2">
                     @foreach ($service->sliders as $key => $slider)
-                        <a href="#{{ $key }}">
+                        <a href="#{{ $key }}" class="" data-slider="{{$key}}">
                             <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""
-                                class="w-32">
+                                class="w-32 custompacity sliderlinkimage{{$key}}"">
                         </a>
                     @endforeach
                 </div>
@@ -672,6 +672,9 @@
             background-color: #FF003A !important;
             color: white !important;
         }
+        /* .custompacity{
+            opacity: .2;
+        } */
     </style>
 @endpush
 
@@ -692,16 +695,16 @@
             autoplayHoverPause: true,
             startPosition: 'URLHash'
         });
-        // $('.owl-carousel').on('changed.owl.carousel', function(event) {
-        //     var current = event.item.index;
-        //     var hash = $(event.target).find(".owl-item").eq(current).find(".item").attr('data-hash');
-        //     $('.' + hash).addClass('active');
-        // });
+        $('.owl-carousel').on('changed.owl.carousel', function(event) {
+            var current = event.item.index;
+            // $(`.sliderlinkimage${current}`).removeClass('custompacity')
+        });
 
         // $('.owl-carousel').on('change.owl.carousel', function(event) {
         //     var current = event.item.index;
         //     var hash = $(event.target).find(".owl-item").eq(current).find(".item").attr('data-hash');
         //     $('.' + hash).removeClass('active');
+        //     console.log('change',hash);
         // });
     </script>
 @endpush
