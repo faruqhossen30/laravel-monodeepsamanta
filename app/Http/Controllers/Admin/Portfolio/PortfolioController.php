@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Portfolio;
 use App\Models\PortfolioCategory;
+use App\Models\PortfolioImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -53,32 +54,34 @@ class PortfolioController extends Controller
             Image::make($imagethumbnail)->save('uploads/portfolio/' . $thumbnailname);
         }
 
-        $portfolio_image = null;
-        if ($request->file('portfolio_image')) {
-            $imagethumbnail = $request->file('portfolio_image');
-            $extension = $imagethumbnail->getClientOriginalExtension();
-            $portfolio_image = Str::uuid() . '.' . $extension;
-            Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $portfolio_image);
-        }
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
             'user_id' => Auth::user()->id,
             'category_id' => $request->category_id,
-            'thumbnail' => $thumbnailname,
-            'portfolio_image' => $portfolio_image
+            'thumbnail' => $thumbnailname
         ];
 
         $porfolio = Portfolio::create($data);
 
-        if(!empty($request->categories)){
-            foreach($request->categories as $category){
-                PortfolioCategory::create([
-                    'portfolio_id' => $porfolio->id,
-                    'category_id' => $category
+        if(!empty($request->file('portfolio_image'))){
+            $captions = $request->captions;
+            PortfolioImage::where('portfolio_id', $porfolio->id)->delete();
+
+            foreach ($request->file('portfolio_image') as $index => $imagefile) {
+                $imagethumbnail = $imagefile;
+                $extension = $imagethumbnail->getClientOriginalExtension();
+                $thumbnailname = Str::uuid() . '.' . $extension;
+                Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $thumbnailname);
+
+                PortfolioImage::create([
+                    'portfolio_id'=> $porfolio->id,
+                    'image'=> $thumbnailname,
+                    'caption'=> $captions[$index],
                 ]);
             }
         }
+
 
         Session::flash('create');
         return redirect()->route('portfolio.index');
@@ -99,7 +102,9 @@ class PortfolioController extends Controller
     public function edit(string $id)
     {
         $categories = Category::get();
-        $portfolio = Portfolio::with('category')->firstWhere('id', $id);
+        $portfolio = Portfolio::with('images')->firstWhere('id', $id);
+
+        // return $portfolio;
 
         return view('admin.portfolio.edit', compact('categories', 'portfolio'));
     }
@@ -113,9 +118,10 @@ class PortfolioController extends Controller
             'title' => 'required'
         ]);
 
+        // return $request->all();
+
 
         $thumbnailname = null;
-        $portfolio_image = null;
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
@@ -131,25 +137,25 @@ class PortfolioController extends Controller
         }
 
 
-        if ($request->file('portfolio_image')) {
-            $imagethumbnail = $request->file('portfolio_image');
-            $extension = $imagethumbnail->getClientOriginalExtension();
-            $portfolio_image = Str::uuid() . '.' . $extension;
-            Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $portfolio_image);
-            $data['portfolio_image'] = $portfolio_image;
-        }
 
 
 
         $porfolio = Portfolio::firstWhere('id', $id)->update($data);
 
-        if(!empty($request->categories)){
-            PortfolioCategory::where('portfolio_id', $id)->delete();
+        if(!empty($request->file('portfolio_image'))){
+            $captions = $request->captions;
+            PortfolioImage::where('portfolio_id', $id)->delete();
 
-            foreach($request->categories as $category){
-                PortfolioCategory::create([
-                    'portfolio_id' => $id,
-                    'category_id' => $category
+            foreach ($request->file('portfolio_image') as $index => $imagefile) {
+                $imagethumbnail = $imagefile;
+                $extension = $imagethumbnail->getClientOriginalExtension();
+                $thumbnailname = Str::uuid() . '.' . $extension;
+                Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $thumbnailname);
+
+                PortfolioImage::create([
+                    'portfolio_id'=> $id,
+                    'image'=> $thumbnailname,
+                    'caption'=> $captions[$index],
                 ]);
             }
         }

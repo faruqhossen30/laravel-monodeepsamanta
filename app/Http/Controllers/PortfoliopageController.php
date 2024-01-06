@@ -25,10 +25,10 @@ class PortfoliopageController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function singlePortfolio(Request $request, $slug):View
+    public function singlePortfolio(Request $request, $slug)
     {
 
-        $portfolio = Portfolio::firstWhere('slug', $slug);
+        $portfolio = Portfolio::with('images')->firstWhere('slug', $slug);
         // return $portfolio;
         return view('single.portfolio', compact('portfolio'));
     }

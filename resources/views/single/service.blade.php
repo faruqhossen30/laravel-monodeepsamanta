@@ -18,7 +18,7 @@
                     @foreach ($service->sliders as $key => $slider)
                         <a href="#{{ $key }}" class="" data-slider="{{$key}}">
                             <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""
-                                class="w-32 custompacity sliderlinkimage{{$key}}"">
+                                class="w-32 custompacity sliderlinkimage{{$key}}">
                         </a>
                     @endforeach
                 </div>
@@ -672,9 +672,9 @@
             background-color: #FF003A !important;
             color: white !important;
         }
-        /* .custompacity{
+        .custompacity{
             opacity: .2;
-        } */
+        }
     </style>
 @endpush
 

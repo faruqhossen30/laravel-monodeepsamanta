@@ -1,4 +1,4 @@
-<header class="bg-white sticky top-0 z-50 mt-6 border-b-2 lg:border-none">
+<header class="bg-white sticky top-0 z-50 mt-10 border-b-2 lg:border-none">
     <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white">
         <div class="flex items-center space-x-6 py-2 bg-white">
             <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
@@ -6,6 +6,7 @@
             </a>
             <div class="space-y-2">
                 <div class="flex items-center space-x-2">
+
                     <a href="{{route('homepage')}}">
                         <h2 class="text-lg font-bold leading-[18px]">Monodeep Samanta</h2>
                     </a>

@@ -2,12 +2,19 @@
 @section('title', 'Home Page')
 @section('content')
 
-<div>
-    <h3 class="py-2 text-3xl font-bold">Raiffeisen Bank App Redesign</h3>
     <div>
-        <img src="{{asset('uploads/portfolio/image/'.$portfolio->portfolio_image)}}" class="w-full h-auto" alt="">
+        <h3 class="py-2 text-3xl font-bold">Raiffeisen Bank App Redesign</h3>
+        <div>
+            @foreach ($portfolio->images as $image)
+                @if ($image->image)
+                    <div class="py-2">
+                        <h2 class="py-2 text-lg shadow-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, facere.</h2>
+                    </div>
+                @endif
+                <img src="{{ asset('uploads/portfolio/image/' . $image->image) }}" class="w-full h-auto" alt="">
+            @endforeach
+        </div>
     </div>
-</div>
 
 @endsection
 

@@ -29,7 +29,7 @@
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
-                            @error("category_id")
+                            @error('category_id')
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
@@ -38,15 +38,31 @@
                                 <label for="myDropify" class="py-2">Portfolio Thumbnail</label>
                                 <input class="dropify" type="file" id="myDropify" name="thumbnail">
                             </div>
-
-
                         </div>
                         <hr>
-                        <div class="py-2">
-                            <label for="myDropify" class="py-2">Portfolio Image</label>
-                            <input class="dropify" type="file" id="myDropify" name="portfolio_image">
+                        <h3>Portfolio</h3>
+                        <div class="">
+                            <div class="grid grid-cols-2 gap-5" id="portfolioImageSection">
+                                <div class="col-span-2 lg:col-span-1 border p-4">
+                                    <input class="dropify" type="file" id="myDropify" name="portfolio_image[]">
+                                    <input type="text" name="captions[]" class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Caption">
+                                </div>
+                            </div>
                         </div>
-                        <x-form.submit_button />
+
+                        <div class="flex justify-between">
+                            <x-form.submit_button />
+                            <button type="button" id="addImageButton"
+                                class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+
+                                Add Image
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -68,7 +84,22 @@
     <script src="{{ asset('js/dropify.min.js') }}"></script>
     <script>
         $(document).ready(function() {
-            $('.dropify').dropify({
+            createDrofify();
+            $(document).on('click', '#addImageButton', function() {
+                $('#portfolioImageSection').append(
+                    `
+                    <div class="col-span-2 lg:col-span-1 border p-4">
+                        <input class="dropify" type="file" id="myDropify" name="portfolio_image[]">
+                        <input type="text" name="captions[]" class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Caption">
+                    </div>
+                `
+                );
+                createDrofify();
+                console.log('click');
+            });
+
+            function createDrofify(){
+                $('.dropify').dropify({
                 messages: {
                     'default': 'Drag and drop a file here or click',
                     'replace': 'Drag and drop or click to replace',
@@ -76,6 +107,8 @@
                     'error': 'Ooops, something wrong happended.'
                 }
             });
+            }
+
         });
     </script>
 @endpush
