@@ -69,7 +69,7 @@ class ServicepackageController extends Controller
         ];
 
         // ServicePackage::create($data);
-        ServicePackage::updateOrCreate(['id' => $id], $data);
+        ServicePackage::updateOrCreate(['service_id' => $id], $data);
 
         Session::flash('create');
         return redirect()->route('service.index');

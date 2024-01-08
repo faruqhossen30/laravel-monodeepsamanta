@@ -513,7 +513,7 @@
                                     {{ $service->package->starter_deliver_time }} Days Delivery
                                 </h1>
                             </div>
-                            <div class="py-2">
+                            <div class="py-2 text-[18px] leading-[30px]">
                                 {!! $service->package->starter_full_description !!}
                             </div>
                             <div class="space-y-2">
@@ -554,8 +554,8 @@
                                     {{ $service->package->standard_deliver_time }} Days Delivery
                                 </h1>
                             </div>
-                            <div class="py-2">
-                                {!! $service->package->standard_short_description !!}
+                            <div class="py-2 text-[18px] leading-[30px]">
+                                {!! $service->package->standard_full_description !!}
                             </div>
                             <div class="space-y-2">
                                 <button type="button"
@@ -595,7 +595,7 @@
                                     {{ $service->package->advance_deliver_time }} Days Delivery
                                 </h1>
                             </div>
-                            <div class="py-3">
+                            <div class="py-3 text-[18px] leading-[30px]">
                                 {!! $service->package->advance_full_description !!}
                             </div>
                             <div class="space-y-2">

@@ -132,6 +132,8 @@ class BlogController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Blog::firstWhere('id', $id)->delete();
+        Session::flash('destroy');
+        return redirect()->route('blog.index');
     }
 }
