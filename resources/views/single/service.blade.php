@@ -695,16 +695,20 @@
             autoplayHoverPause: true,
             startPosition: 'URLHash'
         });
-        $('.owl-carousel').on('changed.owl.carousel', function(event) {
-            var current = event.item.index;
-            // $(`.sliderlinkimage${current}`).removeClass('custompacity')
-        });
+        // $('.owl-carousel').on('changed.owl.carousel', function(event) {
+        //     var current = event.item.index;
+        //     // $(`.sliderlinkimage${current}`).removeClass('custompacity')
+        //     // $(`.${sliderlinkimage}`).addClass('something');
+        //     // console.log(current);
+        //     // $("a[href$='.org']")
+
+        //    $(`.sliderlinkimage${current}`).toggl('custompacity');
+        //     // console.log(some);
+        // });
 
         // $('.owl-carousel').on('change.owl.carousel', function(event) {
         //     var current = event.item.index;
-        //     var hash = $(event.target).find(".owl-item").eq(current).find(".item").attr('data-hash');
-        //     $('.' + hash).removeClass('active');
-        //     console.log('change',hash);
+        //     $(`.sliderlinkimage${current}`).toggleClass('custompacity');
         // });
     </script>
 @endpush

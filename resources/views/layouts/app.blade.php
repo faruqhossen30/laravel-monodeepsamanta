@@ -28,6 +28,11 @@
         @include('layouts.footer')
         <!-- Scripts -->
         @stack('script')
-        <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script>
+        {{-- <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script> --}}
+        <script type="text/javascript">
+            $(window).scroll(function(){
+                $(".mynavbar").toggleClass('pt-4 shadow-md',$(this).scrollTop()>50);
+            })
+        </script>
     </body>
 </html>

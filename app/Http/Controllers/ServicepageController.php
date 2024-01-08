@@ -20,6 +20,7 @@ class ServicepageController extends Controller
         $service = Service::with('features','faqs','package','sliders')->firstWhere('slug', $slug);
 
         // return $service;
+
         return view('single.service', compact('service'));
     }
 }
