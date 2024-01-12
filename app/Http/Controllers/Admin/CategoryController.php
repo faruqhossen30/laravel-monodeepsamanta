@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use Image;
 
 class CategoryController extends Controller
 {
@@ -37,8 +38,14 @@ class CategoryController extends Controller
             'name' => 'required'
         ]);
 
-        $thumbnailname = null;
 
+        $thumbnailname = null;
+        if ($request->file('thumbnail')) {
+            $imagethumbnail = $request->file('thumbnail');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $thumbnailname = Str::uuid() . '.' . $extension;
+            Image::make($imagethumbnail)->save('uploads/category/' . $thumbnailname);
+        }
 
         $data = [
             'name' => $request->name,
@@ -84,6 +91,14 @@ class CategoryController extends Controller
             'slug' => Str::slug($request->name, '-'),
             'user_id' => Auth::user()->id
         ];
+        if ($request->file('thumbnail')) {
+            $imagethumbnail = $request->file('thumbnail');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $thumbnailname = Str::uuid() . '.' . $extension;
+            Image::make($imagethumbnail)->save('uploads/category/' . $thumbnailname);
+            $data['thumbnail'] = $thumbnailname;
+        }
+
         Category::firstwhere('id', $id)->update($data);
         Session::flash('update');
         return redirect()->route('category.index');

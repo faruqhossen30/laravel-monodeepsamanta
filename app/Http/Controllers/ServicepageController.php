@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service\Service;
 use App\Models\Service\ServiceFaq;
+use App\Models\Service\ServicePackage;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -18,7 +19,7 @@ class ServicepageController extends Controller
     public function singleService($slug)
     {
         $service = Service::with('features','faqs','package','sliders')->firstWhere('slug', $slug);
-
+        // $package = ServicePackage::firstWhere('id', $service->id);
         // return $service;
 
         return view('single.service', compact('service'));

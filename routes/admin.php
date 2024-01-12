@@ -29,7 +29,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('feature', FeatureController::class);
 
     Route::resource('service', ServiceController::class);
-
     Route::get('service/{id}/create-faq', [ServicefaqController::class, 'create'])->name('service.faq.create');
     Route::post('service/{id}/create-faq', [ServicefaqController::class, 'store'])->name('service.faq.store');
 

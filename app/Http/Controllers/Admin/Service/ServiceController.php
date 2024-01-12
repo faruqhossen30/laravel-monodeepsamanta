@@ -169,6 +169,8 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Service::firstWhere('id', $id)->delete();
+        Session::flash('update');
+        return redirect()->route('service.index');
     }
 }

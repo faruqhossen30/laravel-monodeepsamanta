@@ -2,8 +2,8 @@
 @section('title', 'Home Page')
 @section('content')
 
-    <div class="grid grid-cols-12 gap-10 pt-3">
-        <div class="col-span-12 lg:col-span-8">
+    <div class="grid grid-cols-12 gap-1 pt-3">
+        <div class="col-span-12 lg:col-span-8 lg:pr-10">
             <h1 class="text-[26px] leading-[32px] py-1 mb-4 font-bold">{{ $service->title }}</h1>
             @if ($service->sliders->count())
                 <div class="owl-carousel owl-theme slider">
@@ -485,7 +485,6 @@
                             Advance
                         </button>
                     </nav>
-
                     <div class="mt-3">
                         <div id="equal-width-elements-1" role="tabpanel" aria-labelledby="equal-width-elements-item-1">
                             <h1 class="text-[26px] leading-[32px] py-2 font-bold">

@@ -1,9 +1,6 @@
 @php
-    use App\Models\Portfolio;
-    $portfolios = Portfolio::latest()
-        ->take(4)
-        ->get();
-
+    use App\Models\Category;
+    $categories = Category::get();
 @endphp
 <div class="lg:flex justify-between items-center">
     <div class="flex items-center space-x-2 py-2 pb-4">
@@ -23,18 +20,18 @@
 
 </div>
 <div class=" grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
-    @foreach ($portfolios as $portfolio)
+    @foreach ($categories as $category)
         <!--Image Card Start-->
-        <a href="{{route('portfoliopage')}}" class="group font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
+        <a href="{{route('portfoliocategorypage', $category->slug)}}" class="group font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
             <!--layer start-->
             <div
                 class="h-full w-full absolute top-0 left-0 bg-gradient-to-t from-gray-800 opacity-70 hidden  group-hover:block transition z-10">
             </div>
             <!--layer end-->
             <img class="max-h-96 w-full group-hover:scale-110 group-hover:rotate-3 transition duration-500  object-top"
-                src="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}" alt="">
+                src="{{ asset('uploads/category/' . $category->thumbnail) }}" alt="">
             <div class="absolute group-hover:bottom-6 group-hover:left-6 hidden group-hover:block bottom-0 z-20 space-y-2">
-                <h1 class="text-2xl">{{ $portfolio->title }}</h1>
+                <h1 class="text-2xl">{{ $category->name }}</h1>
                 <span class="hover:text-[#FF003A] transition flex items-center space-x-2">
                     <span>See All</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"

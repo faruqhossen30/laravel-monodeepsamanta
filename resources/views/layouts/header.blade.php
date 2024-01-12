@@ -1,13 +1,17 @@
-<header class="bg-white sticky top-0 z-50 mt-10 border-b-2 lg:border-none mynavbar transition duration-500">
-    <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white">
+@php
+    use App\Models\Review;
+    $reviews = Review::count();
+@endphp
+<header class="sticky top-0 z-40 border-b-2 lg:border-none mynavbar transition duration-1000" style="background-color: red !important">
+    <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white mt-6 z-50">
         <div class="flex items-center space-x-6 py-2 bg-white">
-            <a href="{{route('homepage')}}" class="flex-none text-xl font-semibold dark:text-white">
-                <img src="{{asset('img/logo.webp')}}" alt="" class=" w-12 h-12">
+            <a href="{{ route('homepage') }}" class="flex-none text-xl font-semibold dark:text-white">
+                <img src="{{ asset('img/logo.webp') }}" alt="" class="w-12 h-12">
             </a>
             <div class="space-y-2">
                 <div class="flex items-center space-x-2">
 
-                    <a href="{{route('homepage')}}">
+                    <a href="{{ route('homepage') }}">
                         <h2 class="text-lg font-bold leading-[18px]">Monodeep Samanta</h2>
                     </a>
                     <div class="hidden md:flex items-center space-x-2">
@@ -58,22 +62,25 @@
                             </a>
                         </div>
                         <div>
-                            <p class="text-sm leading-[14px] font-medium text-black">5.0 (153 reviews)</p>
+                            <p class="text-sm leading-[14px] font-medium text-black">5.0 (1{{ $reviews }})</p>
                         </div>
                     </div>
 
                 </div>
-                <p class="hidden lg:block text-sm text-black font-medium leading-[24px]">Multi Award Winning United Kingdom Designer </p>
+                <p class="hidden lg:block text-sm text-black font-medium leading-[24px]">Multi Award Winning United
+                    Kingdom Designer </p>
             </div>
         </div>
         <div>
             <button type="button"
-            class=" md:hidden py-1 px-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-white text-black hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-            data-hs-overlay="#hs-overlay-top">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-        </button>
+                class=" md:hidden py-1 px-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-white text-black hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                data-hs-overlay="#hs-overlay-top">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
             <div class="space-x-3 hidden lg:flex">
                 <button type="button"
                     class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-bold rounded-sm bg-primary text-white hover:bg-black disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
@@ -91,15 +98,13 @@
             </div>
             <div class="hidden md:flex items-center justify-end space-y-1 space-x-1">
                 <svg class="text-primary w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-            </svg>
-            <span class="text-sm py-1">Average response time 1h</span>
+                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                </svg>
+                <span class="text-sm py-1">Average response time 1h</span>
             </div>
         </div>
-
-
     </div>
 </header>
 {{-- Offcanvas end --}}
@@ -124,53 +129,59 @@
     </div>
     <div class="p-4">
         <ul class="flex flex-col divide-y divide-gray-200 dark:divide-gray-700">
-            <a href="{{route('homepage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
-              Home
+            <a href="{{ route('homepage') }}"
+                class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+                Home
             </a>
-            <a href="{{route('portfoliopage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
-              Portfolio
+            <a href="{{ route('portfoliopage') }}"
+                class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+                Portfolio
             </a>
-            <a href="{{route('aboutpage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
-              About Me
+            <a href="{{ route('aboutpage') }}"
+                class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+                About Me
             </a>
-            <a href="{{route('servicepage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
-              Service
+            <a href="{{ route('servicepage') }}"
+                class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+                Service
             </a>
-            <a href="{{route('reviewpage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
-              Reviews
+            <a href="{{ route('reviewpage') }}"
+                class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+                Reviews
             </a>
-            <a href="{{route('blogpage')}}" class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
-              Blog
+            <a href="{{ route('blogpage') }}"
+                class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
+                Blog
             </a>
-          </ul>
+        </ul>
     </div>
 </div>
 {{-- Offcanvas end --}}
-<section class="hidden md:block bg-white border-b">
+<section class="hidden md:block bg-white border-b z-0">
     <nav class="max-w-[1260px] mx-auto bg-white flex space-x-6">
-        <a href="{{route('homepage')}}"
-            class="@if(request()->routeIs('homepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2" >
+        <a href="{{ route('homepage') }}"
+            class="@if (request()->routeIs('homepage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Home
         </a>
 
-        <a href="{{route('portfoliopage')}}"
-            class="@if(request()->routeIs('portfoliopage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+        <a href="{{ route('portfoliopage') }}"
+            class="@if (request()->routeIs('portfoliopage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Portfolio
         </a>
-        <a href="{{route('aboutpage')}}"
-            class="@if(request()->routeIs('aboutpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+        <a href="{{ route('aboutpage') }}"
+            class="@if (request()->routeIs('aboutpage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             About Me
         </a>
-        <a href="{{route('servicepage')}}"
-            class="@if(request()->routeIs('servicepage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
-            Searvice
+        <a href="{{ route('servicepage') }}"
+            class="@if (request()->routeIs('servicepage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+            Service
         </a>
-        <a href="{{route('reviewpage')}}"
-            class="@if(request()->routeIs('reviewpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+        <a href="{{ route('reviewpage') }}"
+            class="@if (request()->routeIs('reviewpage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Reviews
         </a>
-        <a href="{{route('blogpage')}}"
-            class="@if(request()->routeIs('blogpage'))border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+        <a href="{{ route('blogpage') }}"
+            class="@if (request()->routeIs('blogpage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Blog
         </a>
 

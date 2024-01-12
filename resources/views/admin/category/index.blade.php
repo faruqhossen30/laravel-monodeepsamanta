@@ -40,6 +40,9 @@
                                         <th scope="col"
                                             class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">S.N</th>
                                         <th scope="col"
+                                            class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">Photo
+                                        </th>
+                                        <th scope="col"
                                             class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name
                                         </th>
                                         <th scope="col"
@@ -53,6 +56,10 @@
                                         <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
                                             <td
                                                 class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{$categories->firstItem() + $loop->index}}</td>
+                                            <td
+                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                                                <img src="{{asset('uploads/category/'.$category->thumbnail)}}" class="h-8" alt="">
+                                            </td>
                                             <td
                                                 class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                                 {{$category->name}}</td>
