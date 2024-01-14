@@ -64,7 +64,7 @@
 @endpush
 
 @push('script')
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script>
         $('.owl-carousel').owlCarousel({

@@ -11,7 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+    <link type="text/css" rel="stylesheet" href="{{asset('css/lightgallery-bundle.css')}}" />
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('style')
@@ -29,6 +29,7 @@
     </div>
     @include('layouts.footer')
     <!-- Scripts -->
+    <script src="{{asset('js/lightgallery.umd.js')}}"></script>
     @stack('script')
     {{-- <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script> --}}
     {{-- <script type="text/javascript">
@@ -36,7 +37,9 @@
                 $(".mynavbar").toggleClass('pt-4 shadow-md',$(this).scrollTop()>50);
             })
         </script> --}}
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
+
         $(function() {
             $(window).scroll(function() {
                 var winTop = $(window).scrollTop();

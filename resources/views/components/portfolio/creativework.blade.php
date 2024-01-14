@@ -1,4 +1,4 @@
-<div class="p-4 lg:p-0 md:flex justify-between mt-16 space-y-10  md:space-x-10">
+<div class="p-4 lg:p-0 md:flex justify-between mt-16 space-y-10  md:space-x-10" id="lightgallery">
     <!--FEATURED WORK section start from here-->
     <div class="md:w-7/12 space-y-4">
         <p class="text-primary font-black text-[14px] leading-[14px] tracking-widest">FEATURED WORK</p>
@@ -25,8 +25,10 @@
         <div class="h-full w-full absolute top-0 left-0 bg-black opacity-50 hidden  group-hover:block transition z-10">
         </div>
         <!--layer end-->
-        <img class="group-hover:scale-110 transition duration-300 w-full h-auto"
-            src="{{ asset('img/Portfullio/Monodeep-Samanata-UIUX-Designer.webp') }}" alt="">
+        <a href="{{ asset('img/Portfullio/Monodeep-Samanata-UIUX-Designer.webp') }}" data-lg-size="1024-800">
+            <img class="group-hover:scale-110 transition duration-300 w-full h-auto"
+                src="{{ asset('img/Portfullio/Monodeep-Samanata-UIUX-Designer.webp') }}" alt="">
+        </a>
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
             <div class="bg-[#FF003A] rounded-full p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

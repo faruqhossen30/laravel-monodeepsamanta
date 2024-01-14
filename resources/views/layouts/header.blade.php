@@ -2,8 +2,9 @@
     use App\Models\Review;
     $reviews = Review::count();
 @endphp
-<header class="sticky top-0 z-40 border-b-2 lg:border-none mynavbar transition duration-1000" style="background-color: red !important">
-    <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white mt-6 z-50">
+<div class="h-4 sticky top-0 z-50 bg-white"></div>
+<header class="sticky top-4 z-40 border-b-2 lg:border-none mynavbar transition duration-1000">
+    <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white mt-2 z-50">
         <div class="flex items-center space-x-6 py-2 bg-white">
             <a href="{{ route('homepage') }}" class="flex-none text-xl font-semibold dark:text-white">
                 <img src="{{ asset('img/logo.webp') }}" alt="" class="w-12 h-12">
