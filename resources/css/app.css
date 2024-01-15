@@ -26,7 +26,7 @@
 }
 /*portfullio page component class */
 .galarybtn{
-    @apply font-bold border px-6 py-1 rounded hover:bg-black hover:text-white text-gray-500  transition
+    @apply font-bold border px-6 py-1 rounded hover:bg-black hover:text-white  transition
 }
 .menuhover{
     @apply hover:border-b-2 hover:border-b-[#FF003A] hover:text-[#FF003A]  transition duration-500 font-normal

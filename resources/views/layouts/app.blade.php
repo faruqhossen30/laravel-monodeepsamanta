@@ -31,12 +31,6 @@
     <!-- Scripts -->
     <script src="{{asset('js/lightgallery.umd.js')}}"></script>
     @stack('script')
-    {{-- <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script> --}}
-    {{-- <script type="text/javascript">
-            $(window).scroll(function(){
-                $(".mynavbar").toggleClass('pt-4 shadow-md',$(this).scrollTop()>50);
-            })
-        </script> --}}
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
 

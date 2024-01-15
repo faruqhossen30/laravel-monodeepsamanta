@@ -20,15 +20,15 @@
         </a>
     </div>
     <!--FEATURED WORK section End from here-->
-    <div class="group w-full md:w-5/12 relative h-full overflow-hidden  cursor-pointer rounded-md mx-auto">
+    <a href="{{ asset('img/Portfullio/Monodeep-Samanata-UIUX-Designer.webp') }}" class="cwa-lightbox-image group w-full md:w-5/12 relative h-full overflow-hidden  cursor-pointer rounded-md mx-auto">
         <!--layer start-->
         <div class="h-full w-full absolute top-0 left-0 bg-black opacity-50 hidden  group-hover:block transition z-10">
         </div>
-        <!--layer end-->
-        <a href="{{ asset('img/Portfullio/Monodeep-Samanata-UIUX-Designer.webp') }}" data-lg-size="1024-800">
-            <img class="group-hover:scale-110 transition duration-300 w-full h-auto"
-                src="{{ asset('img/Portfullio/Monodeep-Samanata-UIUX-Designer.webp') }}" alt="">
-        </a>
+
+               <img class="group-hover:scale-110 transition duration-300 w-full h-auto"
+                    src="{{ asset('img/Portfullio/Monodeep-Samanata-UIUX-Designer.webp') }}"
+                     alt="" loading="lazy">
+
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
             <div class="bg-[#FF003A] rounded-full p-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -39,5 +39,5 @@
                 </svg>
             </div>
         </div>
-    </div>
+    </a>
 </div>
