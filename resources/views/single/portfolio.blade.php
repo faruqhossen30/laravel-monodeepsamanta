@@ -6,7 +6,7 @@
         <h3 class="py-2 text-3xl font-bold">Raiffeisen Bank App Redesign</h3>
         <div>
             @foreach ($portfolio->images as $image)
-                @if ($image->image)
+                @if ($image->caption)
                     <div class="py-2">
                         <h2 class="py-2 text-lg shadow-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, facere.</h2>
                     </div>
