@@ -24,14 +24,14 @@
 
 <body class="bg-white">
     @include('layouts.header')
-    <div class="max-w-[1260px] mx-auto md:p-0 mt-12">
+    <div class="max-w-[1260px] mx-auto md:p-0 mt-7 lg:mt-10 px-3 lg:px-0">
         @yield('content')
     </div>
     @include('layouts.footer')
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="{{asset('js/lightgallery.umd.js')}}"></script>
     @stack('script')
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
 
         $(function() {

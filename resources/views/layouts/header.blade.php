@@ -2,12 +2,12 @@
     use App\Models\Review;
     $reviews = Review::count();
 @endphp
-<div class="h-5 sticky top-0 z-50 bg-white"></div>
-<header class="sticky top-4 z-40 border-b-2 lg:border-none mynavbar transition duration-1000">
+<div class="h-4 lg:h-5  sticky top-0 z-50 bg-white"></div>
+<header class="px-4 lg:px-0 sticky top-4 z-40 border-b-2 lg:border-none mynavbar transition duration-1000 bg-white">
     <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white mt-2 z-50">
         <div class="flex items-center space-x-6 py-2 bg-white">
             <a href="{{ route('homepage') }}" class="flex-none text-xl font-semibold dark:text-white">
-                <img src="{{ asset('img/logo.webp') }}" alt="" class="w-12 h-12">
+                <img src="{{ asset('img/logo.webp') }}" alt="" class="w-16 h-16 lg:w-12 lg:h-12">
             </a>
             <div class="space-y-2">
                 <div class="flex items-center space-x-2">
