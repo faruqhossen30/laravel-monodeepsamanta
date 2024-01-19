@@ -32,6 +32,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="{{asset('js/lightgallery.umd.js')}}"></script>
     @stack('script')
+    @stack('script2')
     <script>
 
         $(function() {

@@ -53,6 +53,7 @@
     <x-section-blog />
 @endsection
 
+
 @push('style')
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
@@ -61,13 +62,32 @@
         .owl-theme .owl-dots .owl-dot:hover span {
             background-color: #FF003A;
         }
+
+        #slider2 .owl-dots {
+            display: none;
+        }
     </style>
 @endpush
 
 @push('script')
-
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script>
+        $('#slider2').owlCarousel({
+            items: 3,
+            loop: true,
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items:2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
         $('.owl-carousel').owlCarousel({
             items: 1,
             dots: true,
