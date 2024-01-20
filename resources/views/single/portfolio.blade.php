@@ -16,8 +16,23 @@
         </div>
     </div>
 
+    {{-- <div class="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 py-2">
 
-    <div class="max-w-[1260px] h-full rounded-md mx-auto pl-20 py-10 my-2 space-y-2 text-white text-start bg-[#F87242] mb-24"
+            <div class="">
+                <p class="text-sm text-gray-400 font-bold mb-1">PREVIOUS PROJECT</p>
+                <a href="#"
+                    class="text-[24px] leading-[24px] font-extrabold">Airline App UI/UX</a>
+            </div>
+            <div class="">
+                <p class="text-sm text-gray-400 font-bold mb-1">NEXT PROJECT</p>
+                <a href="#"
+                    class="text-[24px] leading-[24px] font-extrabold">Airline App UI/UX</a>
+            </div>
+    </div> --}}
+    <div class="mb-20 mt-5">
+        <x-section-chat />
+    </div>
+    {{-- <div class="max-w-[1260px] h-full rounded-md mx-auto pl-20 py-10 my-2 space-y-2 text-white text-start bg-[#F87242] mb-24"
         style="background-image: url('{{ asset('img/action-bg-1.webp') }}')">
         <h5 class="font-black text-[40px] leading-[50px] tracking-tight mt-2">HAVE A PROJECT</h5>
         <h5 class="text-[24px] leading-[28px] font-black">THAT NEEDS SOME SOME</h5>
@@ -32,7 +47,7 @@
             </svg>
             Let's Chat
         </a>
-    </div>
+    </div> --}}
 
 
 @endsection
