@@ -24,7 +24,7 @@
 
 <body class="bg-white">
     @include('layouts.header')
-    <div class="max-w-[1260px] mx-auto md:p-0 mt-7 lg:mt-10 px-3 lg:px-0">
+    <div class=" mx-auto md:p-0 mt-7 lg:mt-10 px-3 lg:px-0">
         @yield('content')
     </div>
     @include('layouts.footer')

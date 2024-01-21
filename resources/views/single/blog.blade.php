@@ -1,117 +1,219 @@
 @extends('layouts.app')
 @section('title', 'Home Page')
 @section('content')
-
-    <div>
-        <div>
-            <h3 class="font-bold text-2xl py-2">{{ $post->title }}</h3>
-            <div class="flex space-x-3 py-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>Monoedeep Samanta</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                </svg>
-                <span>{{ $post->created_at->format('d M Y') }}</span>
-            </div>
+<div class=" bg-[#CFE2F3] py-36 w-full pb-60">
+    <div class=" mx-auto">
+        <h1 class=" font-bold text-3xl lg:text-[40px] leading-[48px] text[#0b0c0d] max-w-4xl mx-auto text-center mb-10">Development and Design for a Top 10 Real Estate Company in the US</h1>
+        <p class="max-w-xl mx-auto text-center leading-7 text-[#0b0c0d]">Using AI, modern design, and cutting-edge solutions to become a tech company and shape the future of the industry</p>
         </div>
-        <div>
-            <img src="{{ asset('uploads/blog/' . $post->thumbnail) }}" class="w-full max-h-80 object-cover " alt="">
-        </div>
-        <div class="flex justify-center mx-auto space-x-14 mt-[90px] ">
-
-            <div class="space-y-5 hidden lg:flex flex-col  ">
-                <a href="https://www.behance.net/monodeepsamanta"
-                    class="inline-flex  justify-center items-center w-14  h-14 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" class=""w-6 h-6 lg:w-8 lg:h-8" width="20"
-                        height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                        <path
-                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                    </svg>
-                </a>
-
-                <a href="https://www.behance.net/monodeepsamanta"
-                    class="inline-flex justify-center items-center w-14  h-14 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-twitter" viewBox="0 0 16 16">
-                        <path
-                            d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15" />
-                    </svg>
-                </a>
-
-                <a href="https://www.behance.net/monodeepsamanta"
-                    class="inline-flex justify-center items-center w-14  h-14  text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                        class="bi bi-linkedin" viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4" />
-                    </svg>
-                </a>
-            </div>
-
-            <div class=" max-w-2xl">
-                {!! $post->description !!}
-                <div>
-                    <p class="text-lg py-4">Published: {{ $post->created_at->format('d M Y') }}</p>
-                    <p class="py-6">Written by:</p>
-                    <div class="flex space-x-4">
-                        <img class="w-20 h-20" src="{{asset('img/pic.png')}}" alt="">
-                        <div>
-                            <h2>Monoedeep Samanta</h2>
-                            <p class=" leading-6 text-lg">Monodeep Samanta, the leading UI/UX designer from UK. I am really good at what I do. Through design, I love to solve complex problems and build beautiful & relevant interfaces.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-    <x-section-blog />
-    <x-section-chat />
-    <div class=" py-14"></div>
+</div>
+<div class=" w-11/12 max-w-5xl mx-auto -mt-44 ">
+    <img class="rounded-md" src="{{asset('img/kw_bespoke_HERO.webp')}}" alt="">
+</div>
+
+<div class=" w-11/12 max-w-5xl mx-auto grid grid-cols-12 py-14 px-10 border my-6 rounded-md shadow gap-10 text-sm">
+    <div class=" col-span-12 lg:col-span-6">
+        <h2 class=" font-semibold mb-5 uppercase">About This Project</h2>
+        <p>Keller Williams, the world’s largest real estate franchise, wanted to stay ahead of the competition by leveraging their data to boost artificial intelligence-powered technology. As a design and software partner for Keller Williams we designed a feature in one of KW’s projects and successfully onboarded a 50+ team to support Keller Williams with its transformation and new initiatives.</p>
+    </div>
+    <div class=" col-span-12 md:col-span-6 lg:col-span-3">
+        <h2 class=" font-semibold mb-5">SERVICES</h2>
+        <ul>
+            <li><a class="underline" href="#">Software development</a></li>
+            <li><a class="underline" href="#">Product design</a></li>
+        </ul>
+    </div>
+
+    <div class=" col-span-12 md:col-span-6 lg:col-span-3">
+        <h2 class=" font-semibold uppercase mb-5">Technologies    </h2>
+        <ul>
+            <li>React</li>
+            <li>React native</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>Golang</li>
+            <li>PHP</li>
+        </ul>
+    </div>
+</div>
+
+<div class=" w-11/12 max-w-3xl mx-auto py-10 ">
+    <h1 class=" my-10 font-semibold text-4xl ">Keller Williams is the world’s largest real estate franchise ranked by agent count (it employs more than 170,000 agents).</h1>
+
+    <p class=" my-4 leading-8">It’s been named as one of the Most Innovative Companies in 2019 by “Fast Company”.</p>
+    <p class="my-4 leading-8">The digital transformation journey started back in 2015, when KW decided to reposition itself as a tech company. The company invested heavily in its own software, the cloud, and AI. It has scooped up top talent from the market and created its own Labs division, KW Labs. KW Labs acts as the innovation hub of Keller Williams, working in a similar fashion to Google and Amazon.</p>
+    <p class="my-4 leading-8">To stay ahead of competitors, Keller Williams have also undertaken one of the most ambitious projects in the industry – to leverage their data to boost artificial intelligence-powered technology.</p>
+</div>
+<div class="w-11/12 max-w-5xl mx-auto ">
+    <img class=" rounded-md" src="{{asset('img/kw_bespoke_art_1.webp')}}" alt="">
+</div>
+
+<div class=" w-11/12 max-w-3xl mx-auto py-10 ">
+    <div class=" max-w-2xl border-l-4 border-green-500 my-7 px-10 py-6">
+        <h2 class="font-semibold text-2xl lg:text-3xl">It’s not only the size, it’s the interconnectedness of our system. We spent a lot of time connecting all of our systems – including our legacy systems – so that we would have all of the data.</h2>
+
+        <div class=" flex space-x-4 mt-10">
+            <div class=" h-12 w-12 ">
+                <img class="rounded-full"  src="{{asset('img/icon/Neil_Dholakia.webp')}}" alt="">
+            </div>
+            <div>
+                <h3>Neil Dholakia</h3>
+                <p class=" text-gray-400">Chief Product Officer at KW</p>
+            </div>
+        </div>
+    </div>
+    <div class=" max-w-2xl my-7 text-lg">
+        <p class=" mb-4">The company has already launched innovative products, such as:</p>
+        <ul class=" list-disc list-outside ml-5 space-y-4">
+            <li class=" marker:text-green-600 marker:font-extrabold">Command, a new AI-powered customer relationship management system for real estate agents, one of KW’s major platforms;</li>
+            <li class=" marker:text-green-600 marker:font-extrabold">Kelle, an AI-powered personal assistant app that helps agents manage their deals, dubbed ‘Siri for the real estate industry’;</li>
+            <li class=" marker:text-green-600 marker:font-extrabold">Consumer App, redefining the current buy/sell process in an innovative and transparent way. (launched in beta to consumer test groups in 2019)</li>
+        </ul>
+        <p class=" my-6">To put these products in perspective, let’s see some numbers.</p>
+        <p>As of Oct 15, 2019, Command had over 100k active users, and agents had added more than 40 million client contacts into the platform. Keller Williams also reached over 85k active users on Kelle.</p>
+    </div>
+</div>
+
+<div class="w-11/12 max-w-5xl mx-auto ">
+    <img class=" rounded-md" src="{{asset('img/kw_bespoke_art_2.webp')}}" alt="">
+</div>
+
+<div class=" w-11/12 max-w-3xl mx-auto py-10 text-lg ">
+
+    <p class=" my-4 leading-8">As a design and software partner for Keller Williams, we know for a fact that they are moving incredibly fast in their transformation efforts. Our collaboration started in a modest way in late 2017: we designed a feature in one of KW’s projects.</p>
+    <p class="my-4 leading-8">Fast forward to 2019, and we’ve successfully onboarded a 50+ team to support Keller Williams with its transformation and new initiatives..</p>
+
+    <div class=" max-w-2xl border-l-4 border-green-500 my-7 px-10 py-6">
+        <h2 class="font-semibold text-2xl lg:text-3xl mb-5">About three years ago we decided that we want to be a technology-independent company. Almost the entire industry was dependent on third-party technology companies. They were building solutions for us outside of our own walls.</h2>
+        <h2 class="font-semibold text-2xl lg:text-3xl">We quickly realized that we need to build proprietary software in order to give our agents the best chance to win.</h2>
+
+        <div class=" flex space-x-4 mt-10">
+            <div class=" h-12 w-12 ">
+                <img class="rounded-full"  src="{{asset('img/icon/Neil_Dholakia.webp')}}" alt="">
+            </div>
+            <div>
+                <h3>Neil Dholakia</h3>
+                <p class=" text-gray-400">Chief Product Officer at KW</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-11/12 max-w-5xl mx-auto mb-10">
+    <img class=" rounded-md" src="{{asset('img/kw_bespoke_art_3.webp')}}" alt="">
+</div>
+
+<div class=" w-11/12 max-w-3xl mx-auto py-10 text-lg ">
+    <h1 class=" my-10 font-semibold text-4xl ">Design</h1>
+
+    <p class=" my-4 leading-8">As Keller Williams is moving fast, it is becoming crucial for the company to maintain consistency across multiple products. The company aimed to have an even more efficient production process, without losing its speed to market.</p>
+
+    <p class="my-4 leading-8">Together with Keller Williams’ design team, we have started building an entirely new Design System from scratch (more about the importance of design systems here). We are preparing the library (e.g. visual assets, fonts, colours) and UI components to facilitate developers using them across existing products.</p>
+
+    <p class="my-4 leading-8">We’ve helped to improve Command – an all-in-one tool for real estate agents. The main challenge was to build and merge all the functionalities in one place. Other challenges included redesigning the current software, building a wide style guide and design system, sharing knowledge and good practices, co-operating in terms of design (with the Keller Williams in-house design team), building workflows, and participating in building the product roadmap.</p>
+
+    <p class="my-4 leading-8">We’ve also helped with redesigning KW’s major apps such as Kelle, and its newest version.</p>
+</div>
+
+<div class="w-11/12 max-w-5xl mx-auto mb-10">
+    <img class=" rounded-md" src="{{asset('img/kw_bespoke_art_4.webp')}}" alt="">
+</div>
+
+<div class=" w-11/12 max-w-3xl mx-auto py-10 text-lg ">
+    <h1 class=" my-10 font-semibold text-4xl ">Software</h1>
+
+    <p class=" my-4 leading-8">Our collaboration with Keller Williams involves all our software expertise.</p>
+
+    <p class="my-4 leading-8">We’ve supported KW’s in-house teams in a slew of projects (Command, Keller Covered, Keller Mortgage) with React Native mobile, GraphQL, Go, React, and Node.js. We provided mobile, frontend, and backend engineers (implementing our designs, among other tasks).</p>
+
+    <p class="my-4 leading-8">Netguru’s FE and BE engineers are currently helping five project teams in KW – working on various components of the Command app, comprehensive software and networking platform for real estate agents aiming to support the growth of their business.</p>
+
+    <p class="my-4 leading-8">Our Node.js and React Native team is working on a new version of the Kelle app, an AI-powered personal assistant that can help KW associates. It translates the core functionalities like Referrals, Contacts, Maps, Notifications, Tasks, and Sales Pipeline from Command (desktop app) to the mobile app, aiming to help the agents do their jobs while on the go.</p>
+    <p class="my-4 leading-8">Our experts are also working on a standalone venture by Mr. Keller related to the consumer line – Keller Covered. Keller Covered is a free service for homeowners and homebuyers that helps them to shop for insurance, compare quotes, and choose the insurance that's best for their situation.</p>
+</div>
+
+<div class="w-11/12 max-w-5xl mx-auto mb-10">
+    <img class=" rounded-md" src="{{asset('img/kw_bespoke_art_4.webp')}}" alt="">
+</div>
+
+<div class=" w-11/12 max-w-3xl mx-auto py-10 text-lg ">
+    <h1 class=" my-10 font-semibold text-4xl ">Data & AI</h1>
+
+    <p class=" my-4 leading-8">OThe whole industry is heading towards AI-related initiatives, and Keller Williams aims to be at the forefront of that change. All of the company’s major platforms and apps are becoming AI-driven, and we have also supported KW with our data engineering expertise.</p>
+
+    <p class="my-4 leading-8">The data insights are of tremendous assistance both for agents and consumers. For instance, agents can get an estimate of how much more likely their offer will be accepted if they change specific parameters.</p>
+
+    <p class="my-4 leading-8">KW has lots of real estate historical data, and our developers are helping the company to accelerate a project mapping these data into KW’s new listing system.</p>
+
+    <p class="my-4 leading-8">For consumers, the new data project means they can move to the so-called deep-match search based more on their preferences, and not so much on filtering criteria.</p>
+</div>
+
+<div class="w-11/12 max-w-5xl mx-auto mb-10 bg-[#CFE2F3] rounded-md p-10">
+    <h1 class=" text-5xl text-center text-green-500">"</h1>
+    <h1 class=" max-w-2xl mx-auto text-center text-xl lg:text-3xl font-semibold">Netguru has been the best agency we've worked with so far. Your team understands Kelle and is able to design new skills, features, and interactions within our model, with a great focus on speed to market. Netguru has also been great in terms of having the ability to understand how to balance your own design experience and the best design practices with the outcome of the KW Labs sessions.</h1>
+
+    <div class=" text-center mt-9">
+        <img class=" w-12 inline" src="{{asset('img/icon/Neil_Dholakia.webp')}}" alt="">
+        <h4 class=" text-sm font-semibold mt-4 mb-2">Adi Pavlovic</h4>
+        <p class=" text-sm">Director of Innovation at KW</p>
+    </div>
+</div>
+
+<div class="container mx-auto py-20">
+    <h2 class=" text-center font-bold text-3xl mb-7">Read more case studies</h2>
+    <p class=" text-center text-gray-500 mb-7">Check out more Netguru projects and success stories.</p>
+    <div class=" mb-7">
+        <div class=" flex justify-center text-4xl space-x-5 text-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg>
+        </div>
+    </div>
+    <div class="grid grid-cols-12 gap-7">
+        <a href="#" class=" col-span-4 group">
+            <div class=" overflow-hidden border shadow-sm rounded mb-8 h-52 ">
+                <img class=" group-hover:scale-105 transition duration-300" src="{{asset('img/blog-damac-case-study-main.webp')}}" alt="">
+            </div>
+            <h2 class=" text-xl font-semibold group-hover:text-gray-700 transition ">Boosting Customer Service With a Robust App for Real Estate Agents</h2>
+        </a>
+        <a href="#" class=" col-span-4 group">
+            <div class=" overflow-hidden border shadow-sm rounded mb-8 h-52 ">
+                <img class=" group-hover:scale-105 transition duration-300" src="{{asset('img/blog-cover-42136.webp')}}" alt="">
+            </div>
+            <h2 class=" text-xl font-semibold group-hover:text-gray-700 transition ">Scalable Architecture and API Integrations for a Real Estate Marketplace</h2>
+        </a>
+        <a href="#" class=" col-span-4 group">
+            <div class=" overflow-hidden border shadow-sm rounded mb-8 h-52 ">
+                <img class=" group-hover:scale-105 transition duration-300" src="{{asset("img/construction-project.webp")}}" alt="">
+            </div>
+            <h2 class=" text-xl font-semibold group-hover:text-gray-700 transition ">Development and Product Design of a Project Management Tool</h2>
+        </a>
+    </div>
+</div>
+
+<div class="container mx-auto py-20 bg-[#F2F5F7] px-24 flex flex-wrap justify-between space-y-16 lg:space-y-0">
+    <div class=" space-y-10 w-full lg:w-6/12">
+        <h1 class=" text-green-500 text-3xl font-semiblod"> N</h1>
+        <h2 class=" font-semibold text-3xl">We're Netguru!</h2>
+        <p class=" text-gray-600">At Netguru we specialize in designing, building, shipping and scaling beautiful, usable products with blazing-fast efficiency</p>
+        <a href="#" class=" bg-green-500 hover:bg-green-300 transition py-2 px-6 inline-block rounded-md ">Let's Talk Buisness</a>
+    </div>
+
+    <div class=" w-full lg:w-3/12">
+        <p class=" text-right mb-10">TRUSTED BY:</p>
+        <div class=" grid grid-cols-12 items-center gap-y-14 ">
+            <img class=" col-span-6" src="{{asset("img/icon/keller-williams.svg")}}" alt="">
+            <img class=" col-span-6" src="{{asset("img/icon/babbel.svg")}}" alt="">
+            <img class=" col-span-6" src="{{asset("img/icon/merck.svg")}}" alt="">
+            <img class=" col-span-6" src="{{asset("img/icon/ikea.svg")}}" alt="">
+            <img class=" col-span-6" src="{{asset("img/icon/volkswagen.svg")}}" alt="">
+            <img class=" col-span-6" src="{{asset("img/icon/ubs.svg")}}" alt="">
+        </div>
+    </div>
+</div>
 @endsection
-
-@push('style')
-    <style>
-        h1 {
-            font-size: 40px;
-        }
-
-        h2 {
-            font-size: 35px;
-        }
-
-        h3 {
-            font-size: 30px;
-        }
-        h3 {
-            font-size: 24px;
-        }
-        .table, table{
-            width: 100%;
-        }
-        table, td, tr {
-            border: 1px solid black;
-            padding: 12px;
-        }
-        p{
-            line-height: 1.9rem;
-        }
-    </style>
-@endpush
-
-@push('script')
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/mixitup.min.js') }}"></script>
-    <script>
-        var mixer = mixitup('.mixingContainer');
-    </script>
-@endpush
