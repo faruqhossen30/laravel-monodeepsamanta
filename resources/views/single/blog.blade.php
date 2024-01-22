@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Home Page')
-@section('content')
+@section('blog')
 <div class=" bg-[#CFE2F3] py-36 w-full pb-60">
     <div class=" mx-auto">
         <h1 class=" font-bold text-3xl lg:text-[40px] leading-[48px] text[#0b0c0d] max-w-4xl mx-auto text-center mb-10">Development and Design for a Top 10 Real Estate Company in the US</h1>

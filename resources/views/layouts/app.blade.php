@@ -11,7 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link type="text/css" rel="stylesheet" href="{{asset('css/lightgallery-bundle.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/lightgallery-bundle.css') }}" />
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('style')
@@ -24,17 +24,17 @@
 
 <body class="bg-white">
     @include('layouts.header')
-    <div class=" mx-auto md:p-0 mt-7 lg:mt-10 px-3 lg:px-0">
+    <div class="max-w-[1260px] mx-auto md:p-0 mt-7 lg:mt-10 px-4 lg:px-0">
         @yield('content')
     </div>
+    @yield('blog')
     @include('layouts.footer')
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="{{asset('js/lightgallery.umd.js')}}"></script>
+    <script src="{{ asset('js/lightgallery.umd.js') }}"></script>
     @stack('script')
     @stack('script2')
     <script>
-
         $(function() {
             $(window).scroll(function() {
                 var winTop = $(window).scrollTop();

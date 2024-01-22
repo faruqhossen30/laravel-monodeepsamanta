@@ -72,7 +72,7 @@
                     Kingdom Designer </p>
             </div>
         </div>
-        <div>
+        <div class="mt-1">
             <button type="button"
                 class=" md:hidden py-1 px-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-white text-black hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 data-hs-overlay="#hs-overlay-top">
@@ -128,6 +128,7 @@
             </svg>
         </button>
     </div>
+
     <div class="p-4">
         <ul class="flex flex-col divide-y divide-gray-200 dark:divide-gray-700">
             <a href="{{ route('homepage') }}"

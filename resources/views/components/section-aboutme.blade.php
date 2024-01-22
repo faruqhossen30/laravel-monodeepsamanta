@@ -1,4 +1,4 @@
-<div class="hidden lg:block">
+<div class="">
     <section class="">
         <h1 class="flex items-center text-2xl space-x-2 py-4 mb-2 font-bold">
             <svg class="text-primary w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -10,7 +10,7 @@
         </h1>
     </section>
     <section class="grid grid-cols-12 gap-4">
-        <div class=" col-span-8">
+        <div class="col-span-12 lg:col-span-8">
             <div class="space-y-2 text-lg mb-14 md:mb-0 pr-12">
                 <p class="">I am Monodeep Samanta, the leading UI/UX designer. I create designs that help your website turn
                     visitors into loyal customers. So your business can increase margins. One call with me will change
@@ -22,7 +22,7 @@
                     your products and services. I can handle big projects and make your business grow. Let’s make your
                     website amazing. Contact me today, and have a flying start!</p>
             </div>
-            <div class=" h-24"></div>
+            <div class="hidden lg:block h-24"></div>
             <div class="hidden md:block">
                 <h1 class="flex items-center text-2xl space-x-2 py-4 mb-2 font-bold">
                     <svg class="text-primary h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -49,9 +49,9 @@
                 <button class="btn" style="font-size: 14px">Digital Marketing</button>
                 <button class="btn" style="font-size: 14px">UX Design</button>
             </div>
-            <div class=" h-24"></div>
+            <div class="hidden lg:block h-24"></div>
         </div>
-        <div class="col-span-4">
+        <div class="col-span-12 lg:col-span-4">
             <div class="w-full border p-4 rounded-md">
                 <div class="space-y-5">
                     <div class="flex items-center space-x-2 py-2">

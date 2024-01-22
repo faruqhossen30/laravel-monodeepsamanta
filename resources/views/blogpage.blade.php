@@ -54,7 +54,7 @@
                     <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
                         <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                             src="{{asset('uploads/blog/'.$post->thumbnail)}}"
-                            alt="Image Description">
+                            alt="{{$post->title}}">
 
                     </div>
 

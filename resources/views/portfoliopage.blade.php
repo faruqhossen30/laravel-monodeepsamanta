@@ -22,9 +22,6 @@
             <!--Image Card Parent Start Here-->
 
             @foreach ($portfolios as $key => $portfolio)
-                @if ($key == 4 || $key == 9 || $key == 6)
-                    <x-portfolio.chatitem />
-                @endif
                 <x-portfolio.portfolioitem :portfolio="$portfolio" />
             @endforeach
 

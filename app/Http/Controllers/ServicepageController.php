@@ -19,9 +19,7 @@ class ServicepageController extends Controller
     public function singleService($slug)
     {
         $service = Service::with('features','faqs','package','sliders')->firstWhere('slug', $slug);
-        // $package = ServicePackage::firstWhere('id', $service->id);
         // return $service;
-
         return view('single.service', compact('service'));
     }
 }

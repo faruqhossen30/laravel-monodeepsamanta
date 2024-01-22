@@ -6,9 +6,9 @@
         <div class="col-span-12 lg:col-span-8 lg:pr-10">
             <h1 class="text-[26px] leading-[32px] py-1 mb-4 font-bold">{{ $service->title }}</h1>
             @if ($service->sliders->count())
-                <div class="owl-carousel owl-theme slider">
+                <div class="owl-carousel owl-theme slider bg-gray-100 mx-5" >
                     @foreach ($service->sliders as $key => $slider)
-                        <div class="item" data-hash="{{ $key }}">
+                        <div class="item mx-auto" data-hash="{{ $key }}" style="width: calc(100% - 50px)">
                             <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""">
                         </div>
                     @endforeach
@@ -16,9 +16,9 @@
                 </div>
                 <div class="flex space-x-2 py-2">
                     @foreach ($service->sliders as $key => $slider)
-                        <a href="#{{ $key }}" class="" data-slider="{{$key}}">
+                        <a href="#{{ $key }}" class="" data-slider="{{ $key }}">
                             <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""
-                                class="w-32 custompacity sliderlinkimage{{$key}}">
+                                class="w-32 custompacity sliderlinkimage{{ $key }}">
                         </a>
                     @endforeach
                 </div>
@@ -642,36 +642,49 @@
             position: absolute;
             top: calc(50% - 20px);
             right: 0;
+            margin-right: -20px !important;
             width: 40px;
             height: 40px;
             opacity: .8;
             border-radius: 50% !important;
-            background-color: black !important;
-            color: white !important;
+            background-color: white !important;
+            color: gray !important;
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
         }
+
+        /* .owl-nav .owl-next span{
+                    font-size: 30px;
+                } */
 
         .owl-nav .owl-prev {
             position: absolute;
             top: calc(50% - 20px);
             left: 0;
+            margin-left: -20px !important;
             width: 40px;
             height: 40px;
             opacity: .8;
             border-radius: 50% !important;
-            background-color: black !important;
-            color: white !important;
+            background-color: white !important;
+            color: gray !important;
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
         }
 
         .owl-nav .owl-prev:hover {
             background-color: #FF003A !important;
-            color: white !important;
+            color: gray !important;
         }
 
         .owl-nav .owl-next:hover {
             background-color: #FF003A !important;
             color: white !important;
         }
-        .custompacity{
+
+        .custompacity {
             opacity: .2;
         }
     </style>
@@ -694,20 +707,14 @@
             autoplayHoverPause: true,
             startPosition: 'URLHash'
         });
-        // $('.owl-carousel').on('changed.owl.carousel', function(event) {
-        //     var current = event.item.index;
-        //     // $(`.sliderlinkimage${current}`).removeClass('custompacity')
-        //     // $(`.${sliderlinkimage}`).addClass('something');
-        //     // console.log(current);
-        //     // $("a[href$='.org']")
 
-        //    $(`.sliderlinkimage${current}`).toggl('custompacity');
-        //     // console.log(some);
-        // });
-
-        // $('.owl-carousel').on('change.owl.carousel', function(event) {
-        //     var current = event.item.index;
-        //     $(`.sliderlinkimage${current}`).toggleClass('custompacity');
-        // });
+        $('.owl-carousel').on('changed.owl.carousel', function(event) {
+            var x = $(location).attr('hash');
+            console.log('x',x);
+            let test = $(`a[href='${x}']`);
+            test.siblings().children().addClass('custompacity')
+            test.children().removeClass('custompacity')
+            console.log(test);
+        });
     </script>
 @endpush

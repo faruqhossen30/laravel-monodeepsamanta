@@ -4,7 +4,9 @@
     <x-section-portfolio islink="true" />
     <x-section-chat />
     <div class="hidden lg:block py-12"></div>
-    <x-section-aboutme />
+    <div class="hidden lg:block">
+        <x-section-aboutme />
+    </div>
     <x-section-client />
     <div class="hidden lg:block">
         <section class="grid grid-cols-12 gap-8 py-6">
@@ -78,13 +80,16 @@
             margin: 10,
             responsive: {
                 0: {
-                    items: 1
+                    items: 2
                 },
                 600: {
                     items:2
                 },
                 1000: {
                     items: 3
+                },
+                1200: {
+                    items: 4
                 }
             }
         });
