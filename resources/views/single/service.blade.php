@@ -512,7 +512,7 @@
                                     {{ $service->package->starter_deliver_time }} Days Delivery
                                 </h1>
                             </div>
-                            <div class="py-2 text-[18px] leading-[30px]">
+                            <div class="py-2 text-[18px] leading-[30px] full_description">
                                 {!! $service->package->starter_full_description !!}
                             </div>
                             <div class="space-y-2">
@@ -553,7 +553,7 @@
                                     {{ $service->package->standard_deliver_time }} Days Delivery
                                 </h1>
                             </div>
-                            <div class="py-2 text-[18px] leading-[30px]">
+                            <div class="py-2 text-[18px] leading-[30px] full_description">
                                 {!! $service->package->standard_full_description !!}
                             </div>
                             <div class="space-y-2">
@@ -594,7 +594,7 @@
                                     {{ $service->package->advance_deliver_time }} Days Delivery
                                 </h1>
                             </div>
-                            <div class="py-3 text-[18px] leading-[30px]">
+                            <div class="py-3 text-[18px] leading-[30px] full_description">
                                 {!! $service->package->advance_full_description !!}
                             </div>
                             <div class="space-y-2">
@@ -688,6 +688,17 @@
             opacity: .2;
         }
     </style>
+    <style>
+        .full_description ul{
+            list-style:circle;
+            margin-left: 30px;
+            list-style-image: url("/img/check.png");
+        }
+        .full_description ul li{
+            line-height: 38px;
+            color: #282828;
+        }
+    </style>
 @endpush
 
 @push('script')
@@ -710,11 +721,9 @@
 
         $('.owl-carousel').on('changed.owl.carousel', function(event) {
             var x = $(location).attr('hash');
-            console.log('x',x);
             let test = $(`a[href='${x}']`);
             test.siblings().children().addClass('custompacity')
             test.children().removeClass('custompacity')
-            console.log(test);
         });
     </script>
 @endpush
