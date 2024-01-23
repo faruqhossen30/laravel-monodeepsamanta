@@ -9,7 +9,9 @@
                 <div class="owl-carousel owl-theme slider bg-gray-100 mx-5" >
                     @foreach ($service->sliders as $key => $slider)
                         <div class="item mx-auto" data-hash="{{ $key }}" style="width: calc(100% - 50px)">
-                            <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""">
+                            <a href="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" class="cwa-lightbox-image" data-desc="{{$service->title}}">
+                                <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""">
+                            </a>
                         </div>
                     @endforeach
 
@@ -703,6 +705,7 @@
 
 @push('script')
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{{ asset('js/cwa_lightbox_bundle_v1.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script>
         $('.owl-carousel').owlCarousel({

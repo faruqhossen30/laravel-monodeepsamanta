@@ -145,7 +145,7 @@
             </a>
             <a href="{{ route('servicepage') }}"
                 class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
-                Service
+                Services
             </a>
             <a href="{{ route('reviewpage') }}"
                 class="inline-flex items-center gap-x-2 py-3 text-sm font-medium text-gray-800 dark:text-white">
