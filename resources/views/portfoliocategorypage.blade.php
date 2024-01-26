@@ -4,9 +4,11 @@
 
     <x-portfolio.creativework />
 
-    <div class="sticky top-20 z-30 bg-white space-x-2 py-4 ">
-        <button data-filter="*"
-            class="font-bold border px-6 py-1 rounded bg-black text-white  transition">{{ $category->name }}</button>
+    <div class="sticky lg:top-[94px] top-20 z-30 bg-white space-x-2 py-4">
+        @foreach ($categories as $cat)
+            <a href="{{route('portfoliocategorypage', $cat->slug)}}"
+                class="mb-2 inline-block font-bold border px-6 py-1 rounded  transition @if($cat->id == $category->id) bg-black text-white @else bg-white text-gray-500 @endif">{{ $cat->name }}</a>
+        @endforeach
     </div>
     <!--Image Gellary Section Start From Here-->
     <div class="overflow-hidden">
@@ -28,7 +30,7 @@
 @push('script')
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/cwa_lightbox_bundle_v1.js') }}"></script>
+    <script src="{{ asset('js/cwa_lightbox_bundle_v1.js') }}"></script>
     <script src="{{ asset('js/mixitup.min.js') }}"></script>
     <script>
         var mixer = mixitup('.mixingContainer');

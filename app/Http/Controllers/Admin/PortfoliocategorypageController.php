@@ -14,10 +14,11 @@ class PortfoliocategorypageController extends Controller
     {
 
         $category = Category::firstWhere('slug', $slug);
+        $categories = Category::get();
         $portfolios = Portfolio::where('category_id', $category->id)->paginate(3);
 
         // return $portfolios;
 
-        return view('portfoliocategorypage', compact('category','portfolios'));
+        return view('portfoliocategorypage', compact('category','categories','portfolios'));
     }
 }
