@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutpageController;
 use App\Http\Controllers\Admin\PortfoliocategorypageController;
 use App\Http\Controllers\BlogpageController;
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\ContactpageController;
 use App\Http\Controllers\PortfoliopageController;
 use App\Http\Controllers\ProfileController;
@@ -36,6 +37,10 @@ Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
 Route::get('blog/{slug}', [BlogpageController::class, 'singleBlog'])->name('singleblog');
 
 Route::get('contact', [ContactpageController::class, 'index'])->name('contactpage');
+
+Route::get('cart', [CardController::class, 'index'])->name('cartpage');
+Route::get('cart/{price}/{id}', [CardController::class, 'store'])->name('cartstore');
+Route::get('cart/{id}', [CardController::class, 'remove'])->name('cartremove');
 
 
 Route::middleware('auth')->group(function () {

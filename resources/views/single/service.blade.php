@@ -6,10 +6,11 @@
         <div class="col-span-12 lg:col-span-8 lg:pr-10">
             <h1 class="text-[26px] leading-[32px] py-1 mb-4 font-bold">{{ $service->title }}</h1>
             @if ($service->sliders->count())
-                <div class="owl-carousel owl-theme slider bg-gray-100 mx-5" >
+                <div class="owl-carousel owl-theme slider bg-gray-100 mx-5">
                     @foreach ($service->sliders as $key => $slider)
                         <div class="item mx-auto" data-hash="{{ $key }}" style="width: calc(100% - 50px)">
-                            <a href="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" class="cwa-lightbox-image" data-desc="{{$service->title}}">
+                            <a href="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" class="cwa-lightbox-image"
+                                data-desc="{{ $service->title }}">
                                 <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""">
                             </a>
                         </div>
@@ -518,10 +519,10 @@
                                 {!! $service->package->starter_full_description !!}
                             </div>
                             <div class="space-y-2">
-                                <button type="button"
+                                <a href="{{route('cartstore', ['id'=>$service->id,'price'=>$service->package->starter_price])}}"
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Continue ( ${{ $service->package->starter_price }})
-                                </button>
+                                </a>
                                 <button type="button"
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-white text-black hover:bg-[#1b1021] hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Book a Meeting
@@ -657,8 +658,8 @@
         }
 
         /* .owl-nav .owl-next span{
-                    font-size: 30px;
-                } */
+                        font-size: 30px;
+                    } */
 
         .owl-nav .owl-prev {
             position: absolute;
@@ -691,12 +692,13 @@
         }
     </style>
     <style>
-        .full_description ul{
-            list-style:circle;
+        .full_description ul {
+            list-style: circle;
             margin-left: 30px;
             list-style-image: url("/img/check.png");
         }
-        .full_description ul li{
+
+        .full_description ul li {
             line-height: 38px;
             color: #282828;
         }
