@@ -519,10 +519,16 @@
                                 {!! $service->package->starter_full_description !!}
                             </div>
                             <div class="space-y-2">
-                                <a href="{{route('cartstore', ['id'=>$service->id,'price'=>$service->package->starter_price])}}"
+                                {{-- <form action="{{ route('checkoutpage') }}" method="POST" class="space-y-2">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $service->id }}">
+                                    <input type="hidden" name="package" value="starter">
+                                    <input type="hidden" name="price" value="{{ $service->package->starter_price }}">
+                                </form> --}}
+                                <button
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Continue ( ${{ $service->package->starter_price }})
-                                </a>
+                                </button>
                                 <button type="button"
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-white text-black hover:bg-[#1b1021] hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Book a Meeting
@@ -560,15 +566,22 @@
                                 {!! $service->package->standard_full_description !!}
                             </div>
                             <div class="space-y-2">
-                                <button type="button"
-                                    class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                                    Continue ( ${{ $service->package->standard_price }})
-                                </button>
+                                <form action="{{ route('checkoutpage') }}" method="POST" class="space-y-2">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $service->id }}">
+                                    <input type="hidden" name="package" value="standard">
+                                    <input type="hidden" name="price" value="{{ $service->package->standard_price }}">
+                                    <button
+                                        class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                                        Continue ( ${{ $service->package->standard_price }})
+                                    </button>
+                                </form>
                                 <button type="button"
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-white text-black hover:bg-[#1b1021] hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Book a Meeting
                                 </button>
                             </div>
+
                         </div>
                         <div id="equal-width-elements-3" class="hidden" role="tabpanel"
                             aria-labelledby="equal-width-elements-item-3">
@@ -601,7 +614,13 @@
                                 {!! $service->package->advance_full_description !!}
                             </div>
                             <div class="space-y-2">
-                                <button type="button"
+                                {{-- <form action="{{ route('checkoutpage') }}" method="POST" class="space-y-2">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $service->id }}">
+                                    <input type="hidden" name="package" value="advance">
+                                    <input type="hidden" name="price" value="{{ $service->package->advance_price }}">
+                                </form> --}}
+                                <button
                                     class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                     Continue ( ${{ $service->package->advance_price }})
                                 </button>
@@ -658,8 +677,8 @@
         }
 
         /* .owl-nav .owl-next span{
-                        font-size: 30px;
-                    } */
+                            font-size: 30px;
+                        } */
 
         .owl-nav .owl-prev {
             position: absolute;
