@@ -1,6 +1,6 @@
 <div class="">
     <section class="">
-        <h1 class="flex items-center text-2xl space-x-2 py-4 mb-2 font-bold">
+        <h1 class="flex items-center text-2xl space-x-2 py-4 mb-1 font-bold">
             <svg class="text-primary w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -12,7 +12,7 @@
     <section class="grid grid-cols-12 gap-4">
         <div class="col-span-12 lg:col-span-8">
             <div class="space-y-2 text-lg mb-14 md:mb-0 pr-12">
-                <p class="">I am Monodeep Samanta, the leading UI/UX designer. I create designs that help your website turn
+                <p class="leading-[26px]">I am Monodeep Samanta, the leading UI/UX designer. I create designs that help your website turn
                     visitors into loyal customers. So your business can increase margins. One call with me will change
                     your UX/UI ideas forever. 15-30 minutes of consultation will take your business to the next level.
                     My designs will make your ads and marketing better regardless of your target audience and their

@@ -3,27 +3,29 @@
     $reviews = Review::count();
 @endphp
 <div class="h-4 lg:h-5 hidden lg:block  sticky top-0 z-50 bg-white"></div>
-<header class="px-4 pb-2 lg:pb-0 lg:px-0 sticky lg:top-4 top-0 z-40 border-b-2 lg:border-none mynavbar transition duration-1000 bg-white">
+<header
+    class="px-4 pb-2 lg:pb-0 lg:px-0 sticky lg:top-4 top-0 z-40 border-b-2 lg:border-none mynavbar transition duration-1000 bg-white">
     <div class="flex items-center max-w-[1260px] mx-auto justify-between bg-white mt-2 z-50">
         <div class="flex items-center space-x-6 py-2 bg-white">
             <a href="{{ route('homepage') }}" class="flex-none text-xl font-semibold dark:text-white">
-                <img src="{{ asset('img/logo.webp') }}" alt="" class="w-16 h-16 lg:w-12 lg:h-12">
+                <img src="{{ asset('img/logo.webp') }}" alt="" class="w-12 h-12 lg:w-12 lg:h-12">
             </a>
             <div class="space-y-2">
                 <div class="flex items-center space-x-2">
 
                     <a href="{{ route('homepage') }}">
-                        <h2 class="text-lg font-bold leading-[18px]">Monodeep Samanta</h2>
+                        <h2 class="text-2xl lg:text-lg font-bold leading-[18px]">Monodeep Samanta</h2>
                     </a>
                     <div class="hidden md:flex items-center space-x-2">
                         <button type="button"
-                            class="py-1 px-2 inline-flex items-center gap-x-2 text-xs font-bold rounded-md border border-gray-200 bg-black text-white disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            class="py-1 px-2 inline-flex items-center gap-x-1 font-bold rounded-md border border-gray-200 bg-[#222325] text-white disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 9"
+                                fill="none">
+                                <path
+                                    d="M9.58366 4.5L8.56699 3.45375L8.70866 2.07L7.20449 1.7625L6.41699 0.5625L5.00033 1.11L3.58366 0.5625L2.79616 1.75875L1.29199 2.0625L1.43366 3.45L0.416992 4.5L1.43366 5.54625L1.29199 6.93375L2.79616 7.24125L3.58366 8.4375L5.00033 7.88625L6.41699 8.43375L7.20449 7.2375L8.70866 6.93L8.56699 5.54625L9.58366 4.5ZM3.90866 6.00375L2.91699 5.10375C2.75449 4.9575 2.75449 4.72125 2.91699 4.575L2.94616 4.54875C3.10866 4.4025 3.37533 4.4025 3.53783 4.54875L4.20866 5.15625L6.35449 3.22125C6.51699 3.075 6.78366 3.075 6.94616 3.22125L6.97532 3.2475C7.13783 3.39375 7.13783 3.63 6.97532 3.77625L4.50866 6.00375C4.33783 6.15 4.07533 6.15 3.90866 6.00375Z"
+                                    fill="white"></path>
                             </svg>
-                            PRO VERIFIED
+                            <span class="text-[12px] leading-[12px] py-[2px]">PRO VERIFIED</span>
                         </button>
                         <div class="flex space-x-2">
                             <a href="">
@@ -63,7 +65,8 @@
                             </a>
                         </div>
                         <div>
-                            <p class="text-sm leading-[14px] font-medium text-black">5.0 ({{ $reviews }})</p>
+                            <p class="text-sm leading-[14px] font-medium text-black">5.0 ({{ $reviews }} reviews)
+                            </p>
                         </div>
                     </div>
 
@@ -73,7 +76,7 @@
             </div>
         </div>
         <div class="mt-1">
-            <button type="button"
+            {{-- <button type="button"
                 class=" md:hidden py-1 px-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-white text-black hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 data-hs-overlay="#hs-overlay-top">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -81,7 +84,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
-            </button>
+            </button> --}}
+            @include('inc.topmenuoffcancas')
             <div class="space-x-3 hidden lg:flex">
                 <button type="button"
                     class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-bold rounded-sm bg-primary text-white hover:bg-black disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
@@ -176,7 +180,7 @@
         </a>
         <a href="{{ route('servicepage') }}"
             class="@if (request()->routeIs('servicepage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
-            Service
+            Services
         </a>
         <a href="{{ route('reviewpage') }}"
             class="@if (request()->routeIs('reviewpage')) border-b-2 border-b-[#FF003A] text-primary @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none focus:text-blue-700 dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">

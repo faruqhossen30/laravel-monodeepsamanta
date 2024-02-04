@@ -8,6 +8,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         'node_modules/preline/dist/*.js',
+        './node_modules/flowbite/**/*.js',
     ],
     darkMode: 'class',
     theme: {
@@ -17,9 +18,12 @@ export default {
             },
             backgroundImage: {
                 'background-action': "url('/action-bg.webp')",
-              }
+            },
+            colors: {
+                'brand': '#FF003A',
+            },
         },
     },
 
-    plugins: [forms, require('preline/plugin'),],
+    plugins: [forms, require('preline/plugin'), require('flowbite/plugin')],
 };

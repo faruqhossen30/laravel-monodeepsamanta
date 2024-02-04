@@ -38,7 +38,7 @@
       </div>
       <!-- End Social Brands -->
       <div class=" mt-11">
-        <p class="text-white text-sm">All copyright © 2023  reserved by Monodeep Samanta</p>
+        <p class="text-white text-sm">All copyright © {{date('Y')}}  reserved by Monodeep Samanta</p>
       </div>
     </div>
     <!-- End Grid -->
