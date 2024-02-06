@@ -65,7 +65,15 @@
             background-color: #FF003A;
         }
 
-        #slider2 .owl-dots {
+        #portfolioSlider .owl-dots {
+            display: none;
+        }
+        /* for serviceslider */
+        #serviceslider .owl-dots {
+            display: none;
+        }
+        /* for serviceslider */
+        #blogslider .owl-dots {
             display: none;
         }
     </style>
@@ -74,7 +82,7 @@
 @push('script')
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script>
-        $('#slider2').owlCarousel({
+        $('#portfolioSlider').owlCarousel({
             items: 3,
             loop: true,
             margin: 10,
@@ -92,6 +100,17 @@
                     items: 4
                 }
             }
+        });
+        $('#serviceslider').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+        });
+        $('#blogslider').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+
         });
         $('.owl-carousel').owlCarousel({
             items: 1,

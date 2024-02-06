@@ -27,7 +27,7 @@ class ServicepackageController extends Controller
         $package = ServicePackage::firstWhere('service_id', $id);
 
         // return $package;
-        return view('admin.service.package.create', compact('service','package'));
+        return view('admin.service.package.create', compact('service', 'package'));
     }
 
     /**
@@ -35,6 +35,8 @@ class ServicepackageController extends Controller
      */
     public function store(Request $request, $id)
     {
+
+
         $request->validate([
             'starter_price'              => 'required',
             'starter_deliver_time'       => 'required',
@@ -58,14 +60,17 @@ class ServicepackageController extends Controller
             'starter_deliver_time'       => $request->starter_deliver_time,
             'starter_short_description'  => $request->starter_short_description,
             'starter_full_description'   => $request->starter_full_description,
+            'starter_url'                => $request->starter_url,
             'standard_price'             => $request->standard_price,
             'standard_deliver_time'      => $request->standard_deliver_time,
             'standard_short_description' => $request->standard_short_description,
             'standard_full_description'  => $request->standard_full_description,
+            'standard_url'               => $request->standard_url,
             'advance_price'              => $request->advance_price,
             'advance_deliver_time'       => $request->advance_deliver_time,
             'advance_short_description'  => $request->advance_short_description,
-            'advance_full_description'   => $request->advance_full_description
+            'advance_full_description'   => $request->advance_full_description,
+            'advance_url'                => $request->advance_url
         ];
 
         // ServicePackage::create($data);
@@ -73,7 +78,6 @@ class ServicepackageController extends Controller
 
         Session::flash('create');
         return redirect()->route('service.index');
-
     }
 
     /**

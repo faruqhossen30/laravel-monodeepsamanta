@@ -13,22 +13,22 @@
     </a> --}}
 </div>
 <section class="hidden lg:grid grid-cols-12 gap-4 py-10">
-    <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="p-6 object-center" src="{{ asset('img/client/nasa.webp') }}" alt="">
+    <div class="col-span-3 md:col-span-2 border flex justify-center">
+        <img class="object-center" src="{{ asset('img/client/Group1.jpg') }}" alt="">
     </div>
-    <div class="col-span-3 md:col-span-2 border p-2 flex justify-center items-center py-4">
-        <img class="h-8" src="{{ asset('img/client/cricket.webp') }}" alt="">
+    <div class="col-span-3 md:col-span-2 border flex justify-center">
+        <img class="object-center" src="{{ asset('img/client/Group2.jpg') }}" alt="">
     </div>
-    <div class="col-span-3 md:col-span-2 border p-2 flex justify-center items-center py-4">
-        <img class="h-8" src="{{ asset('img/client/cloaked.webp') }}" alt="">
+    <div class="col-span-3 md:col-span-2 border flex justify-center">
+        <img class="object-center" src="{{ asset('img/client/Group3.jpg') }}" alt="">
     </div>
-    <div class="col-span-3 md:col-span-2 border p-2 flex justify-center items-center py-4">
-        <img class="h-8" src="{{ asset('img/client/jeep.webp') }}" alt="">
+    <div class="col-span-3 md:col-span-2 border flex justify-center">
+        <img class="object-center" src="{{ asset('img/client/Group4.jpg') }}" alt="">
     </div>
-    <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="p-6 object-center" src="{{ asset('img/client/ritter.webp') }}" alt="">
+    <div class="col-span-3 md:col-span-2 border flex justify-center">
+        <img class="object-center" src="{{ asset('img/client/Group5.jpg') }}" alt="">
     </div>
-    <div class="col-span-3 md:col-span-2 border p-2 flex justify-center py-4">
-        <img class="p-6 object-center" src="{{ asset('img/client/vegan.webp') }}" alt="">
+    <div class="col-span-3 md:col-span-2 border flex justify-center">
+        <img class="object-center" src="{{ asset('img/client/Group6.jpg') }}" alt="">
     </div>
 </section>

@@ -10,7 +10,7 @@
         </h1>
     </section>
     <section class="grid grid-cols-12 gap-4">
-        <div class="col-span-12 lg:col-span-8">
+        <div class="col-span-12 lg:col-span-8 order-2 lg:order-1">
             <div class="space-y-2 text-lg mb-14 md:mb-0 pr-12">
                 <p class="leading-[26px]">I am Monodeep Samanta, the leading UI/UX designer. I create designs that help your website turn
                     visitors into loyal customers. So your business can increase margins. One call with me will change
@@ -51,7 +51,7 @@
             </div>
             <div class="hidden lg:block h-24"></div>
         </div>
-        <div class="col-span-12 lg:col-span-4">
+        <div class="col-span-12 lg:col-span-4 order-1 lg:order-2">
             <div class="w-full border p-4 rounded-md">
                 <div class="space-y-5">
                     <div class="flex items-center space-x-2 py-2">

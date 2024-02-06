@@ -1,5 +1,5 @@
 <div>
-    <div class="flex justify-between items-center py-3">
+    <div class="hidden lg:flex justify-between items-center py-3">
         <div class="flex items-center space-x-2 py-2">
             <x-icon.clients />
             <h3 class="text-[26px] font-bold">Client Opinions</h3>

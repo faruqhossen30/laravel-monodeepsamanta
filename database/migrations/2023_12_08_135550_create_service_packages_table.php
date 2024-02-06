@@ -18,14 +18,17 @@ return new class extends Migration
             $table->string('starter_deliver_time');
             $table->string('starter_short_description',500);
             $table->string('starter_full_description',1000);
+            $table->string('starter_url')->nullable();
             $table->string('standard_price');
             $table->string('standard_deliver_time');
             $table->string('standard_short_description',500);
             $table->string('standard_full_description',1000);
+            $table->string('standard_url')->nullable();
             $table->string('advance_price');
             $table->string('advance_deliver_time');
             $table->string('advance_short_description',500);
             $table->string('advance_full_description',1000);
+            $table->string('advance_url')->nullable();
             $table->timestamps();
         });
     }

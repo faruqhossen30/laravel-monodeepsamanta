@@ -13,10 +13,6 @@ class ReviewpageController extends Controller
 
     {
         $reviews = Review::with('type','category')->paginate(10);
-        // return $reviews;
-
-
-
         return view('reviewpage', compact('reviews'));
     }
 }

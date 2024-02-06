@@ -9,7 +9,7 @@
         <h3 class="text-lg lg:text-[26px] font-bold">Check Out My Portfolio</h3>
     </div>
     @isset($islink)
-        <a href="{{ route('portfoliopage') }}" class="text-primary font-bold flex items-center space-x-2 pb-4">
+        <a href="{{ route('portfoliopage') }}" class="text-primary font-bold flex items-center space-x-2 pb-3 ">
             <span class="text-[15px] leading-[15px]">See All Portfolios</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 data-slot="icon" class="w-4 h-4 font-bold">
@@ -53,7 +53,7 @@
 
 
 <div class="block md:hidden">
-    <div id="slider2" class="owl-carousel owl-theme grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
+    <div id="portfolioSlider" class="owl-carousel owl-theme grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
         @foreach ($categories as $category)
             <!--Image Card Start-->
             <a href="{{ route('portfoliocategorypage', $category->slug) }}"
@@ -72,7 +72,8 @@
                         <span>See All</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                         </svg>
                     </span>
                 </div>

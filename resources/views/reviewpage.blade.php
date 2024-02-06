@@ -14,7 +14,7 @@
 @section('title', 'Home Page')
 @section('content')
     <section>
-        <h1 class="flex items-center text-2xl space-x-2 py-4 my-8 font-bold">
+        <h1 class="flex items-center text-2xl space-x-2 py-4 lg:my-8 font-bold">
             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                 fill="none">
                 <path
@@ -31,7 +31,7 @@
     <section class="p-2 md:p-0">
         @foreach ($reviews as $review)
 
-            <div class="md:flex justify-between py-12">
+            <div class="md:flex justify-between py-6 lg:py-12">
                 <div class="flex space-x-3">
                     <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
                         <span class="font-bold">{{acronym($review->name)}}</span>
@@ -69,7 +69,7 @@
                 <div>
                     <div class="flex justify-center">
                         <img src="{{ asset('uploads/review/' . $review->thumbnail) }}"
-                            class="max-h-44 max-w-[260px] lg:max-w-[194px] min-w-[176px]" alt="">
+                            class="lg:max-w-[194px] min-w-[176px]" alt="{{$review->category->slug}}">
                     </div>
                     <div class="text-center py-3 flex items-center space-x-2 justify-center group ">
                         <a href="{{route('portfoliocategorypage', $review->category->slug)}}" class="text-primary font-bold text-center group-hover:text-black">Similar Works
@@ -108,7 +108,67 @@
 @endsection
 
 @push('style')
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <style>
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background-color: #FF003A;
+        }
+
+        #portfolioSlider .owl-dots {
+            display: none;
+        }
+        /* for serviceslider */
+        #serviceslider .owl-dots {
+            display: none;
+        }
+        /* for serviceslider */
+        #blogslider .owl-dots {
+            display: none;
+        }
+    </style>
 @endpush
 
 @push('script')
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script>
+        $('#portfolioSlider').owlCarousel({
+            items: 3,
+            loop: true,
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items:2
+                },
+                1000: {
+                    items: 3
+                },
+                1200: {
+                    items: 4
+                }
+            }
+        });
+        $('#serviceslider').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+        });
+        $('#blogslider').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 10,
+
+        });
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            dots: true,
+            loop: true,
+            margin: 10,
+            dots: true
+        });
+    </script>
 @endpush

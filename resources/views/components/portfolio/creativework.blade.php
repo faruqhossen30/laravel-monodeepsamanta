@@ -1,9 +1,9 @@
-<div class="p-4 lg:p-0 md:flex justify-between mt-16 space-y-10  md:space-x-10" id="lightgallery">
+<div class="p-4 lg:p-0 md:flex justify-between lg:mt-16 space-y-10  md:space-x-10" id="lightgallery">
     <!--FEATURED WORK section start from here-->
     <div class="md:w-7/12 space-y-4">
-        <p class="text-primary font-black text-[14px] leading-[14px] tracking-widest">FEATURED WORK</p>
+        <p class="hidden lg:block text-primary font-black text-[14px] leading-[14px] tracking-widest">FEATURED WORK</p>
         <h2 class="text-2xl font-bold pt-4 pb-2">Creativity by Monodeep Samanta</h2>
-        <p class="text-lg">Explore a Gallery of Creativity by Monodeep Samanta: Unveil a collection of exquisite UI/UX
+        <p class="hidden lg:block text-lg">Explore a Gallery of Creativity by Monodeep Samanta: Unveil a collection of exquisite UI/UX
             design Portfolios. Immerse in a journey of innovation, aesthetics, and User-centric excellence. Discover the
             power of design That inspires, engages, and transforms digital experiences. People love my designs because
             they are easy to use with satisfying layouts. Let’s make your website amazing. Contact me today, and have a
@@ -11,7 +11,7 @@
 
 
         <a href="{{ route('servicepage') }}"
-            class="text-primary font-bold hover:text-black transition flex items-center space-x-2">See All
+            class="hidden lg:block text-primary font-bold hover:text-black transition flex items-center space-x-2">See All
             <span>Service</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">

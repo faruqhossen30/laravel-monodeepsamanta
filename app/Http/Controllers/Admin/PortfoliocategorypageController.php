@@ -12,13 +12,18 @@ class PortfoliocategorypageController extends Controller
 {
     public function index($slug)
     {
+        $category = null;
+        if (isset($_GET['category'])) {
+            $category = trim($_GET['category']);
+        }
 
-        $category = Category::firstWhere('slug', $slug);
+        $category = Category::firstWhere('slug', $category ?? $slug);
         $categories = Category::get();
-        $portfolios = Portfolio::where('category_id', $category->id)->paginate(3);
+
+        $portfolios = Portfolio::where('category_id', $category->id)->paginate();
 
         // return $portfolios;
 
-        return view('portfoliocategorypage', compact('category','categories','portfolios'));
+        return view('portfoliocategorypage', compact('category', 'categories', 'portfolios'));
     }
 }
