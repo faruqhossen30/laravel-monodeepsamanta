@@ -4,7 +4,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-bdcadfa7.css",
+    "file": "assets/app-bdfa3653.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -12,7 +12,7 @@
     "dynamicImports": [
       "_preline-292c73ee.js"
     ],
-    "file": "assets/app-05bc780d.js",
+    "file": "assets/app-bcbd30e3.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   }
