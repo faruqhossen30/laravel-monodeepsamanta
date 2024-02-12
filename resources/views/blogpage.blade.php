@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', 'Blogs')
 @section('content')
 
 
@@ -18,7 +18,6 @@
                     d="M10.0013 12.7507L11.4405 9.60648L14.5846 8.16732L11.4405 6.72815L10.0013 3.58398L8.56214 6.72815L5.41797 8.16732L8.56214 9.60648L10.0013 12.7507Z"
                     fill="#FF003A"></path>
             </svg>
-
             Design Matters</h2>
         <p class="text-lg">I am sharing practical tips and real-world experiences to help both budding and seasoned designers level up their skills. Dive into the latest trends, discover the best tools, and explore the art of creating user-friendly designs.</p>
         <p class="text-lg">My articles are your go-to source for simplified design wisdom. Let’s grow together in this vibrant  UI/UX design blog community.</p>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', 'About Me')
 @section('content')
     <x-section-aboutme />
     <x-section-chat />

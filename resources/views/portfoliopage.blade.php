@@ -9,8 +9,8 @@
 
     <x-portfolio.creativework />
 
-    <div class="space-x-2 space-y-2 py-4 sticky top-20 z-30 bg-white">
-        <button data-filter="*" class="galarybtn gallarybutton text-gray-500 bg-black text-white ">All Capabilities</button>
+    <div class="mr-4 space-y-2 py-4 sticky top-16 lg:top-20 z-30 bg-white w-full">
+        <button data-filter="*" class="galarybtn gallarybutton bg-black text-white ">All Capabilities</button>
         @foreach ($categories as $category)
             <button data-filter=".{{ $category->slug }}"
                 class="galarybtn gallarybutton text-gray-500">{{ $category->name }}</button>

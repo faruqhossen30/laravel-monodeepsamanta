@@ -30,7 +30,7 @@
             <li><a href="{{ route('portfoliopage') }}" class="text-2xl font-semibold @if (request()->routeIs('portfoliopage')) text-[#221429] @endif">Portfolio</a></li>
             <li><a href="{{ route('aboutpage') }}" class="text-2xl font-semibold @if (request()->routeIs('aboutpage')) text-[#221429] @endif">About Me</a></li>
             <li><a href="{{ route('servicepage') }}" class="text-2xl font-semibold @if (request()->routeIs('servicepage')) text-[#221429] @endif">Services</a></li>
-            <li><a href="{{ route('reviewpage') }}" class="text-2xl font-semibold @if (request()->routeIs('reviewpage')) text-[#221429] @endif">Revies</a></li>
+            <li><a href="{{ route('reviewpage') }}" class="text-2xl font-semibold @if (request()->routeIs('reviewpage')) text-[#221429] @endif">Reviews</a></li>
             <li><a href="{{ route('blogpage') }}" class="text-2xl font-semibold @if (request()->routeIs('blogpage')) text-[#221429] @endif">Blog</a></li>
           </ul>
     </div>

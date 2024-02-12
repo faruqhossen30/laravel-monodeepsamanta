@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Welcome')</title>
+    <title>@yield('title', 'Dashboard & UX/UI Designer')</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -46,6 +46,7 @@
             }); //win func.
         }); //ready func.
     </script>
+    <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script>
 </body>
 
 </html>

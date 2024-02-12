@@ -11,7 +11,7 @@
     }
 @endphp
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', 'Reviews')
 @section('content')
     <section>
         <h1 class="flex items-center text-2xl space-x-2 py-4 lg:my-8 font-bold">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="flex space-x-2 py-4 items-center">
                             <p class="text-sm">Originally Posted on:</p>
-                            <a href="{{ $review->review_url }}"
+                            <a href="{{ $review->review_url ?? '#' }}" target="_blank"
                                 class="flex text-sm leading-[18px] text-primary font-bold items-center space-x-2">
                                 <span>{{ $review->type->name }}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
