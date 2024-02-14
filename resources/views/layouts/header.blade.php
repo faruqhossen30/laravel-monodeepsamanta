@@ -96,10 +96,10 @@
                     </svg>
                     Instant Reply
                 </button>
-                <button type="button"
+                <a href="{{ route('aboutpage') }}"
                     class="py-2 px-3 inline-flex items-center gap-x-2 text-md font-bold rounded-sm border border-black bg-white hover:bg-black text-black hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                     More About Me
-                </button>
+                </a>
             </div>
             <div class="hidden md:flex items-center justify-end space-y-1 space-x-1">
                 <svg class="text-primary w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

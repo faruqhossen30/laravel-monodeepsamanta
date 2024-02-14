@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/lightgallery-bundle.css') }}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('MonodeepSamanta.png')}}">
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('style')
