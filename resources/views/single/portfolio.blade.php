@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '{{$portfolio->title}}')
+@section('title', '{{ $portfolio->title }}')
 @section('content')
 
     <div class="mb-24">
@@ -16,19 +16,25 @@
         </div>
     </div>
 
-    {{-- <div class="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 py-2">
+    <div class="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 py-2">
 
-            <div class="">
+        <div class="">
+            @if (isset($portfolio->previous))
                 <p class="text-sm text-gray-400 font-bold mb-1">PREVIOUS PROJECT</p>
-                <a href="#"
-                    class="text-[24px] leading-[24px] font-extrabold">Airline App UI/UX</a>
-            </div>
-            <div class="">
+                <a href="{{ route('singleportfolio', $portfolio->previous->slug) }}"
+                    class="text-[24px] leading-[24px] font-extrabold">{{$portfolio->previous->title}}</a>
+            @endif
+        </div>
+
+        <div class="">
+            @if (isset($portfolio->next))
                 <p class="text-sm text-gray-400 font-bold mb-1">NEXT PROJECT</p>
-                <a href="#"
-                    class="text-[24px] leading-[24px] font-extrabold">Airline App UI/UX</a>
-            </div>
-    </div> --}}
+                <a href="{{ route('singleportfolio', $portfolio->next->slug) }}"
+                    class="text-[24px] leading-[24px] font-extrabold">{{$portfolio->next->title}}</a>
+            @endif
+        </div>
+
+    </div>
     <div class="mb-20 mt-5">
         <x-section-chat />
     </div>
