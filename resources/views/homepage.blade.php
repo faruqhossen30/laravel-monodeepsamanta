@@ -57,70 +57,9 @@
 
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-    <style>
-        .owl-theme .owl-dots .owl-dot.active span,
-        .owl-theme .owl-dots .owl-dot:hover span {
-            background-color: #FF003A;
-        }
 
-        #portfolioSlider .owl-dots {
-            display: none;
-        }
-        /* for serviceslider */
-        #serviceslider .owl-dots {
-            display: none;
-        }
-        /* for serviceslider */
-        #blogslider .owl-dots {
-            display: none;
-        }
-    </style>
 @endpush
 
 @push('script')
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script>
-        $('#portfolioSlider').owlCarousel({
-            items: 3,
-            center: true,
-            loop: true,
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items:2
-                },
-                1000: {
-                    items: 3
-                },
-                1200: {
-                    items: 4
-                }
-            }
-        });
-        $('#serviceslider').owlCarousel({
-            items: 2,
-            center: true,
-            loop: true,
-            margin: 10,
-        });
-        $('#blogslider').owlCarousel({
-            items: 2,
-            center: true,
-            loop: true,
-            margin: 10,
 
-        });
-        $('.owl-carousel').owlCarousel({
-            items: 1,
-            dots: true,
-            loop: true,
-            margin: 10,
-            dots: true
-        });
-    </script>
 @endpush

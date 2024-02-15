@@ -19,10 +19,10 @@
     <div class="block lg:hidden  sticky top-16 lg:top-20 z-30">
         <div id="categorySlider"
             class="owl-carousel owl-theme mr-4 space-y-2 py-4 bg-white w-full">
-            <button data-filter="*" class="galarybtn bg-black text-white ">All Capabilities</button>
+            <button data-filter="*" class="galarybtn mobileGallarybutton bg-black text-white ">All Capabilities</button>
             @foreach ($categories as $category)
                 <button data-filter=".{{ $category->slug }}"
-                    class="galarybtn text-gray-500">{{ $category->name }}</button>
+                    class="galarybtn mobileGallarybutton text-gray-500">{{ $category->name }}</button>
             @endforeach
         </div>
     </div>
@@ -45,28 +45,7 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-    <style>
-        .owl-theme .owl-dots .owl-dot.active span,
-        .owl-theme .owl-dots .owl-dot:hover span {
-            background-color: #FF003A;
-        }
 
-        #portfolioSlider .owl-dots {
-            display: none;
-        }
-
-        /* for serviceslider */
-        #serviceslider .owl-dots {
-            display: none;
-        }
-
-        /* for serviceslider */
-        #blogslider .owl-dots {
-            display: none;
-        }
-    </style>
 @endpush
 
 @push('script')
@@ -74,60 +53,16 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/cwa_lightbox_bundle_v1.js') }}"></script>
     <script src="{{ asset('js/mixitup.min.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script>
         var mixer = mixitup('.mixingContainer');
         $(document).ready(function() {
-
-            $('#portfolioSlider').owlCarousel({
-            items: 3,
-            loop: true,
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                },
-                1200: {
-                    items: 4
-                }
-            }
-        });
-        $('#categorySlider').owlCarousel({
-            loop: false,
-            autoWidth: true,
-            dots: false,
-            margin: 10,
-        });
-        $('#serviceslider').owlCarousel({
-            items: 2,
-            center:2,
-            loop: true,
-            margin: 10,
-        });
-        $('#blogslider').owlCarousel({
-            items: 1,
-            loop: true,
-            margin: 10,
-
-        });
-        $('.owl-carousel').owlCarousel({
-            items: 1,
-            dots: true,
-            loop: true,
-            margin: 10,
-            dots: true
-        });
-
-            let gallarybutton = $('.gallarybutton');
             $(document).on('click', '.gallarybutton', function() {
-                console.log($(this));
                 $(this).siblings().removeClass('bg-black text-white');
+                $(this).addClass('bg-black text-white')
+            })
+
+            $(document).on('click', '.mobileGallarybutton', function() {
+                $('.mobileGallarybutton').removeClass('bg-black text-white');
                 $(this).addClass('bg-black text-white')
             })
 

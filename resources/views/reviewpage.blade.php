@@ -89,12 +89,12 @@
             {{$reviews->links()}}
         </div>
     </section>
-    <div class=" py-16"></div>
+    <div class="lg:py-16"></div>
     <x-section-portfolio islink="true" />
-    <div class="py-6"></div>
+    <div class="lg:py-6"></div>
     <div>
         <x-section-service />
-        <div class="flex justify-center py-10 mb-14">
+        <div class="flex justify-center lg:py-10 mb-8 lg:mb-14">
             <a href="{{ route('servicepage') }}" class="text-primary font-bold flex items-center space-x-2">
                 <span class="text-[15px] leading-[15px]">See All Services</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
@@ -108,68 +108,9 @@
 @endsection
 
 @push('style')
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-    <style>
-        .owl-theme .owl-dots .owl-dot.active span,
-        .owl-theme .owl-dots .owl-dot:hover span {
-            background-color: #FF003A;
-        }
 
-        #portfolioSlider .owl-dots {
-            display: none;
-        }
-        /* for serviceslider */
-        #serviceslider .owl-dots {
-            display: none;
-        }
-        /* for serviceslider */
-        #blogslider .owl-dots {
-            display: none;
-        }
-    </style>
 @endpush
 
 @push('script')
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script>
-        $('#portfolioSlider').owlCarousel({
-            items: 3,
-            loop: true,
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items:2
-                },
-                1000: {
-                    items: 3
-                },
-                1200: {
-                    items: 4
-                }
-            }
-        });
-        $('#serviceslider').owlCarousel({
-            items: 2,
-            center:true,
-            loop: true,
-            margin: 10,
-        });
-        $('#blogslider').owlCarousel({
-            items: 1,
-            loop: true,
-            margin: 10,
 
-        });
-        $('.owl-carousel').owlCarousel({
-            items: 1,
-            dots: true,
-            loop: true,
-            margin: 10,
-            dots: true
-        });
-    </script>
 @endpush

@@ -62,4 +62,4 @@
     @endforeach
 </div>
 
-<div class="h-20"></div>
+<div class="h-5 lg:h-20"></div>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', '{{$portfolio->title}}')
 @section('content')
 
     <div class="mb-24">

@@ -372,12 +372,12 @@
             startPosition: 'URLHash'
         });
         $('#portfolioSlider').owlCarousel({
-            items: 1,
+            items: 2,
             loop: true,
             margin: 10,
         });
         $('#serviceslider').owlCarousel({
-            items: 1,
+            items: 2,
             loop: true,
             margin: 10,
         });

@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="mt-7">
-                    <h3 class="text-md lg:text-2xl font-semibold text-gray-800 dark:text-gray-200 hover:text-[#FF003A]">
+                    <h3 class="text-md lg:text-2xl font-semibold text-gray-800 dark:text-gray-200">
                         {{ $post->title }}
                     </h3>
                 </div>
@@ -63,4 +63,4 @@
         @endforeach
     </div>
 
-<div class="h-24"></div>
+<div class="h-8 lg:h-24"></div>

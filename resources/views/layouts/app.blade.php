@@ -20,7 +20,28 @@
         * {
             font-family: "Roboto Flex", Sans-serif
         }
+
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background-color: #FF003A;
+        }
+
+        #portfolioSlider .owl-dots {
+            display: none;
+        }
+
+        /* for serviceslider */
+        #serviceslider .owl-dots {
+            display: none;
+        }
+
+        /* for serviceslider */
+        #blogslider .owl-dots {
+            display: none;
+        }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
 </head>
 
 <body class="bg-white">
@@ -35,7 +56,7 @@
     <script src="{{ asset('js/lightgallery.umd.js') }}"></script>
     @stack('script')
     @stack('script2')
-    <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async ></script>
+    <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script>
     <script>
         $(function() {
             $(window).scroll(function() {
@@ -64,6 +85,41 @@
             });
         })();
     </script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script>
+        $('#portfolioSlider').owlCarousel({
+            items: 2,
+            center: true,
+            loop: true,
+            margin: 10,
+        });
+        $('#serviceslider').owlCarousel({
+            items: 2,
+            loop: true,
+            margin: 10,
+        });
+        $('#blogslider').owlCarousel({
+            items: 2,
+            loop: true,
+            margin: 10,
+
+        });
+        $('#categorySlider').owlCarousel({
+            items: 2,
+            loop: true,
+            margin: 10,
+            dots:false,
+            autoWidth:true
+        });
+        $('.owl-carousel').owlCarousel({
+            items: 1,
+            dots: true,
+            loop: true,
+            margin: 10,
+            dots: true
+        });
+    </script>
+
 </body>
 
 </html>

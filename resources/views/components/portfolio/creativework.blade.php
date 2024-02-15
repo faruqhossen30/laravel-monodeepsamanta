@@ -11,7 +11,7 @@
 
 
         <a href="{{ route('servicepage') }}"
-            class="hidden lg:block text-primary font-bold hover:text-black transition flex items-center space-x-2">See All
+            class="hidden lg:flex text-primary font-bold hover:text-black transition items-center space-x-2">See All
             <span>Service</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">
