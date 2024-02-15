@@ -22,7 +22,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <a href="{{ route('post.create') }}"
+                            <a href="{{ route('blog.create') }}"
                                 class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -51,7 +51,7 @@
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
 
-                                    @foreach ($posts as $blog)
+                                    @foreach ($blogs as $blog)
                                         <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
                                             <td
                                                 class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{$blogs->firstItem() + $loop->index}}</td>
@@ -74,7 +74,7 @@
                             </table>
                         </div>
                         <div class="px-2 py-4">
-                            {{$posts->links()}}
+                            {{$blogs->links()}}
                         </div>
                     </div>
                 </div>

@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="mt-7">
-                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 hover:text-[#FF003A]">
+                    <h3 class="text-md lg:text-2xl font-semibold text-gray-800 dark:text-gray-200 hover:text-[#FF003A]">
                         {{ $post->title }}
                     </h3>
                 </div>

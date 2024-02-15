@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="mb-24">
-        <h3 class="-mt-4 text-3xl font-bold">{{ $portfolio->title }}</h3>
+        <h3 class="lg:-mt-4 text-3xl font-bold">{{ $portfolio->title }}</h3>
         <div class="my-6">
             @foreach ($portfolio->images as $image)
                 @if ($image->caption)

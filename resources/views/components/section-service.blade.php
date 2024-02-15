@@ -36,8 +36,8 @@
                         class="group-hover:scale-110 group-hover:rotate-3 transition duration-500" alt="">
                 </div>
                 <div class="py-2 mt-5 space-y-1">
-                    <h3 class="text-xl font-bold hover:text-[#FF003A]">{{ $service->title }}</h3>
-                    <h2 class="text-primary text-lg font-normal">Starting at
+                    <h3 class="text-md lg:text-xl font-bold hover:text-[#FF003A]">{{ $service->title }}</h3>
+                    <h2 class="text-md text-brand lg:text-lg font-normal">Starting at
                         ${{ $service->package->starter_price ?? '' }}</h2>
                 </div>
             </a>

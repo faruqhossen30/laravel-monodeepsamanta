@@ -84,6 +84,7 @@
     <script>
         $('#portfolioSlider').owlCarousel({
             items: 3,
+            center: true,
             loop: true,
             margin: 10,
             responsive: {
@@ -102,12 +103,14 @@
             }
         });
         $('#serviceslider').owlCarousel({
-            items: 1,
+            items: 2,
+            center: true,
             loop: true,
             margin: 10,
         });
         $('#blogslider').owlCarousel({
-            items: 1,
+            items: 2,
+            center: true,
             loop: true,
             margin: 10,
 

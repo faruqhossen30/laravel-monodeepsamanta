@@ -16,17 +16,11 @@
         <div class="flex flex-col">
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
-                    <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data" class=" space-y-1">
+                    <form action="{{ route('blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data" class=" space-y-1">
                         @csrf
-                        <x-form.input label="Title" title="title" />
-                        <div class="py-2">
-                            <x-form.textarea label="Short Description" title="short_description" />
-                            @error("short_description")
-                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <textarea name="description" id="editor" cols="30" rows="10"></textarea>
+                        @method('PUT')
+                        <x-form.input label="Title" title="title" value="{{$blog->title}}" />
+                        <textarea name="description" id="editor" cols="30" rows="10">{{$blog->description}}</textarea>
                         @error('description')
                             <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                         @enderror
@@ -36,25 +30,21 @@
                                 class="py-2 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                                 <option value="">Select Category</option>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" @if($blog->id == $category->id) selected @endif>{{ $category->name }}</option>
                                 @endforeach
                             </select>
                             @error('category_id')
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
-                        <div class="grid grid-cols-12 gap-4">
-                            <div class="col-span-12 lg:col-span-6">
-                                <x-form.select :data="$categories" name="category_id" />
+                        <div class="">
+                            <x-form.input label="Meta Title" title="meta_title" value="{{$blog->meta_title}}" />
+                            <x-form.textarea label="Meta Description" title="meta_description" value="{{$blog->meta_description}}" />
+                            <x-form.input label="Meta Keyword" title="meta_keyword" value="{{$blog->meta_keyword}}" />
+                        </div>
+                        <div class="max-w-md">
+                            <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{asset('uploads/blog/'.$blog->thumbnail)}}" >
 
-                                <x-form.input label="Meta Title" title="meta_title" />
-                                <x-form.textarea label="Meta Description" title="meta_description" />
-                                <x-form.input label="Meta Keyword" title="meta_keyword" />
-                                <input class="dropify" type="file" id="myDropify" name="thumbnail">
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis minus esse asperiores eaque porro earum corporis in qui voluptates culpa. Deserunt, repudiandae libero autem nihil maiores vero nisi optio cum!</p>
-                            </div>
                         </div>
 
                         <x-form.submit_button />

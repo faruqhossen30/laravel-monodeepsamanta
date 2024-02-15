@@ -153,7 +153,8 @@
             }
         });
         $('#serviceslider').owlCarousel({
-            items: 1,
+            items: 2,
+            center:true,
             loop: true,
             margin: 10,
         });

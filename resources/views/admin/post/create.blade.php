@@ -19,13 +19,6 @@
                     <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data" class=" space-y-1">
                         @csrf
                         <x-form.input label="Title" title="title" />
-                        <div class="py-2">
-                            <x-form.textarea label="Short Description" title="short_description" />
-                            @error("short_description")
-                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
-                            @enderror
-                        </div>
-
                         <textarea name="description" id="editor" cols="30" rows="10"></textarea>
                         @error('description')
                             <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
@@ -43,18 +36,14 @@
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
-                        <div class="grid grid-cols-12 gap-4">
-                            <div class="col-span-12 lg:col-span-6">
-                                <x-form.select :data="$categories" name="category_id" />
+                        <div class="">
+                            <x-form.input label="Meta Title" title="meta_title" />
+                            <x-form.textarea label="Meta Description" title="meta_description" />
+                            <x-form.input label="Meta Keyword" title="meta_keyword" />
+                        </div>
+                        <div class="max-w-md">
+                            <input class="dropify" type="file" id="myDropify" name="thumbnail">
 
-                                <x-form.input label="Meta Title" title="meta_title" />
-                                <x-form.textarea label="Meta Description" title="meta_description" />
-                                <x-form.input label="Meta Keyword" title="meta_keyword" />
-                                <input class="dropify" type="file" id="myDropify" name="thumbnail">
-                            </div>
-                            <div class="col-span-12 lg:col-span-6">
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis minus esse asperiores eaque porro earum corporis in qui voluptates culpa. Deserunt, repudiandae libero autem nihil maiores vero nisi optio cum!</p>
-                            </div>
                         </div>
 
                         <x-form.submit_button />

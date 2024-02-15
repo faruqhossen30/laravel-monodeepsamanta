@@ -15,7 +15,8 @@
             <select name="category" onchange="this.form.submit()"
                 class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                 @foreach ($categories as $cat)
-                    <option value="{{ $cat->slug }}" @if ($cat->id == $category->id) selected @endif>{{ $cat->name }}</option>
+                    <option value="{{ $cat->slug }}" @if ($cat->id == $category->id) selected @endif>{{ $cat->name }}
+                    </option>
                 @endforeach
             </select>
         </form>
@@ -36,18 +37,19 @@
 @endsection
 
 @push('style')
-<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-<style>
-    .owl-theme .owl-dots .owl-dot.active span,
-    .owl-theme .owl-dots .owl-dot:hover span {
-        background-color: #FF003A;
-    }
-    /* for serviceslider */
-    #serviceslider .owl-dots {
-        display: none;
-    }
-</style>
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <style>
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background-color: #FF003A;
+        }
+
+        /* for serviceslider */
+        #serviceslider .owl-dots {
+            display: none;
+        }
+    </style>
 @endpush
 
 @push('script')
@@ -58,12 +60,13 @@
     <script>
         var mixer = mixitup('.mixingContainer');
     </script>
-        <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-        <script>
-            $('#serviceslider').owlCarousel({
-                items: 1,
-                loop: true,
-                margin: 10,
-            });
-        </script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script>
+        $('#serviceslider').owlCarousel({
+            items: 2,
+            center: true,
+            loop: true,
+            margin: 10,
+        });
+    </script>
 @endpush

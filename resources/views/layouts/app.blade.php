@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Dashboard & UX/UI Designer')</title>
+    <title>Dashboard & UX/UI Designer | @yield('title', '')</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/lightgallery-bundle.css') }}" />
-    <link rel="icon" type="image/x-icon" href="{{asset('MonodeepSamanta.png')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('MonodeepSamanta.png') }}">
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('style')
@@ -35,6 +35,7 @@
     <script src="{{ asset('js/lightgallery.umd.js') }}"></script>
     @stack('script')
     @stack('script2')
+    <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async ></script>
     <script>
         $(function() {
             $(window).scroll(function() {
@@ -47,7 +48,22 @@
             }); //win func.
         }); //ready func.
     </script>
-    <script src="//code.tidio.co/ef702oknsoksvys0gdqiewpvf0pz9olw.js" async></script>
+    <script>
+        (function() {
+            function onTidioChatApiReady() {
+                window.tidioChatApi.hide();
+            }
+
+            if (window.tidioChatApi) {
+                window.tidioChatApi.on("ready", onTidioChatApiReady);
+            }
+
+            document.querySelector(".chat-button").addEventListener("click", function() {
+                window.tidioChatApi.show();
+                window.tidioChatApi.open();
+            });
+        })();
+    </script>
 </body>
 
 </html>
