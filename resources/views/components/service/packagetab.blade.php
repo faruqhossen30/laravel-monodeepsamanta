@@ -1,5 +1,6 @@
 @if ($service->package)
-    <div class="col-span-12 lg:col-span-4 @if(isset($isMobile) && $isMobile=='true') lg:hidden @endif @if(isset($isMobile) && $isMobile=='false') hidden lg:block @endif">
+    <div
+        class="col-span-12 lg:col-span-4 @if (isset($isMobile) && $isMobile == 'true') lg:hidden @endif @if (isset($isMobile) && $isMobile == 'false') hidden lg:block @endif">
         <div class="border p-3 sticky top-36 rounded-md">
             <nav class="flex space-x-2" aria-label="Tabs" role="tablist">
                 <button type="button"
@@ -58,14 +59,14 @@
                                     <input type="hidden" name="package" value="starter">
                                     <input type="hidden" name="price" value="{{ $service->package->starter_price }}">
                                 </form> --}}
-                        <a href="{{$service->package->starter_url}}"
+                        <a href="{{ $service->package->starter_url ?? '#' }}"
                             class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                             Continue ( ${{ $service->package->starter_price }})
                         </a>
-                        <button type="button"
+                        <a href="https://calendly.com/monodeepsamanta/15min" target="_blank"
                             class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-white text-black hover:bg-[#1b1021] hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                             Book a Meeting
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div id="equal-width-elements-2" class="hidden" role="tabpanel"
@@ -104,15 +105,15 @@
                             <input type="hidden" name="id" value="{{ $service->id }}">
                             <input type="hidden" name="package" value="standard">
                             <input type="hidden" name="price" value="{{ $service->package->standard_price }}">
-                            <button
+                            <a href="{{ $service->package->standard_url ?? '#' }}"
                                 class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                 Continue ( ${{ $service->package->standard_price }})
-                            </button>
+                            </a>
                         </form>
-                        <button type="button"
+                        <a href="https://calendly.com/monodeepsamanta/15min" target="_blank"
                             class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-white text-black hover:bg-[#1b1021] hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                             Book a Meeting
-                        </button>
+                        </a>
                     </div>
 
                 </div>
@@ -153,14 +154,14 @@
                                     <input type="hidden" name="package" value="advance">
                                     <input type="hidden" name="price" value="{{ $service->package->advance_price }}">
                                 </form> --}}
-                        <button
+                        <a href="{{ $service->package->advance_url ?? '#' }}"
                             class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-black text-white hover:text-gray-800 hover:bg-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                             Continue ( ${{ $service->package->advance_price }})
-                        </button>
-                        <button type="button"
+                        </a>
+                        <a href="https://calendly.com/monodeepsamanta/15min" target="_blank"
                             class="w-full py-2 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-sm border border-black bg-white text-black hover:bg-[#1b1021] hover:text-white disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                             Book a Meeting
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

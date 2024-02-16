@@ -25,11 +25,10 @@
     <div id="blogslider" class="owl-carousel owl-theme grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
         @foreach ($posts as $post)
             <a class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="#">
+                href="{{route('singleblog', $post->slug)}}">
                 <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
                     <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                         src="{{ asset('uploads/blog/' . $post->thumbnail) }}" alt="Image Description">
-
                 </div>
 
                 <div class="mt-7">
@@ -47,11 +46,10 @@
     <div class="hidden lg:grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($posts as $post)
             <a class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="#">
+                href="{{route('singleblog', $post->slug)}}">
                 <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
                     <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
                         src="{{ asset('uploads/blog/' . $post->thumbnail) }}" alt="Image Description">
-
                 </div>
 
                 <div class="mt-7">

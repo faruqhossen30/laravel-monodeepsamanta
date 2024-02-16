@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Image;
 
@@ -34,10 +36,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->all();
         $request->validate([
             'title' => 'required',
+            'short_description' => 'required',
+            'project_description' => 'required',
             'description' => 'required',
-            'category_id' => 'required'
         ]);
 
         // return $request->all();
@@ -47,11 +51,13 @@ class PostController extends Controller
             $imagethumbnail = $request->file('thumbnail');
             $extension = $imagethumbnail->getClientOriginalExtension();
             $thumbnailname = Str::uuid() . '.' . $extension;
-            Image::make($imagethumbnail)->save('uploads/blog/' . $thumbnailname);
+            Image::make($imagethumbnail)->save('uploads/post/' . $thumbnailname);
         }
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
+            'short_description' => $request->short_description,
+            'project_description' => $request->project_description,
             'description' => $request->description,
             'thumbnail' => $thumbnailname,
             'category_id' => $request->category_id,
@@ -61,10 +67,10 @@ class PostController extends Controller
             'meta_keyword' => $request->meta_keyword
         ];
 
-        $porfolio = Blog::create($data);
+        $porfolio = Post::create($data);
 
         Session::flash('create');
-        return redirect()->route('blog.index');
+        return redirect()->route('post.index');
     }
 
     /**

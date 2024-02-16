@@ -54,7 +54,7 @@
                                     @foreach ($posts as $blog)
                                         <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
                                             <td
-                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{$blogs->firstItem() + $loop->index}}</td>
+                                                class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">{{$posts->firstItem() + $loop->index}}</td>
                                                 <td
                                                 class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                                 <img src="{{asset('uploads/blog/'.$blog->thumbnail)}}" class="h-6 w-auto" alt="">

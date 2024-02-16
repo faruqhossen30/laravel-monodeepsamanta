@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('short_description')->nullable();
+            $table->string('project_description')->nullable();
             $table->longText('description');
             $table->string('thumbnail')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
