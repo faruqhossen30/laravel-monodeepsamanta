@@ -4,11 +4,11 @@
 
 
 
-<div class="p-4 lg:p-0 md:flex justify-between mt-16  md:space-x-10" id="lightgallery">
+<div class="lg:p-0 md:flex justify-between lg:mt-16  md:space-x-10" id="lightgallery">
     <!--FEATURED WORK section start from here-->
     <div class="md:w-7/12 space-y-4 mb-7 ">
-        <p class="text-primary font-black leading-[14px] tracking-[3px] ">Blog</p>
-        <h2 class="text-2xl font-bold pt-4 pb-2">
+        <p class="text-primary font-black leading-[14px] tracking-[3px] py-4 lg:py-0">Blog</p>
+        <h2 class="text-2xl font-bold lg:py-8">
 
             <svg class="w-5 h-5 inline" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path

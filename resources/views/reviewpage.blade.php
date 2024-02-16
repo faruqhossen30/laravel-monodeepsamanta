@@ -14,7 +14,7 @@
 @section('title', 'Reviews')
 @section('content')
     <section>
-        <h1 class="flex items-center text-2xl space-x-2 py-4 lg:my-8 font-bold">
+        <h1 class="flex items-center text-2xl space-x-2 lg:my-8 font-bold">
             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                 fill="none">
                 <path
@@ -89,12 +89,12 @@
             {{$reviews->links()}}
         </div>
     </section>
-    <div class="lg:py-16"></div>
+    {{-- <div class="lg:py-16"></div> --}}
     <x-section-portfolio islink="true" />
-    <div class="lg:py-6"></div>
+    {{-- <div class="lg:py-6"></div> --}}
     <div>
-        <x-section-service />
-        <div class="flex justify-center lg:py-10 mb-8 lg:mb-14">
+        <x-section-service islink="true" />
+        <div class="flex justify-center py-5 lg:py-20">
             <a href="{{ route('servicepage') }}" class="text-primary font-bold flex items-center space-x-2">
                 <span class="text-[15px] leading-[15px]">See All Services</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"

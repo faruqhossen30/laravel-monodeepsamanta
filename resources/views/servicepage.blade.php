@@ -22,6 +22,9 @@
         </div>
     </a>
     @endforeach
+    <div class="pt-5">
+        {{$services->links()}}
+    </div>
 </div>
 
     <x-section-chat />

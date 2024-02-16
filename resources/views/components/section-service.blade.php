@@ -10,8 +10,8 @@
 
 
 
-<div class="flex justify-between items-center pt-6 pb-3">
-    <div class="flex items-center space-x-2 py-3">
+<div class="flex justify-between items-center py-2 lg:py-10">
+    <div class="flex items-center space-x-2">
         <x-icon.listcheck />
         <h3 class="text-lg lg:text-[26px] font-bold leading-[39px]">See My Services</h3>
     </div>
@@ -62,4 +62,4 @@
     @endforeach
 </div>
 
-<div class="h-5 lg:h-20"></div>
+{{-- <div class="h-5 lg:h-20"></div> --}}

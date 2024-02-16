@@ -40,7 +40,7 @@
         <!--Image Card Parent End Here-->
     </div>
     <x-section-chat />
-    <x-section-service />
+    <x-section-service islink="true" />
     <div class="pb-[20px]"></div>
 @endsection
 

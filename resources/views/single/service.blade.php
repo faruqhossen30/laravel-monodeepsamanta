@@ -262,7 +262,7 @@
     <div class="py-6"></div>
     <div>
         <x-section-service />
-        <div class="flex justify-center py-10 mb-14">
+        <div class="flex justify-center py-5 lg:py-20">
             <a href="{{ route('servicepage') }}" class="text-primary font-bold flex items-center space-x-2">
                 <span class="text-[15px] leading-[15px]">See All Services</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
