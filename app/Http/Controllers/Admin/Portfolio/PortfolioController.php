@@ -64,7 +64,7 @@ class PortfolioController extends Controller
 
         $porfolio = Portfolio::create($data);
 
-        if(!empty($request->file('portfolio_image'))){
+        if (!empty($request->file('portfolio_image'))) {
             $captions = $request->captions;
             PortfolioImage::where('portfolio_id', $porfolio->id)->delete();
 
@@ -75,9 +75,9 @@ class PortfolioController extends Controller
                 Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $thumbnailname);
 
                 PortfolioImage::create([
-                    'portfolio_id'=> $porfolio->id,
-                    'image'=> $thumbnailname,
-                    'caption'=> $captions[$index],
+                    'portfolio_id' => $porfolio->id,
+                    'image' => $thumbnailname,
+                    'caption' => $captions[$index],
                 ]);
             }
         }
@@ -142,9 +142,9 @@ class PortfolioController extends Controller
 
         $porfolio = Portfolio::firstWhere('id', $id)->update($data);
 
-        if(!empty($request->file('portfolio_image'))){
+        if (!empty($request->file('portfolio_image'))) {
             $captions = $request->captions;
-            PortfolioImage::where('portfolio_id', $id)->delete();
+            // PortfolioImage::where('portfolio_id', $id)->delete();
 
             foreach ($request->file('portfolio_image') as $index => $imagefile) {
                 $imagethumbnail = $imagefile;
@@ -153,16 +153,15 @@ class PortfolioController extends Controller
                 Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $thumbnailname);
 
                 PortfolioImage::create([
-                    'portfolio_id'=> $id,
-                    'image'=> $thumbnailname,
-                    'caption'=> $captions[$index],
+                    'portfolio_id' => $id,
+                    'image' => $thumbnailname,
+                    'caption' => $captions[$index],
                 ]);
             }
         }
 
         Session::flash('create');
         return redirect()->route('portfolio.index');
-
     }
 
     /**
@@ -172,5 +171,28 @@ class PortfolioController extends Controller
     {
         Portfolio::firstwhere('id', $id)->delete();
         return redirect()->route('portfolio.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function removeImage(string $id)
+    {
+        // $portfolion =  Portfolio::firstwhere('id', $id);
+
+        $image = PortfolioImage::firstWhere('id', $id);
+        $path = 'uploads/portfolio/image/'.$image->image;
+
+        // return $path;
+
+        if (file_exists($path)) {
+            unlink($path);
+            // echo 'File ' . $image->image . ' has been deleted';
+        }
+
+        $image->delete();
+
+        // return $image;
+        return redirect()->back();
     }
 }

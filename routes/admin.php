@@ -26,11 +26,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('blog', BlogController::class);
     Route::resource('post', PostController::class);
     Route::resource('software', SoftwareController::class);
-    Route::resource('portfolio', PortfolioController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('review', ReviewController::class);
     Route::resource('reviewtype', ReviewtypeController::class);
     Route::resource('feature', FeatureController::class);
+    Route::resource('portfolio', PortfolioController::class);
+    Route::get('portfolio/{id}/delete',[ PortfolioController::class, 'removeImage'])->name('removeportfolionimage');
 
     Route::resource('service', ServiceController::class);
     Route::get('service/{id}/create-faq', [ServicefaqController::class, 'create'])->name('service.faq.create');
@@ -41,4 +42,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('service/{id}/create-slider', [ServicesliderController::class, 'create'])->name('service.slider.create');
     Route::post('service/{id}/create-slider', [ServicesliderController::class, 'store'])->name('service.slider.store');
+
+    Route::get('service/{id}/delete',[ ServicesliderController::class, 'removeImage'])->name('removesliderimage');
 });

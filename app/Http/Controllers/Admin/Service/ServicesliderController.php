@@ -28,7 +28,7 @@ class ServicesliderController extends Controller
 
         if(!empty($request->file('thumbnails'))){
 
-            ServiceSlider::where('service_id', $id)->delete();
+            // ServiceSlider::where('service_id', $id)->delete();
 
             foreach ($request->file('thumbnails') as $imagefile) {
                 $imagethumbnail = $imagefile;
@@ -46,5 +46,28 @@ class ServicesliderController extends Controller
 
 
         return redirect()->route('service.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function removeImage(string $id)
+    {
+        $slider = ServiceSlider::firstWhere('id', $id);
+
+        // return $slider;
+        $path = 'uploads/service/slider/'.$slider->thumbnail;
+
+        // return $path;
+
+        if (file_exists($path)) {
+            unlink($path);
+            // echo 'File ' . $image->image . ' has been deleted';
+        }
+
+        $slider->delete();
+
+        // return $image;
+        return redirect()->back();
     }
 }

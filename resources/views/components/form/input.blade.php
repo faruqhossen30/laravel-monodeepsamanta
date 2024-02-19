@@ -1,6 +1,6 @@
 <div class="space-y-1 py-2">
     <label for="{{$title}}"
-        class="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200">
+        class="inline-block text-sm font-medium text-gray-800 mt-2.5 dark:text-gray-200 py-1">
         {{$label}}
     </label>
     <input id="{{$title}}" type="{{$type ?? ''}}" name="{{$title}}" value="{{$value ?? old($title)}}"
