@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Blog\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\Portfolio\PortfolioController;
 use App\Http\Controllers\Admin\Post\PostController;
+use App\Http\Controllers\Admin\Post\SoftwareController;
 use App\Http\Controllers\Admin\Review\ReviewController;
 use App\Http\Controllers\Admin\Review\ReviewtypeController;
 use App\Http\Controllers\Admin\Service\FeatureController;
@@ -24,6 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('blogcategory', BlogcategoryController::class);
     Route::resource('blog', BlogController::class);
     Route::resource('post', PostController::class);
+    Route::resource('software', SoftwareController::class);
     Route::resource('portfolio', PortfolioController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('review', ReviewController::class);

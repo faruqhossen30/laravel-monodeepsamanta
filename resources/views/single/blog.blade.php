@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', "{$post->title} | Dashboard & UX/UI Designer")
 @section('blog')
 
 <div class=" bg-[#CFE2F3] py-36 w-full pb-60 -mt-10">
-    <div class="z-[999] fixed top-0">
+    {{-- <div class="z-[999] fixed top-0">
         <button type="button" class="flex flex-shrink-0 justify-center items-center gap-2 h-[2.875rem] w-[2.875rem] text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </button>
-    </div>
+    </div> --}}
     <div class=" mx-auto">
         <h1 class=" font-bold text-3xl lg:text-[40px] leading-[48px] text[#0b0c0d] max-w-4xl mx-auto text-center mb-10">Development and Design for a Top 10 Real Estate Company in the US</h1>
         <p class="max-w-xl mx-auto text-center leading-7 text-[#0b0c0d]">Using AI, modern design, and cutting-edge solutions to become a tech company and shape the future of the industry</p>

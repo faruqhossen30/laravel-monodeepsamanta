@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Post;
+use App\Models\Post\Post;
+use App\Models\Post\PostCategory;
+use App\Models\Post\PostSoftware;
+use App\Models\Software;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -19,7 +22,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate();
-        return view('admin.blog.index', compact('posts'));
+        return view('admin.post.index', compact('posts'));
     }
 
     /**
@@ -28,7 +31,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('admin.blog.create', compact('categories'));
+        $softwares = Software::get();
+        return view('admin.post.create', compact('categories','softwares'));
     }
 
     /**
@@ -67,7 +71,25 @@ class PostController extends Controller
             'meta_keyword' => $request->meta_keyword
         ];
 
-        $porfolio = Post::create($data);
+        $post = Post::create($data);
+
+        if(!empty($request->category_ids)){
+             foreach($request->category_ids as $id){
+                PostCategory::create([
+                    'post_id'=>$post->id,
+                    'category_id'=>$id
+                ]);
+             }
+        }
+
+        if(!empty($request->software_ids)){
+             foreach($request->software_ids as $id){
+                PostSoftware::create([
+                    'post_id'=>$post->id,
+                    'software_id'=>$id
+                ]);
+             }
+        }
 
         Session::flash('create');
         return redirect()->route('post.index');
@@ -87,9 +109,9 @@ class PostController extends Controller
     public function edit(string $id)
     {
         $categories = Category::get();
-        $blog = Blog::firstWhere('id', $id);
-        // return $blog;
-        return view('admin.blog.edit', compact('categories','blog'));
+        $post = Post::firstWhere('id', $id);
+        // return $post;
+        return view('admin.post.edit', compact('categories','post'));
     }
 
     /**
@@ -121,14 +143,14 @@ class PostController extends Controller
             $imagethumbnail = $request->file('thumbnail');
             $extension = $imagethumbnail->getClientOriginalExtension();
             $thumbnailname = Str::uuid() . '.' . $extension;
-            Image::make($imagethumbnail)->save('uploads/blog/' . $thumbnailname);
+            Image::make($imagethumbnail)->save('uploads/post/' . $thumbnailname);
             $data['thumbnail'] = $thumbnailname;
         }
 
-        $porfolio = Blog::firstWhere('id', $id)->update($data);
+        $porfolio = Post::firstWhere('id', $id)->update($data);
 
         Session::flash('create');
-        return redirect()->route('blog.index');
+        return redirect()->route('post.index');
     }
 
     /**
@@ -136,8 +158,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        Blog::firstWhere('id', $id)->delete();
+        Post::firstWhere('id', $id)->delete();
         Session::flash('destroy');
-        return redirect()->route('blog.index');
+        return redirect()->route('post.index');
     }
 }

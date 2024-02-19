@@ -9,8 +9,8 @@
           </button>
     </div>
     <div class=" mx-auto">
-        <h1 class=" font-bold text-3xl lg:text-[40px] leading-[48px] text[#0b0c0d] max-w-4xl mx-auto text-center mb-10">Development and Design for a Top 10 Real Estate Company in the US</h1>
-        <p class="max-w-xl mx-auto text-center leading-7 text-[#0b0c0d]">Using AI, modern design, and cutting-edge solutions to become a tech company and shape the future of the industry</p>
+        <h1 class=" font-bold text-3xl lg:text-[40px] leading-[48px] text[#0b0c0d] max-w-4xl mx-auto text-center mb-10">{{$post->title}}</h1>
+        <p class="max-w-xl mx-auto text-center leading-7 text-[#0b0c0d]">{{$post->short_description}}</p>
         </div>
     </div>
 </div>
@@ -22,26 +22,25 @@
 <div class=" w-11/12 max-w-5xl mx-auto grid grid-cols-12 py-14 px-10 border my-6 rounded-md shadow gap-10 text-sm">
     <div class=" col-span-12 lg:col-span-6">
         <h2 class=" font-semibold mb-5 uppercase">About This Project</h2>
-        <p>Keller Williams, the world’s largest real estate franchise, wanted to stay ahead of the competition by leveraging their data to boost artificial intelligence-powered technology. As a design and software partner for Keller Williams we designed a feature in one of KW’s projects and successfully onboarded a 50+ team to support Keller Williams with its transformation and new initiatives.</p>
+        <p>{{$post->project_description}}</p>
     </div>
     <div class=" col-span-12 md:col-span-6 lg:col-span-3">
         <h2 class=" font-semibold mb-5">SERVICES</h2>
         <ul>
-            <li><a class="underline" href="#">Software development</a></li>
-            <li><a class="underline" href="#">Product design</a></li>
+            @foreach ($post->categories as $cat)
+            <li><a class="underline" href="#">{{$cat->name}}</a></li>
+
+            @endforeach
+            {{-- <li><a class="underline" href="#">Product design</a></li> --}}
         </ul>
     </div>
 
     <div class=" col-span-12 md:col-span-6 lg:col-span-3">
         <h2 class=" font-semibold uppercase mb-5">Technologies    </h2>
         <ul>
-            <li>React</li>
-            <li>React native</li>
-            <li>Node.js</li>
-            <li>Python</li>
-            <li>Django</li>
-            <li>Golang</li>
-            <li>PHP</li>
+            @foreach ($post->softwares as $soft)
+                <li>{{$soft->name}}</li>
+            @endforeach
         </ul>
     </div>
 </div>

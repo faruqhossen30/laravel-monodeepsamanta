@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', "{$service->title} | Dashboard & UX/UI Designer")
 @section('content')
 
     <div class="grid grid-cols-12 gap-1 pt-3">

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Page')
+@section('title', 'Dashboard & UX/UI Designer | Home')
 @section('content')
     <x-section-portfolio islink="true" />
     <x-section-chat />

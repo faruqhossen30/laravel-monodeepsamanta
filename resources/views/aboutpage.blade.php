@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'About Me')
+@section('title', 'Dashboard & UX/UI Designer | About Me')
 @section('content')
     <x-section-aboutme />
     <x-section-chat />

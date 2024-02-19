@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Portfolio Page')
+@section('title', 'Dashboard & UX/UI Designer | Portfolio')
 @section('content')
 
 

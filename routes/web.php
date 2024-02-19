@@ -7,6 +7,7 @@ use App\Http\Controllers\CardController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ContactpageController;
 use App\Http\Controllers\PortfoliopageController;
+use App\Http\Controllers\PostpageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewpageController;
 use App\Http\Controllers\ServicepageController;
@@ -38,7 +39,10 @@ Route::get('reviews', [ReviewpageController::class, 'index'])->name('reviewpage'
 Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
 Route::get('blog/{slug}', [BlogpageController::class, 'singleBlog'])->name('singleblog');
 
-Route::get('contact', [ContactpageController::class, 'index'])->name('contactpage');
+Route::get('posts', [PostpageController::class, 'index'])->name('postpage');
+Route::get('post/{slug}', [PostpageController::class, 'singlePost'])->name('singlepost');
+
+// Route::get('contact', [ContactpageController::class, 'index'])->name('contactpage');
 
 Route::get('cart', [CardController::class, 'index'])->name('cartpage');
 Route::get('cart/{price}/{id}', [CardController::class, 'store'])->name('cartstore');

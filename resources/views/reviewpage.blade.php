@@ -11,7 +11,7 @@
     }
 @endphp
 @extends('layouts.app')
-@section('title', 'Reviews')
+@section('title', 'Dashboard & UX/UI Designer | Reviews')
 @section('content')
     <section>
         <h1 class="flex items-center text-2xl space-x-2 lg:my-8 font-bold">
@@ -86,7 +86,7 @@
 
         @endforeach
         <div class="pt-5">
-            {{$reviews->links()}}
+            {{$reviews->links('pagination::custom')}}
         </div>
     </section>
     {{-- <div class="lg:py-16"></div> --}}

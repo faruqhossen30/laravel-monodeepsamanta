@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard & UX/UI Designer | @yield('title', '')</title>
+    <title> @yield('title', '')</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,6 +15,20 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('MonodeepSamanta.png') }}">
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <meta name="google-site-verification" content="wn1oFpUqzZ6XoS6WgEWRF3U8ZCWRvVXryKbCWix9xD0" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-824VLTPPNZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-824VLTPPNZ');
+    </script>
     @stack('style')
     <style>
         * {
@@ -108,8 +122,8 @@
             items: 2,
             loop: true,
             margin: 10,
-            dots:false,
-            autoWidth:true
+            dots: false,
+            autoWidth: true
         });
         $('.owl-carousel').owlCarousel({
             items: 1,
