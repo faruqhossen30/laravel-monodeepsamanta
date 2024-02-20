@@ -28,7 +28,9 @@
                 </div>
             @endif
             {{-- Package Tab Only for mobile --}}
-            <x-service.packagetab :service="$service" isMobile="true" />
+            <span class="block lg:hidden">
+                <x-service.mobilepackagetab :service="$service" />
+            </span>
 
             {{-- Slider Start --}}
             <div class="py-8">
@@ -255,7 +257,8 @@
             </div>
         </div>
         {{-- Package Tab --}}
-        <x-service.packagetab :service="$service" isMobile="false" />
+
+        <x-service.packagetab :service="$service" />
 
     </div>
     <x-section-portfolio />
@@ -300,8 +303,8 @@
         }
 
         /* .owl-nav .owl-next span{
-                                    font-size: 30px;
-                                } */
+                                        font-size: 30px;
+                                    } */
 
         .owl-nav .owl-prev {
             position: absolute;
@@ -344,9 +347,11 @@
             line-height: 38px;
             color: #282828;
         }
+
         #portfolioSlider .owl-dots {
             display: none;
         }
+
         #serviceslider .owl-dots {
             display: none;
         }
