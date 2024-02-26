@@ -1,13 +1,19 @@
 <a href="{{ route('singleportfolio', $portfolio->slug) }}"
     class="group col-span-12 sm:col-span-6 lg:col-span-4 font-bold relative overflow-hidden text-white rounded-sm shadow cursor-pointer mix {{ $portfolio->category->slug }}">
     <!--layer start-->
-    <div
-        class="w-full h-full absolute top-0 left-0 bg-black opacity-50 hidden  group-hover:block transition z-10">
+    <div class="w-full h-full absolute top-0 left-0 bg-black opacity-50 hidden  group-hover:block transition z-10">
     </div>
-
     <!--layer end-->
-    <img class="w-full max-h-80 object-cover group-hover:scale-110 group-hover:rotate-3 transition duration-500"
-        src="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}" alt="">
+    @if ($portfolio->video)
+        <video autoplay loop muted class="w-full h-full">
+            <source src="{{ asset('uploads/portfolio/' . $portfolio->video) }}" type="video/mp4">
+        </video>
+    @else
+        <img class="w-full h-full max-h-80 object-cover group-hover:scale-110 group-hover:rotate-3 transition duration-500"
+            src="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}" alt="">
+    @endif
+
+
     <div class="absolute group-hover:bottom-6 group-hover:left-6 hidden group-hover:block bottom-0 z-10  space-y-2">
         <h1 class="text-2xl">{{ $portfolio->title }}</h1>
 

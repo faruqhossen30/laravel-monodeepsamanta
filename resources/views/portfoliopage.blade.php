@@ -9,14 +9,14 @@
 
     <x-portfolio.creativework />
 
-    <div class="hidden lg:block mr-4 space-y-2 py-4 sticky top-16 lg:top-20 z-30 bg-white w-full">
+    <div class="hidden lg:block mr-4 space-y-2 py-4 sticky top-16 lg:top-20 z-30 bg-white w-full text-gray-500">
         <button data-filter="*" class="galarybtn gallarybutton bg-black text-white ">All Capabilities</button>
         @foreach ($categories as $category)
             <button data-filter=".{{ $category->slug }}"
                 class="galarybtn gallarybutton text-gray-500">{{ $category->name }}</button>
         @endforeach
     </div>
-    <div class="block lg:hidden  sticky top-16 lg:top-20 z-30">
+    <div class="block lg:hidden  sticky top-16 lg:top-20 z-30 text-gray-500">
         <div id="categorySlider"
             class="owl-carousel owl-theme mr-4 space-y-2 py-4 bg-white w-full">
             <button data-filter="*" class="galarybtn mobileGallarybutton bg-black text-white ">All Capabilities</button>

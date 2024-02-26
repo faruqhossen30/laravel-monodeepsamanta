@@ -33,35 +33,67 @@
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
-                        <div class="md:flex md:space-x-6 my-2">
-                            <div class="max-w-md">
-                                <label for="myDropify" class="py-2">Portfolio Thumbnail</label>
-                                <input class="dropify" type="file" id="myDropify" name="thumbnail">
+                        <div
+                            class="py-3 font-extrabold flex items-center text-lg text-gray-800 before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-gray-600 dark:after:border-gray-600">
+                            Thumbnail Section</div>
+                        <div class="grid grid-cols-2 gap-10">
+                            <div class="col-span-2 lg:col-span-1">
+                                <div class="md:flex my-2">
+                                    <div class="w-full">
+                                        <label for="myDropify" class="py-2">Photo Thumbnail</label>
+                                        <input class="dropify" type="file" id="myDropify" name="thumbnail">
+                                    </div>
+                                </div>
                             </div>
+                            <div class="col-span-2 lg:col-span-1">
+                                <div class="md:flex my-2">
+                                    <div class="w-full">
+                                        <label for="myDropify" class="py-2">Video Thumbnail</label>
+                                        <input class="dropify" type="file" id="myDropify" name="video">
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <hr>
-                        <h3>Portfolio</h3>
+                        <div
+                            class="py-3 font-extrabold flex items-center text-lg text-gray-800 before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-gray-600 dark:after:border-gray-600">
+                            Portfolo Section</div>
+                        {{-- <h3>Portfolio</h3> --}}
                         <div class="">
                             <div class="grid grid-cols-2 gap-5" id="portfolioImageSection">
                                 <div class="col-span-2 lg:col-span-1 border p-4">
                                     <input class="dropify" type="file" id="myDropify" name="portfolio_image[]">
-                                    <input type="text" name="captions[]" class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Caption">
+                                    <input type="text" name="captions[]"
+                                        class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                                        placeholder="Caption">
                                 </div>
+
                             </div>
                         </div>
 
                         <div class="flex justify-between">
                             <x-form.submit_button />
-                            <button type="button" id="addImageButton"
-                                class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                </svg>
+                            <div>
+                                <button type="button" id="addVideoButton"
+                                    class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                    </svg>
 
-                                Add Image
-                            </button>
+                                    Add Video
+                                </button>
+                                <button type="button" id="addImageButton"
+                                    class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                                    </svg>
+                                    Add Image
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -98,15 +130,38 @@
                 console.log('click');
             });
 
-            function createDrofify(){
-                $('.dropify').dropify({
-                messages: {
-                    'default': 'Drag and drop a file here or click',
-                    'replace': 'Drag and drop or click to replace',
-                    'remove': 'Remove',
-                    'error': 'Ooops, something wrong happended.'
-                }
+            $(document).on('click', '#addVideoButton', function() {
+                $('#portfolioImageSection').append(
+                    `
+                    <div class="col-span-2 lg:col-span-1 border p-4">
+                        <input class="videoDropify" type="file" id="videoDropify" name="portfolio_video[]">
+                        <input type="text" name="video_caption[]"
+                            class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                            placeholder="Caption">
+                    </div>
+                `
+                );
+                createDrofify();
+                console.log('click');
             });
+
+            function createDrofify() {
+                $('.dropify').dropify({
+                    messages: {
+                        'default': 'Image file drop here or click',
+                        'replace': 'Drag and drop or click to replace',
+                        'remove': 'Remove',
+                        'error': 'Ooops, something wrong happended.'
+                    }
+                });
+                $('.videoDropify').dropify({
+                    messages: {
+                        'default': 'Video file drop or click',
+                        'replace': 'Drag and drop or click to replace',
+                        'remove': 'Remove',
+                        'error': 'Ooops, something wrong happended.'
+                    }
+                });
             }
 
         });

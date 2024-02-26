@@ -36,7 +36,7 @@ class PortfoliopageController extends Controller
         $previous = null;
         $next = null;
 
-        // return
+        // return $portfolio;
 
 
         return view('single.portfolio', compact('portfolio'));

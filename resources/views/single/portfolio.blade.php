@@ -6,12 +6,24 @@
         <h3 class="lg:-mt-4 text-3xl font-bold">{{ $portfolio->title }}</h3>
         <div class="my-6">
             @foreach ($portfolio->images as $image)
-                @if ($image->caption)
-                    <div class="py-2">
-                        <h2 class="py-2 text-lg shadow-md">{{ $image->caption }}</h2>
-                    </div>
+                @if ($image->video)
+                    {{-- <p>{{ $image }}</p> --}}
+                    @if ($image->caption)
+                        <div class="py-2">
+                            <h2 class="py-2 text-lg shadow-md">{{ $image->caption }}</h2>
+                        </div>
+                    @endif
+                    <video autoplay loop muted class="w-full h-full">
+                        <source src="{{ asset('uploads/portfolio/video/' . $image->video) }}" type="video/mp4">
+                    </video>
+                @else
+                    @if ($image->caption)
+                        <div class="py-2">
+                            <h2 class="py-2 text-lg shadow-md">{{ $image->caption }}</h2>
+                        </div>
+                    @endif
+                    <img src="{{ asset('uploads/portfolio/image/' . $image->image) }}" class="w-full h-auto" alt="">
                 @endif
-                <img src="{{ asset('uploads/portfolio/image/' . $image->image) }}" class="w-full h-auto" alt="">
             @endforeach
         </div>
     </div>
@@ -22,7 +34,7 @@
             @if (isset($portfolio->previous))
                 <p class="text-sm text-gray-400 font-bold mb-1">PREVIOUS PROJECT</p>
                 <a href="{{ route('singleportfolio', $portfolio->previous->slug) }}"
-                    class="text-[24px] leading-[24px] font-extrabold">{{$portfolio->previous->title}}</a>
+                    class="text-[24px] leading-[24px] font-extrabold">{{ $portfolio->previous->title }}</a>
             @endif
         </div>
 
@@ -30,7 +42,7 @@
             @if (isset($portfolio->next))
                 <p class="text-sm text-gray-400 font-bold mb-1">NEXT PROJECT</p>
                 <a href="{{ route('singleportfolio', $portfolio->next->slug) }}"
-                    class="text-[24px] leading-[24px] font-extrabold">{{$portfolio->next->title}}</a>
+                    class="text-[24px] leading-[24px] font-extrabold">{{ $portfolio->next->title }}</a>
             @endif
         </div>
 

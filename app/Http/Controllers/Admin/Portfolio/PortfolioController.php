@@ -51,7 +51,17 @@ class PortfolioController extends Controller
             $imagethumbnail = $request->file('thumbnail');
             $extension = $imagethumbnail->getClientOriginalExtension();
             $thumbnailname = Str::uuid() . '.' . $extension;
-            Image::make($imagethumbnail)->save('uploads/portfolio/' . $thumbnailname);
+            // Image::make($imagethumbnail)->save('uploads/portfolio/' . $thumbnailname);
+            $request->file('thumbnail')->move(public_path('uploads/portfolio/'), $thumbnailname);
+        }
+
+        $video = null;
+        if ($request->file('video')) {
+            $imagethumbnail = $request->file('video');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $video = Str::uuid() . '.' . $extension;
+            // Image::make($imagethumbnail)->save('uploads/portfolio/' . $video);
+            $request->file('video')->move(public_path('uploads/portfolio/'), $video);
         }
 
         $data = [
@@ -59,24 +69,45 @@ class PortfolioController extends Controller
             'slug' => Str::slug($request->title, '-'),
             'user_id' => Auth::user()->id,
             'category_id' => $request->category_id,
-            'thumbnail' => $thumbnailname
+            'thumbnail' => $thumbnailname,
+            'video' => $video,
         ];
 
         $porfolio = Portfolio::create($data);
 
         if (!empty($request->file('portfolio_image'))) {
             $captions = $request->captions;
-            PortfolioImage::where('portfolio_id', $porfolio->id)->delete();
+            // PortfolioImage::where('portfolio_id', $porfolio->id)->delete();
 
             foreach ($request->file('portfolio_image') as $index => $imagefile) {
                 $imagethumbnail = $imagefile;
                 $extension = $imagethumbnail->getClientOriginalExtension();
                 $thumbnailname = Str::uuid() . '.' . $extension;
-                Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $thumbnailname);
+                // Image::make($imagethumbnail)->save('uploads/portfolio/image/' . $thumbnailname);
+                $request->file('portfolio_image')[$index]->move(public_path('uploads/portfolio/image/'), $thumbnailname);
 
                 PortfolioImage::create([
                     'portfolio_id' => $porfolio->id,
                     'image' => $thumbnailname,
+                    'caption' => $captions[$index],
+                ]);
+            }
+        }
+
+        if (!empty($request->file('portfolio_video'))) {
+            $captions = $request->video_caption;
+            // PortfolioImage::where('portfolio_id', $porfolio->id)->delete();
+
+            foreach ($request->file('portfolio_video') as $index => $videofile) {
+                $videohumbnail = $videofile;
+                $extension = $videohumbnail->getClientOriginalExtension();
+                $videoName = Str::uuid() . '.' . $extension;
+                // Image::make($videohumbnail)->save('uploads/portfolio/image/' . $videoName);
+                $request->file('portfolio_video')[$index]->move(public_path('uploads/portfolio/video/'), $videoName);
+
+                PortfolioImage::create([
+                    'portfolio_id' => $porfolio->id,
+                    'video' => $videoName,
                     'caption' => $captions[$index],
                 ]);
             }
@@ -169,7 +200,31 @@ class PortfolioController extends Controller
      */
     public function destroy(string $id)
     {
-        Portfolio::firstwhere('id', $id)->delete();
+        // $portfolio = Portfolio::with('images')->firstWhere('id', $id);
+        // $thumbnailPath = 'uploads/portfolio/' . $portfolio->image;
+        // // $videoPath = 'uploads/portfolio/' . $portfolio->video;
+
+        // if (file_exists($thumbnailPath)) {
+        //     unlink($thumbnailPath);
+        // }
+        // // if (file_exists($videoPath)) {
+        // //     unlink($videoPath);
+        // // }
+
+        // if (!empty($portfolio->images)) {
+        //     foreach($portfolio->images as $image){
+        //         $path = 'uploads/portfolio/image/' . $image->image;
+        //         if (file_exists($path)) {
+        //             unlink($path);
+        //             // echo 'File ' . $image->image . ' has been deleted';
+        //         }
+        //     }
+
+
+        // }
+
+        Portfolio::firstWhere('id', $id)->delete();
+
         return redirect()->route('portfolio.index');
     }
 
@@ -181,9 +236,7 @@ class PortfolioController extends Controller
         // $portfolion =  Portfolio::firstwhere('id', $id);
 
         $image = PortfolioImage::firstWhere('id', $id);
-        $path = 'uploads/portfolio/image/'.$image->image;
-
-        // return $path;
+        $path = 'uploads/portfolio/image/' . $image->image;
 
         if (file_exists($path)) {
             unlink($path);
@@ -192,7 +245,6 @@ class PortfolioController extends Controller
 
         $image->delete();
 
-        // return $image;
         return redirect()->back();
     }
 }
