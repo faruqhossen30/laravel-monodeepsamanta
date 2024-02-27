@@ -40,33 +40,26 @@
                             <div class="col-span-2 lg:col-span-1">
                                 <div class="md:flex my-2">
                                     <div class="w-full">
-                                        <label for="myDropify" class="py-2">Photo Thumbnail</label>
-                                        <input class="dropify" type="file" id="myDropify" name="thumbnail">
+                                        <label for="photoThubnail" class="py-2">Photo Thumbnail</label>
+                                        <input class="photoThumbnail" type="file" id="photoThubnail" name="thumbnail">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-span-2 lg:col-span-1">
                                 <div class="md:flex my-2">
                                     <div class="w-full">
-                                        <label for="myDropify" class="py-2">Video Thumbnail</label>
-                                        <input class="dropify" type="file" id="myDropify" name="video">
+                                        <label for="videoThumbnail" class="py-2">Video Thumbnail</label>
+                                        <input class="videoThumbnail" type="file" id="videoThumbnail" name="video">
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div
                             class="py-3 font-extrabold flex items-center text-lg text-gray-800 before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-gray-600 dark:after:border-gray-600">
                             Portfolo Section</div>
-                        {{-- <h3>Portfolio</h3> --}}
                         <div class="">
                             <div class="grid grid-cols-2 gap-5" id="portfolioImageSection">
-                                <div class="col-span-2 lg:col-span-1 border p-4">
-                                    <input class="dropify" type="file" id="myDropify" name="portfolio_image[]">
-                                    <input type="text" name="captions[]"
-                                        class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                                        placeholder="Caption">
-                                </div>
+
 
                             </div>
                         </div>
@@ -108,6 +101,7 @@
         .dropify-message p {
             font-size: 24px
         }
+
     </style>
 @endpush
 
@@ -116,37 +110,37 @@
     <script src="{{ asset('js/dropify.min.js') }}"></script>
     <script>
         $(document).ready(function() {
-            createDrofify();
+            photoThubnail();
+            videoThubnail();
             $(document).on('click', '#addImageButton', function() {
                 $('#portfolioImageSection').append(
                     `
                     <div class="col-span-2 lg:col-span-1 border p-4">
-                        <input class="dropify" type="file" id="myDropify" name="portfolio_image[]">
+                        <input class="imagePortfolio" type="file" id="imagePortfolio" name="portfolio_image[]">
                         <input type="text" name="captions[]" class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Caption">
                     </div>
                 `
                 );
-                createDrofify();
-                console.log('click');
+                imagePortfolio();
             });
 
             $(document).on('click', '#addVideoButton', function() {
                 $('#portfolioImageSection').append(
                     `
                     <div class="col-span-2 lg:col-span-1 border p-4">
-                        <input class="videoDropify" type="file" id="videoDropify" name="portfolio_video[]">
+                        <input class="videoPortfolio" type="file" id="videoPortfolio" name="portfolio_video[]">
                         <input type="text" name="video_caption[]"
                             class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                             placeholder="Caption">
                     </div>
                 `
                 );
-                createDrofify();
-                console.log('click');
+                videoPortfolio();
             });
 
-            function createDrofify() {
-                $('.dropify').dropify({
+
+            function photoThubnail() {
+                $('.photoThumbnail').dropify({
                     messages: {
                         'default': 'Image file drop here or click',
                         'replace': 'Drag and drop or click to replace',
@@ -154,9 +148,34 @@
                         'error': 'Ooops, something wrong happended.'
                     }
                 });
-                $('.videoDropify').dropify({
+            }
+
+            function videoThubnail() {
+                $('.videoThumbnail').dropify({
                     messages: {
-                        'default': 'Video file drop or click',
+                        'default': 'Video file drop here or click',
+                        'replace': 'Drag and drop or click to replace',
+                        'remove': 'Remove',
+                        'error': 'Ooops, something wrong happended.'
+                    }
+                });
+            }
+
+            function videoPortfolio() {
+                $('.videoPortfolio').dropify({
+                    messages: {
+                        'default': 'Video file drop here or click',
+                        'replace': 'Drag and drop or click to replace',
+                        'remove': 'Remove',
+                        'error': 'Ooops, something wrong happended.'
+                    }
+                });
+            }
+
+            function imagePortfolio() {
+                $('.imagePortfolio').dropify({
+                    messages: {
+                        'default': 'Image file drop here or click',
                         'replace': 'Drag and drop or click to replace',
                         'remove': 'Remove',
                         'error': 'Ooops, something wrong happended.'
