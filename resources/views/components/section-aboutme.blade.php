@@ -1,17 +1,18 @@
 <div class="">
-    <section class="">
-        <h1 class="flex items-center text-2xl space-x-2 py-4 mb-1 font-bold">
+    <div class="flex flex-row justify-between items-center py-3 lg:py-10">
+        <div class="flex items-center space-x-2">
             <svg class="text-primary w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
             </svg>
-            <span>About Me</span>
-        </h1>
-    </section>
+            <h3 class="text-lg lg:text-[26px] font-bold">About Me</h3>
+        </div>
+    </div>
+
     <section class="grid grid-cols-12 gap-4">
         <div class="col-span-12 lg:col-span-8 order-2 lg:order-1">
-            <div class="space-y-2 text-lg mb-14 md:mb-0 pr-12">
+            <div class="space-y-2 text-lg mb-5 lg:mb-14 md:mb-0 pr-12">
                 <p class="leading-[26px]">I am Monodeep Samanta, the leading UI/UX designer. I create designs that help your website turn
                     visitors into loyal customers. So your business can increase margins. One call with me will change
                     your UX/UI ideas forever. 15-30 minutes of consultation will take your business to the next level.
@@ -22,16 +23,18 @@
                     your products and services. I can handle big projects and make your business grow. Let’s make your
                     website amazing. Contact me today, and have a flying start!</p>
             </div>
-            <div class="hidden lg:block h-24"></div>
             <div class="hidden md:block">
-                <h1 class="flex items-center text-2xl space-x-2 py-4 mb-2 font-bold">
-                    <svg class="text-primary h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+
+                <div class="flex flex-row justify-between items-center py-3 lg:py-10">
+                    <div class="flex items-center space-x-2">
+                        <svg class="text-primary h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                     </svg>
-                    <span>I’m Expert In</span>
-                </h1>
+                        <span class="text-lg lg:text-[26px] font-bold">I’m Expert In</span>
+                    </div>
+                </div>
 
                 <button class="btn" style="font-size: 14px">Website Design</button>
                 <button class="btn" style="font-size: 14px">App Design</button>
@@ -49,7 +52,7 @@
                 <button class="btn" style="font-size: 14px">Digital Marketing</button>
                 <button class="btn" style="font-size: 14px">UX Design</button>
             </div>
-            <div class="hidden lg:block h-24"></div>
+            {{-- <div class="hidden lg:block h-24"></div> --}}
         </div>
         <div class="col-span-12 lg:col-span-4 order-1 lg:order-2">
             <div class="w-full border p-4 rounded-md">

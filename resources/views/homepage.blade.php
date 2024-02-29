@@ -2,15 +2,17 @@
 @section('title', 'Dashboard & UX/UI Designer | Home')
 @section('content')
     <x-section-portfolio islink="true" />
-    <x-section-chat />
-    <div class="hidden lg:block py-12"></div>
+    <div class="mt-5 lg:mt-12">
+        <x-section-chat />
+    </div>
+    {{-- <div class="hidden lg:block py-6"></div> --}}
     <div class="hidden lg:block">
         <x-section-aboutme />
     </div>
     <x-section-client />
     <div class="hidden lg:block">
-        <section class="grid grid-cols-12 gap-8 py-6">
-            <div class="col-span-12 p-2 md:col-span-4 space-y-3">
+        <section class="grid grid-cols-12 gap-8 py-8">
+            <div class="col-span-12 p-2 md:col-span-4 space-y-5">
                 <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -20,7 +22,7 @@
                 <p class="text-md">Create better visibility and capture your target audience to spread business ideas and
                     identity worldwide.</p>
             </div>
-            <div class="col-span-12 p-2 md:col-span-4 space-y-3">
+            <div class="col-span-12 p-2 md:col-span-4 space-y-5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-8 h-8">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -31,7 +33,7 @@
                 <p class="text-md">Create better visibility and capture your target audience to spread business ideas and
                     identity worldwide.</p>
             </div>
-            <div class="col-span-12 p-2 md:col-span-4 space-y-3">
+            <div class="col-span-12 p-2 md:col-span-4 space-y-5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-8 h-8">
                     <path stroke-linecap="round" stroke-linejoin="round"

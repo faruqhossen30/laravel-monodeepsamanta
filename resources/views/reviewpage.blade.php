@@ -13,8 +13,8 @@
 @extends('layouts.app')
 @section('title', 'Dashboard & UX/UI Designer | Reviews')
 @section('content')
-    <section>
-        <h1 class="flex items-center text-2xl space-x-2 lg:my-8 font-bold">
+    <div class="flex flex-row justify-between items-center py-3 lg:py-10">
+        <div class="flex items-center space-x-2">
             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                 fill="none">
                 <path
@@ -24,13 +24,12 @@
                     d="M10.0013 12.7507L11.4405 9.60648L14.5846 8.16732L11.4405 6.72815L10.0013 3.58398L8.56214 6.72815L5.41797 8.16732L8.56214 9.60648L10.0013 12.7507Z"
                     fill="#FF003A"></path>
             </svg>
-            <span>Reviews</span>
-        </h1>
-    </section>
+            <h1 class="text-lg lg:text-[26px] font-bold">Reviews</h1>
+        </div>
+    </div>
 
     <section class="p-2 md:p-0">
         @foreach ($reviews as $review)
-
             <div class="md:flex justify-between py-6 lg:py-12">
                 <div class="flex space-x-3">
                     <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
@@ -94,7 +93,7 @@
     {{-- <div class="lg:py-6"></div> --}}
     <div>
         <x-section-service islink="true" />
-        <div class="flex justify-center py-5 lg:py-20">
+        <div class="flex justify-center py-5 lg:py-10">
             <a href="{{ route('servicepage') }}" class="text-primary font-bold flex items-center space-x-2">
                 <span class="text-[15px] leading-[15px]">See All Services</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"

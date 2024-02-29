@@ -65,14 +65,14 @@
                             </a>
                         </div>
                         <div>
-                            <p class="text-sm leading-[14px] font-medium text-black">5.0 ({{ $reviews }} reviews)
-                            </p>
+                            <a href="{{route('reviewpage')}}" class="text-sm leading-[14px] font-medium text-black">5.0 ({{ $reviews }} reviews)
+                            </a>
                         </div>
                     </div>
 
                 </div>
-                <p class="hidden lg:block text-sm text-black font-medium leading-[24px]">Multi Award Winning United
-                    Kingdom Designer </p>
+                <h1 class="hidden lg:block text-sm text-black font-medium leading-[24px]">Multi Award Winning United
+                    Kingdom Designer </h1>
             </div>
         </div>
         <div class="mt-1">

@@ -41,7 +41,7 @@
     </div>
     <x-section-chat />
     <x-section-service islink="true" />
-    <div class="pb-[20px]"></div>
+    <div class="pb-[60px]"></div>
 @endsection
 
 @push('style')

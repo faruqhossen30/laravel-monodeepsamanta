@@ -68,8 +68,9 @@
     </div>
 
 
-    <div class="px-4 ">
+    <div class="py-5 lg:py-10">
         <x-section-chat />
 
     </div>
+    {{-- <div class="pb-[50px]"></div> --}}
 @endsection
