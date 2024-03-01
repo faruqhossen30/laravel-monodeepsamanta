@@ -4,7 +4,7 @@
 
     <div class="grid grid-cols-12 gap-1 pt-3">
         <div class="col-span-12 lg:col-span-8 lg:pr-10">
-            <h1 class="text-[26px] leading-[32px] py-1 mb-4 font-bold">{{ $service->title }}</h1>
+            <x-h1>{{ $service->title }}</x-h1>
             {{-- Slider Start --}}
             @if ($service->sliders->count())
                 <div id="singleServiceCarousel" class="owl-carousel owl-theme slider bg-gray-100 mx-5">

@@ -115,7 +115,7 @@
         </a>
 
         <a href="{{ route('portfoliopage') }}"
-            class="@if (request()->routeIs('portfoliopage')) border-b-2 border-b-[#FF003A] text-brand @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+            class="@if (request()->routeIs(['portfoliopage','singleportfolio'])) border-b-2 border-b-[#FF003A] text-brand @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Portfolio
         </a>
         <a href="{{ route('aboutpage') }}"
@@ -123,7 +123,7 @@
             About Me
         </a>
         <a href="{{ route('servicepage') }}"
-            class="@if (request()->routeIs('servicepage')) border-b-2 border-b-[#FF003A] text-brand @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+            class="@if (request()->routeIs(['servicepage','singleservice'])) border-b-2 border-b-[#FF003A] text-brand @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Services
         </a>
         <a href="{{ route('reviewpage') }}"
@@ -131,7 +131,7 @@
             Reviews
         </a>
         <a href="{{ route('blogpage') }}"
-            class="@if (request()->routeIs('blogpage')) border-b-2 border-b-[#FF003A] text-brand @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
+            class="@if (request()->routeIs(['blogpage','postpage','singlepost'])) border-b-2 border-b-[#FF003A] text-brand @endif inline-flex items-center gap-x-2 text-lg leading-[21px] whitespace-nowrap text-gray-400 hover:text-blue-70 focus:outline-none dark:text-blue-500 dark:focus:text-blue-400 menuhover pb-2">
             Blog
         </a>
 
