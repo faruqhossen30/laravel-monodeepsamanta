@@ -37,7 +37,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
+        return $request->all();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -60,6 +60,7 @@ class ServiceController extends Controller
             'thumbnail' => $thumbnailname,
             'category_id' => $request->category_id,
             'user_id' => Auth::user()->id,
+            'status' => $request->status,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
             'meta_keyword' => $request->meta_keyword
@@ -127,6 +128,7 @@ class ServiceController extends Controller
             'slug' => Str::slug($request->title, '-'),
             'description' => $request->description,
             'category_id' => $request->category_id,
+            'status' => $request->status,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
             'meta_keyword' => $request->meta_keyword

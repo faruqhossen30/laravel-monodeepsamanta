@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('review_url')->nullable();
             $table->unsignedBigInteger('user_id');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

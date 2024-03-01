@@ -71,6 +71,7 @@ class PortfolioController extends Controller
             'category_id' => $request->category_id,
             'thumbnail' => $thumbnailname,
             'video' => $video,
+            'status' => $request->status,
         ];
 
         $porfolio = Portfolio::create($data);
@@ -149,6 +150,7 @@ class PortfolioController extends Controller
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
             'category_id' => $request->category_id,
+            'status' => $request->status,
         ];
 
         if ($request->file('thumbnail')) {
@@ -207,19 +209,24 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::with('images')->firstWhere('id', $id);
 
-        $portfoliothumb = 'uploads/portfolio/' . $portfolio->thumbnail;
-        $portfoliotVideo = 'uploads/portfolio/' . $portfolio->video;
 
-        // return $portfolio;
 
-        // $videoPath = 'uploads/portfolio/' . $portfolio->video;
 
-        if (file_exists($portfoliothumb)) {
-            unlink($portfoliothumb);
+        if ($portfolio->thumbnail) {
+            $portfoliothumb = 'uploads/portfolio/' . $portfolio->thumbnail;
+            if (file_exists($portfoliothumb)) {
+                unlink($portfoliothumb);
+            }
         }
-        if (file_exists($portfoliotVideo)) {
-            unlink($portfoliotVideo);
+
+        if ($portfolio->video) {
+            $portfoliotVideo = 'uploads/portfolio/' . $portfolio->video;
+            if (file_exists($portfoliotVideo)) {
+                unlink($portfoliotVideo);
+            }
         }
+
+
 
         if (!empty($portfolio->images)) {
             foreach ($portfolio->images as $image) {

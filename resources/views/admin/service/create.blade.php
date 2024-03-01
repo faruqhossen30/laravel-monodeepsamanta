@@ -9,7 +9,7 @@
             @csrf
             <x-form.input label="Title" title="title" />
             <div class="py-1">
-                <label for="category_id">Revie Type</label>
+                <label for="category_id">Select Category</label>
                 <select name="category_id" id="category_id"
                     class="py-2 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
                     <option value="">Select Category</option>
@@ -21,6 +21,19 @@
                     <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                 @enderror
             </div>
+            <div class="py-1">
+                <label for="status">Status</label>
+                <select name="status" id="status"
+                    class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                    <option value="">Select Status</option>
+                    <option value="1">Active</option>
+                    <option value="0">Deactive</option>
+                </select>
+                @error('status')
+                    <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
             <textarea name="description" id="editor" cols="30" rows="10"></textarea>
             @error('description')
                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
@@ -37,6 +50,7 @@
                 </div>
             </div>
             <hr>
+
             <div>
                 <h4 class="p-2">Servie Featurs Table </h4>
                 <div>
@@ -49,7 +63,7 @@
                             class="py-3 px-4 pe-11 block w-1/6 border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                             placeholder="Starter">
 
-                        <input type="text"  name="standard"
+                        <input type="text" name="standard"
                             class="py-3 px-4 pe-11 block w-1/6 border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                             placeholder="Standard">
 

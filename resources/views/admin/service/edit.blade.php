@@ -8,33 +8,47 @@
         <form action="{{ route('service.update', $service->id) }}" method="POST" enctype="multipart/form-data" class="">
             @csrf
             @method('PUT')
-            <x-form.input label="Title" title="title" value="{{$service->title}}" />
+            <x-form.input label="Title" title="title" value="{{ $service->title }}" />
             <div class="py-1">
-                <label for="category_id">Revie Type</label>
+                <label for="category_id">Select Category</label>
                 <select name="category_id" id="category_id"
                     class="py-2 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                    <option value="">Select Category</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" @if($service->category_id == $category->id) selected @endif >{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" @if ($service->category_id == $category->id) selected @endif>
+                            {{ $category->name }}</option>
                     @endforeach
                 </select>
                 @error('category_id')
                     <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                 @enderror
             </div>
-            <textarea name="description" id="editor" cols="30" rows="10">{{$service->description}}</textarea>
+            <div class="py-1">
+                <label for="status">Status</label>
+                <select name="status" id="status"
+                    class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                    <option value="0" @if ($service->status) selected @endif>Deactive</option>
+                    <option value="1" @if ($service->status) selected @endif>Active</option>
+                </select>
+                @error('status')
+                    <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <textarea name="description" id="editor" cols="30" rows="10">{{ $service->description }}</textarea>
             @error('description')
                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
             @enderror
 
             <div class="lg:flex items-center gap-4">
                 <div class="w-full">
-                    <x-form.input label="Meta Title" title="meta_title" value="{{$service->meta_title}}" />
-                    <x-form.textarea label="Meta Description" title="meta_description" value="{{$service->meta_description}}" />
-                    <x-form.input label="Meta Keyword" title="meta_keyword" value="{{$service->meta_keyword}}" />
+                    <x-form.input label="Meta Title" title="meta_title" value="{{ $service->meta_title }}" />
+                    <x-form.textarea label="Meta Description" title="meta_description"
+                        value="{{ $service->meta_description }}" />
+                    <x-form.input label="Meta Keyword" title="meta_keyword" value="{{ $service->meta_keyword }}" />
                 </div>
                 <div class="w-full">
-                    <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{ asset('uploads/service/' . $service->thumbnail) }}">
+                    <input class="dropify" type="file" id="myDropify" name="thumbnail"
+                        data-default-file="{{ asset('uploads/service/' . $service->thumbnail) }}">
                 </div>
             </div>
             <hr>
@@ -50,7 +64,7 @@
                             class="py-3 px-4 pe-11 block w-1/6 border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                             placeholder="Starter">
 
-                        <input type="text"  name="standard"
+                        <input type="text" name="standard"
                             class="py-3 px-4 pe-11 block w-1/6 border-gray-200 shadow-sm -mt-px -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                             placeholder="Standard">
 
@@ -101,20 +115,32 @@
                                     </thead>
                                     <tbody id="simple-list" class="divide-y divide-gray-200 dark:divide-gray-700">
                                         @foreach ($service->features as $feature)
-                                        <tr>
-                                            <input type="hidden" name="featuredetails[]" value="{{$feature->feature}}">
-                                            <input type="hidden" name="starter[]" value="{{$feature->starter}}">
-                                            <input type="hidden" name="standard[]" value="{{$feature->standard}}">
-                                            <input type="hidden" name="advanced[]" value="{{$feature->advanced}}">
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">#</td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"> {{$feature->feature}} </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"> {{$feature->starter}} </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200"> {{$feature->standard}} </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 flex justify-between items-center">
-                                                <span class="">{{$feature->advanced}}</span>
-                                                <span class="bg-red-500 p-1 rounded-full text-white cursor-pointer close-icon">x</span>
-                                            </td>
-                                        </tr>
+                                            <tr>
+                                                <input type="hidden" name="featuredetails[]"
+                                                    value="{{ $feature->feature }}">
+                                                <input type="hidden" name="starter[]" value="{{ $feature->starter }}">
+                                                <input type="hidden" name="standard[]" value="{{ $feature->standard }}">
+                                                <input type="hidden" name="advanced[]"
+                                                    value="{{ $feature->advanced }}">
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                                    #</td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                                    {{ $feature->feature }} </td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                                    {{ $feature->starter }} </td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                                    {{ $feature->standard }} </td>
+                                                <td
+                                                    class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 flex justify-between items-center">
+                                                    <span class="">{{ $feature->advanced }}</span>
+                                                    <span
+                                                        class="bg-red-500 p-1 rounded-full text-white cursor-pointer close-icon">x</span>
+                                                </td>
+                                            </tr>
                                         @endforeach
 
                                     </tbody>

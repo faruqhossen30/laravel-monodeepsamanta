@@ -20,16 +20,29 @@
                     <form action="{{ route('portfolio.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <x-form.input label="Portfolio Title" title="title" />
+
                         <div class="py-1">
                             <label for="category_id">Select Category</label>
                             <select name="category_id" id="category_id"
                                 class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                <option value="">Review Type</option>
+                                <option value="">Select Category</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                             @error('category_id')
+                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="py-1">
+                            <label for="status">Status</label>
+                            <select name="status" id="status"
+                                class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                <option value="">Select Status</option>
+                                <option value="1">Active</option>
+                                <option value="1">Deactive</option>
+                            </select>
+                            @error('status')
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>

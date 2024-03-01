@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->string('video')->nullable();
             $table->unsignedBigInteger('user_id');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

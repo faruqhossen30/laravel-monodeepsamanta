@@ -16,7 +16,7 @@ class PortfoliopageController extends Controller
     public function index(Request $request)
     {
 
-        $portfolios = Portfolio::with('category')->latest()->get();
+        $portfolios = Portfolio::with('category')->where('status',true)->latest()->get();
         $categories = Category::get();
         // return $portfolios;
 

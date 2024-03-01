@@ -37,15 +37,22 @@
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
+                        <div class="py-1">
+                            <label for="status">Status</label>
+                            <select name="status" id="status"
+                                class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
+                                <option value="0" @if ($portfolio->status ) selected  @endif>Deactive</option>
+                                <option value="1" @if ($portfolio->status ) selected  @endif>Active</option>
+                            </select>
+                            @error('status')
+                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
+
                         <div
                             class="py-3 font-extrabold flex items-center text-lg text-gray-800 before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-gray-600 dark:after:border-gray-600">
                             Thumbnail Section</div>
-                        {{-- <div class="md:flex md:space-x-6">
-                            <div class="max-w-md">
-                                <input class="dropify" type="file" id="myDropify" name="thumbnail"
-                                    data-default-file="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}">
-                            </div>
-                        </div> --}}
+
 
                         <div class="grid grid-cols-2 gap-10">
                             <div class="col-span-2 lg:col-span-1">
