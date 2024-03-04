@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostpageController extends Controller
 {
     public function index(){
-        $posts = Post::paginate();
+        $posts = Post::latest()->paginate(12);
         return view('postpage', compact('posts'));
     }
     public function singlePost($slug)

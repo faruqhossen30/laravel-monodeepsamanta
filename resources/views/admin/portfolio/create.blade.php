@@ -19,33 +19,10 @@
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <form action="{{ route('portfolio.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <x-form.input label="Portfolio Title" title="title" />
+                        <x-form.input label="Portfolio Title" name="title" />
+                        <x-form.select label="Select Category" name="category_id" :data="$categories" />
+                        <x-form.select-status />
 
-                        <div class="py-1">
-                            <label for="category_id">Select Category</label>
-                            <select name="category_id" id="category_id"
-                                class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                <option value="">Select Category</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('category_id')
-                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="py-1">
-                            <label for="status">Status</label>
-                            <select name="status" id="status"
-                                class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                <option value="">Select Status</option>
-                                <option value="1">Active</option>
-                                <option value="1">Deactive</option>
-                            </select>
-                            @error('status')
-                                <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
-                            @enderror
-                        </div>
                         <div
                             class="py-3 font-extrabold flex items-center text-lg text-gray-800 before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-gray-600 dark:after:border-gray-600">
                             Thumbnail Section</div>
@@ -78,7 +55,7 @@
                         </div>
 
                         <div class="flex justify-between">
-                            <x-form.submit_button />
+                            <x-form.submit-button />
                             <div>
                                 <button type="button" id="addVideoButton"
                                     class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">

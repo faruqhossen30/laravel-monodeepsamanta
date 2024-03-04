@@ -68,8 +68,7 @@
                     </div>
                 </li> --}}
                 <li class="hs-accordion" id="service-accordion">
-                    <a
-                        class="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white">
+                    <a class="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white">
                         <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -104,7 +103,6 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-
                                     All Service
                                 </a>
                             </li>
@@ -116,7 +114,6 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-
                                     Create Service
                                 </a>
                             </li>
@@ -130,7 +127,6 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M6 6h.008v.008H6V6z" />
                                     </svg>
-
                                     Feature
                                 </a>
                             </li>
@@ -145,9 +141,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
                         </svg>
-
                         Revies
-
                         <svg class="hs-accordion-active:block ml-auto hidden w-3 h-3 text-gray-600 group-hover:text-gray-500 dark:text-gray-400"
                             width="16" height="16" viewBox="0 0 16 16" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -225,7 +219,7 @@
 
                 {{-- Flowbite --}}
 
-                {{-- <li>
+                <li>
                     <button type="button"
                         class="flex items-center w-full p-2 text-base text-slate-700 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-gray-700"
                         aria-controls="dropdown-post" data-collapse-toggle="dropdown-post">
@@ -257,7 +251,7 @@
                                 class="flex items-center w-full p-2 text-slate-700 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-gray-700">Invoice</a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
 
             </ul>
         </nav>

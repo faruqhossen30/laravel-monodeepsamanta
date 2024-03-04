@@ -71,7 +71,7 @@
                             class="lg:max-w-[194px] min-w-[176px]" alt="{{$review->category->slug}}">
                     </div>
                     <div class="text-center py-3 flex items-center space-x-2 justify-center group ">
-                        <a href="{{route('portfoliocategorypage', $review->category->slug)}}" class="text-primary font-bold text-center group-hover:text-black">Similar Works
+                        <a href="{{route('portfoliopage', ['category'=>$review->category->slug])}}" class="text-primary font-bold text-center group-hover:text-black">Similar Works
                         </a>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" data-slot="icon"

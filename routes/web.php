@@ -36,11 +36,11 @@ Route::get('about-me', [AboutpageController::class, 'index'])->name('aboutpage')
 Route::get('services', [ServicepageController::class, 'index'])->name('servicepage');
 Route::get('services/{slug}', [ServicepageController::class, 'singleService'])->name('singleservice');
 Route::get('reviews', [ReviewpageController::class, 'index'])->name('reviewpage');
-Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
-Route::get('blog/{slug}', [BlogpageController::class, 'singleBlog'])->name('singleblog');
+// Route::get('blogs', [BlogpageController::class, 'index'])->name('blogpage');
+// Route::get('blog/{slug}', [BlogpageController::class, 'singleBlog'])->name('singleblog');
 
-Route::get('posts', [PostpageController::class, 'index'])->name('postpage');
-Route::get('post/{slug}', [PostpageController::class, 'singlePost'])->name('singlepost');
+Route::get('blogs', [PostpageController::class, 'index'])->name('blogpage');
+Route::get('blog/{slug}', [PostpageController::class, 'singlePost'])->name('singleblog');
 
 // Route::get('contact', [ContactpageController::class, 'index'])->name('contactpage');
 

@@ -18,9 +18,9 @@
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data" class=" space-y-1">
                         @csrf
-                        <x-form.input label="Title" title="title" />
+                        <x-form.input label="Title" name="title" />
                         <div class="py-2">
-                            <x-form.textarea label="Short Description" title="short_description" />
+                            <x-form.textarea label="Short Description" name="short_description" />
                             @error("short_description")
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
@@ -35,7 +35,7 @@
                             <div class="col-span-12 lg:col-span-6 p-4 shadow">
                                 <h2>About Project</h2>
                                 <hr>
-                                <x-form.textarea label="Project Description" title="project_description" />
+                                <x-form.textarea label="Project Description" name="project_description" />
                                 <div class="py-2">
                                     <label for="category_ids" class="block text-sm font-medium mb-2 dark:text-white">Select Service</label>
 
@@ -59,14 +59,14 @@
                             <div class="col-span-12 lg:col-span-6 p-4 shadow">
                                 {{-- <x-form.select :data="$categories" name="category_id" />
                                 <x-form.input label="Meta Title" title="meta_title" /> --}}
-                                <x-form.textarea label="Meta Description" title="meta_description" />
-                                <x-form.input label="Meta Keyword" title="meta_keyword" />
+                                <x-form.textarea label="Meta Description" name="meta_description" />
+                                <x-form.input label="Meta Keyword" name="meta_keyword" />
                                 <input class="dropify" type="file" id="myDropify" name="thumbnail">
                             </div>
                         </div>
                         <hr>
 
-                        <x-form.submit_button />
+                        <x-form.submit-button />
                     </form>
                 </div>
             </div>

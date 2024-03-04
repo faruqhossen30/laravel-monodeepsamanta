@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate();
+        $posts = Post::latest()->paginate(10);
         return view('admin.post.index', compact('posts'));
     }
 
@@ -110,8 +110,14 @@ class PostController extends Controller
     {
         $categories = Category::get();
         $post = Post::firstWhere('id', $id);
-        // return $post;
-        return view('admin.post.edit', compact('categories','post'));
+        $categories = Category::get();
+        $softwares = Software::get();
+
+        $cat_ids = $post->pluck('id')->toArray();
+        $soft_ids = $softwares->pluck('id')->toArray();
+
+        // return $cat_ids;
+        return view('admin.post.edit', compact('categories','post','categories','softwares','cat_ids','soft_ids'));
     }
 
     /**
@@ -119,10 +125,12 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // return $request->all();
         $request->validate([
             'title' => 'required',
+            'short_description' => 'required',
+            'project_description' => 'required',
             'description' => 'required',
-            'category_id' => 'required'
         ]);
 
         // return $request->all();
@@ -131,6 +139,8 @@ class PostController extends Controller
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
+            'short_description' => $request->short_description,
+            'project_description' => $request->project_description,
             'description' => $request->description,
             'category_id' => $request->category_id,
             'user_id' => Auth::user()->id,
@@ -139,6 +149,7 @@ class PostController extends Controller
             'meta_keyword' => $request->meta_keyword
         ];
 
+        $thumbnailname = null;
         if ($request->file('thumbnail')) {
             $imagethumbnail = $request->file('thumbnail');
             $extension = $imagethumbnail->getClientOriginalExtension();
@@ -147,7 +158,27 @@ class PostController extends Controller
             $data['thumbnail'] = $thumbnailname;
         }
 
-        $porfolio = Post::firstWhere('id', $id)->update($data);
+        $post = Post::firstWhere('id',$id)->update($data);
+
+        if(!empty($request->category_ids)){
+            PostCategory::where('post_id', $id)->delete();
+             foreach($request->category_ids as $cat){
+                PostCategory::create([
+                    'post_id'=>$id,
+                    'category_id'=>$cat
+                ]);
+             }
+        }
+
+        if(!empty($request->software_ids)){
+            PostSoftware::where('post_id', $id)->delete();
+             foreach($request->software_ids as $soft){
+                PostSoftware::create([
+                    'post_id'=>$id,
+                    'software_id'=>$soft
+                ]);
+             }
+        }
 
         Session::flash('create');
         return redirect()->route('post.index');

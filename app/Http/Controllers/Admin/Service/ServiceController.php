@@ -37,7 +37,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         $request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -171,8 +171,18 @@ class ServiceController extends Controller
      */
     public function destroy(string $id)
     {
-        Service::firstWhere('id', $id)->delete();
-        Session::flash('update');
+
+        $service = Service::firstWhere('id', $id);
+
+        if ($service->thumbnail) {
+            $path = 'uploads/service/'. $service->thumbnail;
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
+
+        $service->delete();
+
         return redirect()->route('service.index');
     }
 }

@@ -52,18 +52,21 @@
                     >
                     <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
                         <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
-                            src="{{asset('uploads/blog/'.$post->thumbnail)}}"
+                            src="{{asset('uploads/post/'.$post->thumbnail)}}"
                             alt="{{$post->title}}">
 
                     </div>
 
                     <div class="mt-7">
-                        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200">
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-brand">
                             {{$post->title}}
                         </h3>
                     </div>
                 </a>
             @endforeach
+        </div>
+        <div class="pt-5">
+            {{$posts->links('pagination::custom')}}
         </div>
     </div>
 

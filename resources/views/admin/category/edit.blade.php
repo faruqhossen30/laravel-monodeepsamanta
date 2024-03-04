@@ -9,14 +9,14 @@
                     <form action="{{ route('category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <x-form.input label="Category Name" title="name" :value="$category->name" />
+                        <x-form.input label="Category Name" name="name" :value="$category->name" />
                         <div class="md:flex md:space-x-6 my-2">
                             <div class="max-w-md">
                                 <label for="myDropify" class="py-2">Category Thumbnail</label>
                                 <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{ asset('uploads/category/' . $category->thumbnail) }}">
                             </div>
                         </div>
-                        <x-form.submit_button />
+                        <x-form.submit-button />
                     </form>
                 </div>
             </div>

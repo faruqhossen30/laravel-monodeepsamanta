@@ -19,7 +19,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::paginate(10);
+        $reviews = Review::latest()->paginate(10);
         // return $reviews;
         return view('admin.review.index', compact('reviews'));
     }
@@ -143,8 +143,18 @@ class ReviewController extends Controller
      */
     public function destroy(string $id)
     {
-        Review::firstwhere('id', $id)->delete();
-        Session::flash('delete');
-        return redirect()->route('review.index');
+        $review = Review::firstWhere('id', $id);
+        // return   $review;
+
+        if ($review->thumbnail) {
+            $path = 'uploads/review/'. $review->thumbnail;
+            if (file_exists($path)) {
+                unlink($path);
+            }
+        }
+
+        $review->delete();
+
+        return redirect()->back();
     }
 }

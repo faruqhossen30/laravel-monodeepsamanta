@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', "{$category->name} | Portfolio | Dashboard & UX/UI Designer | Home")
+@section('title', "Portfolio | Dashboard & UX/UI Designer | Home")
 @section('content')
 
     <x-portfolio.creativework />

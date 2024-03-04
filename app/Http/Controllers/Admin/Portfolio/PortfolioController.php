@@ -21,7 +21,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        $portfolios = Portfolio::paginate(10);
+        $portfolios = Portfolio::latest()->paginate(10);
         // return $portfolios;
         return view('admin.portfolio.index', compact('portfolios'));
     }
@@ -208,9 +208,7 @@ class PortfolioController extends Controller
     public function destroy(string $id)
     {
         $portfolio = Portfolio::with('images')->firstWhere('id', $id);
-
-
-
+        return $portfolio;
 
         if ($portfolio->thumbnail) {
             $portfoliothumb = 'uploads/portfolio/' . $portfolio->thumbnail;

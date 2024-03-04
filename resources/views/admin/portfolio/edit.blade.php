@@ -21,7 +21,7 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <x-form.input label="Portfolio Title" title="title" value="{{ $portfolio->title }}" />
+                        <x-form.input label="Portfolio Title" name="title" value="{{ $portfolio->title }}" />
 
                         <div class="py-1">
                             <label for="category_id">Select Category</label>
@@ -41,8 +41,8 @@
                             <label for="status">Status</label>
                             <select name="status" id="status"
                                 class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                <option value="0" @if ($portfolio->status ) selected  @endif>Deactive</option>
-                                <option value="1" @if ($portfolio->status ) selected  @endif>Active</option>
+                                <option value="0" @if ($portfolio->status) selected @endif>Deactive</option>
+                                <option value="1" @if ($portfolio->status) selected @endif>Active</option>
                             </select>
                             @error('status')
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                         <div class="flex justify-between">
-                            <x-form.submit_button />
+                            <x-form.submit-button />
                             <div>
                                 <button type="button" id="addVideoButton"
                                     class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">

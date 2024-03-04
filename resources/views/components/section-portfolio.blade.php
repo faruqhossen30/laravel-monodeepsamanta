@@ -22,7 +22,7 @@
 <div class="hidden md:grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
     @foreach ($categories as $category)
         <!--Image Card Start-->
-        <a href="{{ route('portfoliocategorypage', $category->slug) }}"
+        <a href="{{ route('portfoliopage', ['category'=>$category->slug]) }}"
             class="group font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
             <!--layer start-->
             <div
@@ -49,13 +49,11 @@
 
 
 {{-- Slider statrt --}}
-
-
 <div class="block md:hidden">
     <div id="portfolioSlider" class="owl-carousel owl-theme grid grid-cols-2  sm:grid-cols-2 lg:grid-cols-4 gap-2">
         @foreach ($categories as $category)
             <!--Image Card Start-->
-            <a href="{{ route('portfoliocategorypage', $category->slug) }}"
+            <a href="{{ route('portfoliopage', ['category'=>$category->slug]) }}"
                 class="item group font-bold  relative overflow-hidden text-white rounded-md shadow cursor-pointer">
                 <!--layer start-->
                 <div

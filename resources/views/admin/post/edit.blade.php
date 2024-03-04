@@ -16,38 +16,61 @@
         <div class="flex flex-col">
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
-                    <form action="{{ route('blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data" class=" space-y-1">
+                    <form action="{{ route('post.update', $post->id) }}" method="POST" enctype="multipart/form-data" class="space-y-1">
                         @csrf
                         @method('PUT')
-                        <x-form.input label="Title" title="title" value="{{$blog->title}}" />
-                        <textarea name="description" id="editor" cols="30" rows="10">{{$blog->description}}</textarea>
-                        @error('description')
-                            <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
-                        @enderror
-                        <div class="py-1">
-                            <label for="category_id">Category</label>
-                            <select name="category_id" id="category_id"
-                                class="py-2 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                                <option value="">Select Category</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" @if($blog->id == $category->id) selected @endif>{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                            @error('category_id')
+                        @csrf
+                        <x-form.input label="Title" name="title" value="{{$post->title}}" />
+                        <div class="py-2">
+                            <x-form.textarea label="Short Description" name="short_description" value="{{$post->short_description}}" />
+                            @error("short_description")
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
-                        <div class="">
-                            <x-form.input label="Meta Title" title="meta_title" value="{{$blog->meta_title}}" />
-                            <x-form.textarea label="Meta Description" title="meta_description" value="{{$blog->meta_description}}" />
-                            <x-form.input label="Meta Keyword" title="meta_keyword" value="{{$blog->meta_keyword}}" />
-                        </div>
-                        <div class="max-w-md">
-                            <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{asset('uploads/blog/'.$blog->thumbnail)}}" >
 
-                        </div>
+                        <textarea name="description" id="editor" cols="30" rows="10">
+                            {{$post->description}}
+                        </textarea>
+                        @error('description')
+                            <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
+                        @enderror
 
-                        <x-form.submit_button />
+                        <div class="grid grid-cols-12 gap-4 py-2">
+                            <div class="col-span-12 lg:col-span-6 p-4 shadow">
+                                <h2>About Project</h2>
+                                <hr>
+                                <x-form.textarea label="Project Description" name="project_description" value="{{$post->project_description}}" />
+                                <div class="py-2">
+                                    <label for="category_ids" class="block text-sm font-medium mb-2 dark:text-white">Select Service</label>
+
+                                    <select id="category_ids" name="category_ids[]" class="js-example-basic-multiple py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"  multiple="multiple">
+                                        <option>Select Categories</option>
+                                        @foreach ($categories as $cat)
+                                            <option value="{{$cat->id}}" @if(in_array($cat->id, $cat_ids)) selected @endif >{{$cat->name}}</option>
+                                        @endforeach
+                                      </select>
+                                </div>
+                                <div class="py-2">
+                                    <label for="software_ids" class="block text-sm font-medium mb-2 dark:text-white">Select Tools</label>
+                                    <select id="software_ids" name="software_ids[]" class="js-example-basic-multiple py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"  multiple="multiple">
+                                        <option>Select Categories</option>
+                                        @foreach ($softwares as $software)
+                                            <option value="{{$software->id}}" @if(in_array($software->id, $soft_ids)) selected @endif >{{$software->name}}</option>
+                                        @endforeach
+                                      </select>
+                                </div>
+                            </div>
+                            <div class="col-span-12 lg:col-span-6 p-4 shadow">
+                                {{-- <x-form.select :data="$categories" name="category_id" />
+                                <x-form.input label="Meta Title" title="meta_title" /> --}}
+                                <x-form.textarea label="Meta Description" name="meta_description" value="{{$post->meta_description}}" />
+                                <x-form.input label="Meta Keyword" name="meta_keyword" value="{{$post->meta_keyword}}" />
+                                <input class="dropify" type="file" id="myDropify" name="thumbnail" data-default-file="{{ asset('uploads/post/' . $post->thumbnail) }}">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <x-form.submit-button title="Update Post" />
                     </form>
                 </div>
             </div>
@@ -69,10 +92,12 @@
             font-size: 24px
         }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endpush
 
 @push('script')
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('js/dropify.min.js') }}"></script>
     <script>
         ClassicEditor
@@ -91,6 +116,7 @@
                     'error': 'Ooops, something wrong happended.'
                 }
             });
+            $('.js-example-basic-multiple').select2();
         });
     </script>
 @endpush

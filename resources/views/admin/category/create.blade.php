@@ -8,14 +8,14 @@
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <x-form.input label="Category Name" title="name" />
+                        <x-form.input label="Category Name" name="name" />
                         <div class="md:flex md:space-x-6 my-2">
                             <div class="max-w-md">
                                 <label for="myDropify" class="py-2">Category Thumbnail</label>
                                 <input class="dropify" type="file" id="myDropify" name="thumbnail">
                             </div>
                         </div>
-                        <x-form.submit_button />
+                        <x-form.submit-button />
                     </form>
                 </div>
             </div>

@@ -15,12 +15,26 @@ class PortfoliopageController extends Controller
      */
     public function index(Request $request)
     {
+        $category = null;
+        $cat = null;
+        if (isset($_GET['category'])) {
+            $category = trim($_GET['category']);
+            $cat = Category::firstWhere('slug', $category);
+        }
 
-        $portfolios = Portfolio::with('category')->where('status',true)->latest()->get();
+        $portfolios = Portfolio::with('category')
+            ->when($cat, function ($query, $cat) {
+                return $query->where('category_id', $cat->id);
+            })
+            ->where('status', true)
+            ->latest()
+            ->paginate(12);
+
+
         $categories = Category::get();
         // return $portfolios;
 
-        return view('portfoliopage', compact('portfolios', 'categories'));
+        return view('portfoliopagenew', compact('portfolios', 'categories'));
     }
     /**
      * Display the user's profile form.

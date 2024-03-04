@@ -1,6 +1,6 @@
 @php
-    use App\Models\Blog;
-    $posts = Blog::latest()
+    use App\Models\Post\Post;
+    $posts = Post::latest()
         ->take(3)
         ->get();
 

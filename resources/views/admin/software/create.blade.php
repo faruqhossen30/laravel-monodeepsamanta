@@ -8,8 +8,8 @@
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <form action="{{ route('software.store') }}" method="POST">
                         @csrf
-                        <x-form.input label="Software Name" title="name" />
-                        <x-form.submit_button />
+                        <x-form.input label="Software Name" name="name" />
+                        <x-form.submit-button />
                     </form>
                 </div>
             </div>

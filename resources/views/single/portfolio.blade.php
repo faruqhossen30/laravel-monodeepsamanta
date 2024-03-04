@@ -35,7 +35,7 @@
             @if (isset($portfolio->previous))
                 <p class="text-sm text-gray-400 font-bold mb-1">PREVIOUS PROJECT</p>
                 <a href="{{ route('singleportfolio', $portfolio->previous->slug) }}"
-                    class="text-[24px] leading-[24px] font-extrabold">{{ $portfolio->previous->title }}</a>
+                    class="text-[24px] leading-[24px] font-extrabold hover:text-brand">{{ $portfolio->previous->title }}</a>
             @endif
         </div>
 
@@ -43,7 +43,7 @@
             @if (isset($portfolio->next))
                 <p class="text-sm text-gray-400 font-bold mb-1">NEXT PROJECT</p>
                 <a href="{{ route('singleportfolio', $portfolio->next->slug) }}"
-                    class="text-[24px] leading-[24px] font-extrabold">{{ $portfolio->next->title }}</a>
+                    class="text-[24px] leading-[24px] font-extrabold hover:text-brand">{{ $portfolio->next->title }}</a>
             @endif
         </div>
 
