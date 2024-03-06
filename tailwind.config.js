@@ -25,5 +25,5 @@ export default {
         },
     },
 
-    plugins: [forms, require('preline/plugin'), require('flowbite/plugin')],
+    plugins: [forms, require('preline/plugin'), require('flowbite/plugin'),require('@tailwindcss/typography'),],
 };

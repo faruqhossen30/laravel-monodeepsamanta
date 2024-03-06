@@ -7,20 +7,8 @@
     <div class="bg-white dark:bg-gray-800 dark:text-slate-400 p-2">
         <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data" class="">
             @csrf
-            <x-form.input label="Title" title="title" />
-            <div class="py-1">
-                <label for="category_id">Select Category</label>
-                <select name="category_id" id="category_id"
-                    class="py-2 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
-                    <option value="">Select Category</option>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-                @error('category_id')
-                    <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
-                @enderror
-            </div>
+            <x-form.input label="Title" name="title" />
+            <x-form.select label="Select Category" name="category_id" :data="$categories" />
             <div class="py-1">
                 <label for="status">Status</label>
                 <select name="status" id="status"
@@ -41,9 +29,9 @@
 
             <div class="lg:flex items-center gap-4">
                 <div class="w-full">
-                    <x-form.input label="Meta Title" title="meta_title" />
-                    <x-form.textarea label="Meta Description" title="meta_description" />
-                    <x-form.input label="Meta Keyword" title="meta_keyword" />
+                    <x-form.input label="Meta Title" name="meta_title" />
+                    <x-form.textarea label="Meta Description" name="meta_description" />
+                    <x-form.input label="Meta Keyword" name="meta_keyword" />
                 </div>
                 <div class="w-full">
                     <input class="dropify" type="file" id="myDropify" name="thumbnail">
@@ -121,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <x-form.submit_button />
+            <x-form.submit-button />
         </form>
     </div>
 

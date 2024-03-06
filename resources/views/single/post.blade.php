@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class=" w-11/12 max-w-3xl mx-auto py-10 ">
+    <div class=" w-11/12 max-w-3xl mx-auto py-10 prose">
         {!!$post->description!!}
     </div>
 

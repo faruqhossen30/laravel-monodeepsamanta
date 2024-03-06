@@ -33,7 +33,7 @@
             </span>
 
             {{-- Slider Start --}}
-            <div class="py-8">
+            <div class="py-8 prose">
                 {!! $service->description !!}
             </div>
 

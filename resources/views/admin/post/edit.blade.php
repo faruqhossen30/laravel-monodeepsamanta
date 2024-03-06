@@ -28,6 +28,8 @@
                             @enderror
                         </div>
 
+                        <x-form.select-status :status="$post->status" />
+
                         <textarea name="description" id="editor" cols="30" rows="10">
                             {{$post->description}}
                         </textarea>

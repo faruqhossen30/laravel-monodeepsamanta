@@ -68,7 +68,8 @@ class PostController extends Controller
             'user_id' => Auth::user()->id,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
-            'meta_keyword' => $request->meta_keyword
+            'meta_keyword' => $request->meta_keyword,
+            'status' => $request->status
         ];
 
         $post = Post::create($data);
@@ -146,7 +147,8 @@ class PostController extends Controller
             'user_id' => Auth::user()->id,
             'meta_title' => $request->meta_title,
             'meta_description' => $request->meta_description,
-            'meta_keyword' => $request->meta_keyword
+            'meta_keyword' => $request->meta_keyword,
+            'status' => $request->status
         ];
 
         $thumbnailname = null;

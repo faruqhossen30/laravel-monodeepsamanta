@@ -25,6 +25,7 @@
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
+                        <x-form.select-status />
 
                         <textarea name="description" id="editor" cols="30" rows="10"></textarea>
                         @error('description')

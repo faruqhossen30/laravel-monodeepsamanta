@@ -48,7 +48,7 @@
     <div>
         <div class="p-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($posts as $post)
-                <a href="{{route('singlepost', $post->slug)}}" class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                <a href="{{route('singleblog', $post->slug)}}" class="group rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                     >
                     <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
                         <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"

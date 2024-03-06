@@ -8,7 +8,7 @@
         <form action="{{ route('service.update', $service->id) }}" method="POST" enctype="multipart/form-data" class="">
             @csrf
             @method('PUT')
-            <x-form.input label="Title" title="title" value="{{ $service->title }}" />
+            <x-form.input label="Title" name="title" value="{{ $service->title }}" />
             <div class="py-1">
                 <label for="category_id">Select Category</label>
                 <select name="category_id" id="category_id"
@@ -41,10 +41,10 @@
 
             <div class="lg:flex items-center gap-4">
                 <div class="w-full">
-                    <x-form.input label="Meta Title" title="meta_title" value="{{ $service->meta_title }}" />
-                    <x-form.textarea label="Meta Description" title="meta_description"
+                    <x-form.input label="Meta Title" name="meta_title" value="{{ $service->meta_title }}" />
+                    <x-form.textarea label="Meta Description" name="meta_description"
                         value="{{ $service->meta_description }}" />
-                    <x-form.input label="Meta Keyword" title="meta_keyword" value="{{ $service->meta_keyword }}" />
+                    <x-form.input label="Meta Keyword" name="meta_keyword" value="{{ $service->meta_keyword }}" />
                 </div>
                 <div class="w-full">
                     <input class="dropify" type="file" id="myDropify" name="thumbnail"
@@ -150,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <x-form.submit_button />
+            <x-form.submit-button />
         </form>
     </div>
 
