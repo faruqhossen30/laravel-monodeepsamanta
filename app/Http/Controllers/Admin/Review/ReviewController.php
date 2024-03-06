@@ -66,7 +66,8 @@ class ReviewController extends Controller
             'review_type_id' => $request->review_type_id,
             'category_id' => $request->category_id,
             'review_url' => $request->review_url,
-            'user_id' => Auth::user()->id
+            'user_id' => Auth::user()->id,
+            'status' => $request->status
         ];
 
         Review::create($data);
@@ -117,7 +118,8 @@ class ReviewController extends Controller
             'review' => $request->review,
             'review_type_id' => $request->review_type_id,
             'category_id' => $request->category_id,
-            'review_url' => $request->review_url
+            'review_url' => $request->review_url,
+            'status' => $request->status
         ];
 
         if ($request->file('thumbnail')) {

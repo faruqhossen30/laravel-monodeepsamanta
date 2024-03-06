@@ -23,8 +23,14 @@
                         <x-form.input label="Rating" name="rating" type="number" />
                         <x-form.input label="Review Date" name="date" type="date" />
 
+                        <x-form.select label="Review Type" name="review_type_id" :data="$types" />
+                        <x-form.select label="Select Category" name="category_id" :data="$categories" />
+                        <x-form.input label="Review URL" type="text" name="review_url" type="text" />
+                        <x-form.textarea label="Review Text" type="text" name="review" />
+                        <x-form.select-status />
 
-                        <div class="py-1">
+
+                        {{-- <div class="py-1">
                             <label for="review_type_id">Revie Type</label>
                             <select name="review_type_id" id="review_type_id"
                                 class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
@@ -36,9 +42,9 @@
                             @error("review_type_id")
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
-                        </div>
+                        </div> --}}
 
-                        <div class="py-1">
+                        {{-- <div class="py-1">
                             <label for="category_id">Select Category</label>
                             <select name="category_id" id="category_id"
                                 class="py-3 px-4 pe-9 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600">
@@ -50,17 +56,16 @@
                             @error("category_id")
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
-                        </div>
+                        </div> --}}
 
 
-                        <x-form.input label="Review URL" type="text" name="review_url" type="text" />
-                        <div class="py-2">
+                        {{-- <div class="py-2">
                             <label for="review">Review Text</label>
                             <textarea name="review" id="review" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" rows="5" placeholder="This is a review text."></textarea>
                             @error("review")
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
-                        </div>
+                        </div> --}}
                         <hr>
 
                         <div class="md:flex md:space-x-6">

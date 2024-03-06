@@ -56,6 +56,7 @@
                                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
                             @enderror
                         </div>
+                        <x-form.select-status :status="$review->status" />
                         <hr>
 
                         <div class="md:flex md:space-x-6">
