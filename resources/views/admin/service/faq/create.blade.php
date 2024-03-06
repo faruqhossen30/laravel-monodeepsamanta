@@ -10,8 +10,8 @@
             <div>
                 <div>
                     <h3 class="p-2 font-bold">Create FAQ for Your Service</h3>
-                    <x-form.input label="Question" title="question" />
-                    <x-form.textarea label="Answer" title="answer" />
+                    <x-form.input label="Question" name="question" />
+                    <x-form.textarea label="Answer" name="answer" />
 
                     <div>
                         <button type="button" id="addButton"
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <x-form.submit_button />
+            <x-form.submit-button />
         </form>
     </div>
 

@@ -1,6 +1,6 @@
 @php
     use App\Models\Review;
-    $reviews = Review::count();
+    $reviews = Review::where('status', true)->count();
 @endphp
 <section class="sticky top-0 z-50">
     {{-- <div class="h-4 lg:h-5 hidden lg:block  sticky top-0 z-50 bg-white"></div> --}}

@@ -1,6 +1,5 @@
 @if ($service->package)
-    <div
-        class="col-span-12 lg:col-span-4">
+    <div class="col-span-12 lg:col-span-4">
         <div class="border p-3 sticky top-36 rounded-md">
             <nav class="flex space-x-2" aria-label="Tabs" role="tablist">
                 <button type="button"
@@ -39,15 +38,15 @@
                     <p class="py-2 text-[18px] leading-[26px]">
                         {{ $service->package->starter_short_description }}
                     </p>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <h1 class="text-[26px] leading-[32px] py-2 font-bold">
+                        <x-h4>
                             {{ $service->package->starter_deliver_time }} Days Delivery
-                        </h1>
+                        </x-h4>>
                     </div>
                     <div class="py-2 text-[18px] leading-[30px] full_description">
                         {!! $service->package->starter_full_description !!}
@@ -86,14 +85,15 @@
                     <p class="py-2 text-[18px] leading-[26px]">
                         {{ $service->package->standard_short_description }}
                     </p>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <h1 class="text-[26px] leading-[32px] py-2 font-bold">
+                        <x-h4>
                             {{ $service->package->standard_deliver_time }} Days Delivery
+                        </x-h4>
                         </h1>
                     </div>
                     <div class="py-2 text-[18px] leading-[30px] full_description">
@@ -134,15 +134,15 @@
                     <p class="py-2 text-[18px] leading-[26px]">
                         {{ $service->package->advance_short_description }}
                     </p>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <h1 class="text-[26px] leading-[32px] py-2 font-bold">
+                        <x-h4>
                             {{ $service->package->advance_deliver_time }} Days Delivery
-                        </h1>
+                        </x-h4>
                     </div>
                     <div class="py-3 text-[18px] leading-[30px] full_description">
                         {!! $service->package->advance_full_description !!}
