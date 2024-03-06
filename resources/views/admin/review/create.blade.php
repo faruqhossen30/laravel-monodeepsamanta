@@ -19,9 +19,9 @@
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <form action="{{ route('review.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <x-form.input label="Buyer Name" title="name" />
-                        <x-form.input label="Rating" title="rating" type="number" />
-                        <x-form.input label="Review Date" title="date" type="date" />
+                        <x-form.input label="Buyer Name" name="name" />
+                        <x-form.input label="Rating" name="rating" type="number" />
+                        <x-form.input label="Review Date" name="date" type="date" />
 
 
                         <div class="py-1">
@@ -53,7 +53,7 @@
                         </div>
 
 
-                        <x-form.input label="Review URL" type="text" title="review_url" type="text" />
+                        <x-form.input label="Review URL" type="text" name="review_url" type="text" />
                         <div class="py-2">
                             <label for="review">Review Text</label>
                             <textarea name="review" id="review" class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" rows="5" placeholder="This is a review text."></textarea>
@@ -68,7 +68,7 @@
                                 <input class="dropify" type="file" id="myDropify" name="thumbnail">
                             </div>
                         </div>
-                        <x-form.submit_button />
+                        <x-form.submit-button />
                     </form>
                 </div>
             </div>

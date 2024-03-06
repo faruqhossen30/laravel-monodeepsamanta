@@ -11,9 +11,9 @@
                     <form action="{{ route('review.update', $review->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <x-form.input label="Buyer Name" title="name" value="{{ $review->name }}" />
-                        <x-form.input label="Rating" title="rating" type="number" value="{{ $review->rating }}" />
-                        <x-form.input label="Review Date" title="date" type="date"
+                        <x-form.input label="Buyer Name" name="name" value="{{ $review->name }}" />
+                        <x-form.input label="Rating" name="rating" type="number" value="{{ $review->rating }}" />
+                        <x-form.input label="Review Date" name="date" type="date"
                             value="{{ $review->date->format('Y-m-d') }}" />
 
 
@@ -45,7 +45,7 @@
                             @enderror
                         </div>
 
-                        <x-form.input label="Review URL" title="revie_url" type="text"
+                        <x-form.input label="Review URL" name="revie_url" type="text"
                             value="{{ $review->review_url }}" />
                         <div class="py-2">
                             <label for="review">Review Text</label>
@@ -65,7 +65,7 @@
                             </div>
                         </div>
 
-                        <x-form.submit_button />
+                        <x-form.submit-button title="Update" />
                     </form>
                 </div>
             </div>

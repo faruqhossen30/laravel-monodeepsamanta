@@ -4,7 +4,7 @@
     use App\Models\Review;
     $totalportfolio = Portfolio::count();
     $totalservice = Service::count();
-    $totalreviews = Review::count();
+    $totalreviews = Review::where('status', true)->count();
 
 @endphp
 @extends('admin.layouts.app')
