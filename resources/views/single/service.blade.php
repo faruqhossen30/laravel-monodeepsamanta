@@ -303,8 +303,8 @@
         }
 
         /* .owl-nav .owl-next span{
-                                        font-size: 30px;
-                                    } */
+                                            font-size: 30px;
+                                        } */
 
         .owl-nav .owl-prev {
             position: absolute;

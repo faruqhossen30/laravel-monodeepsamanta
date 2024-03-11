@@ -13,6 +13,9 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/lightgallery-bundle.css') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('MonodeepSamanta.png') }}">
+
+    <!-- Styles -->
+    @stack('OG')
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -31,10 +34,15 @@
     </script>
     <!-- clarity -->
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "l8z5lmk9qs");
     </script>
 
@@ -58,9 +66,18 @@
             display: none;
         }
 
-        /* for serviceslider */
-        #blogslider .owl-dots {
+        /* for postSlider */
+        #postSlider .owl-dots {
             display: none;
+        }
+
+        /* for relatedblog */
+        #relatedblog .owl-dots {
+            display: none;
+        }
+
+        li::marker {
+            color: black !important;
         }
     </style>
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
@@ -110,6 +127,14 @@
     </script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script>
+        const next = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                        </svg>
+                        `;
+        const prev = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                        </svg>
+                        `;
         $('#portfolioSlider').owlCarousel({
             items: 2,
             center: true,
@@ -125,6 +150,25 @@
             items: 2,
             loop: true,
             margin: 10,
+
+        });
+        $('#postSlider').owlCarousel({
+            items: 3,
+            loop: true,
+            margin: 50,
+            nav: true,
+            navText: [next, prev],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                1200: {
+                    items: 3,
+                },
+            }
 
         });
         $('#categorySlider').owlCarousel({

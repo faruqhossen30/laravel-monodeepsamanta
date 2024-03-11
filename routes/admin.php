@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\Service\ServiceController;
 use App\Http\Controllers\Admin\Service\ServicefaqController;
 use App\Http\Controllers\Admin\Service\ServicepackageController;
 use App\Http\Controllers\Admin\Service\ServicesliderController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\ServicepageController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,4 +45,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('service/{id}/create-slider', [ServicesliderController::class, 'store'])->name('service.slider.store');
 
     Route::get('service/{id}/delete',[ ServicesliderController::class, 'removeImage'])->name('removesliderimage');
+    Route::get('settings',[ SettingController::class, 'index'])->name('settingpage');
 });
