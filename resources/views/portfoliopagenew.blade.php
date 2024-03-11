@@ -10,7 +10,7 @@
 
     <x-portfolio.creativework />
 
-    <div class="hidden lg:block sticky lg:top-[110px] top-20 z-30 text-gray-500 space-x-2 py-2 bg-white">
+    <div class="hidden lg:block sticky lg:pt-[60px] lg:top-[110px] top-20 z-30 text-gray-500 space-x-2 py-2 bg-white" data-aos="fade-down" data-aos-duration="1000">
         <a href="{{ route('portfoliopage') }}"
             class="mb-2 inline-block font-bold border px-6 py-1 rounded  transition @if(!$query) bg-black text-white @endif">All Capabilities</a>
         @foreach ($categories as $cat)
@@ -18,8 +18,8 @@
                 class="mb-2 inline-block font-bold border px-6 py-1 rounded  transition @if ($cat->slug == $query) bg-black text-white @endif">{{ $cat->name }}</a>
         @endforeach
     </div>
-    <div class="block lg:hidden  sticky top-16 lg:top-20 z-30 bg-white">
-        <div id="categorySlider" class="owl-carousel owl-theme mr-4 space-y-2 py-4 text-gray-500 w-full">
+    <div class="sticky z-30 block bg-white lg:hidden top-16 lg:top-20">
+        <div id="categorySlider" class="w-full py-4 mr-4 space-y-2 text-gray-500 owl-carousel owl-theme">
             <a href="{{ route('portfoliopage') }}"
             class="mb-2 inline-block font-bold border px-6 py-1 rounded  transition @if(!$query) bg-black text-white @endif">All Capabilities</a>
             @foreach ($categories as $cat)

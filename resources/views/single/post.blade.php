@@ -25,15 +25,15 @@
 @section('blog')
 
     <div class=" bg-[#CFE2F3] py-10 w-full pb-60">
-        <div class="py-10 flex justify-center space-y-3 text-center lg:text-right">
+        <div class="flex justify-center py-10 space-y-3 text-center lg:text-right">
             <div class="py-6 lg:py-0">
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('singleblog', $post->slug) }}"
-                    class="bg-white text-white  font-medium rounded-full text-sm p-4 text-center inline-flex items-center me-2">
+                    class="inline-flex items-center p-4 text-sm font-medium text-center text-white bg-white rounded-full me-2">
                     <img src="{{ asset('img/icon/facebook-app-symbol.png') }}" class="w-4" alt="">
                 </a>
 
                 <a href="https://twitter.com/intent/tweet?url={{ route('singleblog', $post->slug) }}"
-                    class="bg-white text-white  font-medium rounded-full text-sm p-4 text-center inline-flex items-center me-2">
+                    class="inline-flex items-center p-4 text-sm font-medium text-center text-white bg-white rounded-full me-2">
                     <svg class="text-black" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
                         <path
@@ -42,7 +42,7 @@
                 </a>
 
                 {{-- <button type="button"
-                    class="bg-white text-white  font-medium rounded-full text-sm p-4 text-center inline-flex items-center me-2">
+                    class="inline-flex items-center p-4 text-sm font-medium text-center text-white bg-white rounded-full me-2">
                     <svg class="text-black" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
                         <path
@@ -51,7 +51,7 @@
                 </button> --}}
 
                 <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ route('singleblog', $post->slug) }}"
-                    class="bg-white text-white  font-medium rounded-full text-sm p-4 text-center inline-flex items-center me-2">
+                    class="inline-flex items-center p-4 text-sm font-medium text-center text-white bg-white rounded-full me-2">
                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
                         <circle cx="4.983" cy="5.009" r="2.188"></circle>
@@ -64,25 +64,25 @@
             </div>
         </div>
 
-        <div class=" mx-auto">
-            <h1 class=" font-bold text-3xl lg:text-[40px] leading-[48px] text[#0b0c0d] max-w-4xl mx-auto text-center mb-10">
+        <div class="mx-auto ">
+            <h1 class=" font-bold text-3xl lg:text-[40px] leading-[48px] text[#0b0c0d] max-w-4xl mx-auto text-center mb-10" data-aos="fade-down" data-aos-duration="1000">
                 {{ $post->title }}</h1>
-            <p class="max-w-xl mx-auto text-center leading-7 text-[#0b0c0d]">{{ $post->short_description }}</p>
+            <p class="max-w-xl mx-auto text-center leading-7 text-[#0b0c0d]" data-aos="fade-up" data-aos-duration="1000">{{ $post->short_description }}</p>
         </div>
     </div>
     </div>
 
-    <div class=" w-11/12 max-w-5xl mx-auto -mt-44">
+    <div class="w-11/12 max-w-5xl mx-auto -mt-44" data-aos="zoom-in" data-aos-duration="1000">
         <img class="rounded-md" src="{{ asset('uploads/post/' . $post->thumbnail) }}" alt="">
     </div>
 
-    <div class=" w-11/12 max-w-5xl mx-auto grid grid-cols-12 py-14 px-10 border my-6 rounded-md shadow gap-10 text-sm">
-        <div class=" col-span-12 lg:col-span-6">
-            <h2 class=" font-semibold mb-5 uppercase">About This Project</h2>
+    <div class="grid w-11/12 max-w-5xl grid-cols-12 gap-10 px-10 mx-auto my-6 text-sm border rounded-md shadow py-14" data-aos="fade-right" data-aos-duration="1000">
+        <div class="col-span-12 lg:col-span-6">
+            <h2 class="mb-5 font-semibold uppercase ">About This Project</h2>
             <p class="font-normal text-[16px] leading-[26px]">{{ $post->project_description }}</p>
         </div>
-        <div class=" col-span-12 md:col-span-6 lg:col-span-3">
-            <h2 class=" font-semibold mb-5">SERVICES</h2>
+        <div class="col-span-12 md:col-span-6 lg:col-span-3">
+            <h2 class="mb-5 font-semibold ">SERVICES</h2>
             <ul>
                 @foreach ($post->categories as $cat)
                     <li><a class="underline" href="#">{{ $cat->name }}</a></li>
@@ -91,8 +91,8 @@
             </ul>
         </div>
 
-        <div class=" col-span-12 md:col-span-6 lg:col-span-3">
-            <h2 class=" font-semibold uppercase mb-5">Technologies </h2>
+        <div class="col-span-12 md:col-span-6 lg:col-span-3">
+            <h2 class="mb-5 font-semibold uppercase ">Technologies </h2>
             <ul>
                 @foreach ($post->softwares as $soft)
                     <li>{{ $soft->name }}</li>
@@ -101,52 +101,51 @@
         </div>
     </div>
 
-    <div class=" w-11/12 max-w-3xl mx-auto py-10 prose">
+    <div class="w-11/12 max-w-3xl py-10 mx-auto prose " data-aos="fade" data-aos-duration="1000">
         {!! $post->description !!}
     </div>
 
-    <div class="bg-[#CFE2F3] max-w-[1260px] mx-auto flex flex-col items-center py-10 rounded-lg">
+    <div class="bg-[#CFE2F3] max-w-[1260px] mx-auto flex flex-col items-center py-10 rounded-lg" data-aos="zoom-in" data-aos-duration="1000">
         <svg class="w-20 h-20 text-green-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
             <path
                 d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z" />
         </svg>
-        <div>
-            <p class="px-10 text-3xl leading-[42px] font-bold text-center max-w-2xl">
+        <div class="py-10 ">
+            <p class="px-10 text-2xl leading-[42px] font-bold text-center max-w-5xl">
                 I'm Monodeep Samanat, an award-winning senior UX/UI designer based in London. Over my 15-year career journey in UX/UI design, I've navigated through various challenges and triumphs. Now, I'm excited to share my insights and experiences through articles. Join me as I delve into the dynamic world of UX/UI design.
             </p>
         </div>
         <div class="flex flex-col items-center py-10 font-bold">
             <img class="w-20 h-20" src="{{ asset('img/pic.png') }}" alt="">
-            <span>Monodeep Samanta</span>
+            <span class="pt-4">Monodeep Samanta</span>
             {{-- <span class="font-normal">Director of Monodeep Samanta</span> --}}
         </div>
     </div>
 
 
     <div class="max-w-[1260px] mx-auto">
-        <div class="text-center py-10">
-            <h1 class="font-bold text-3xl">
+        <div class="py-10 text-center">
+            <h1 class="text-3xl font-bold" data-aos="fade-right" data-aos-duration="1000">
                 Related posts
             </h1>
-            <p class="py-4">Check out more blogs and stories.</p>
+            <p class="py-4" data-aos="fade-left" data-aos-duration="1000">Check out more blogs and stories.</p>
         </div>
         <div class="py-5"></div>
 
         <div id="postSlider"
-            class="px-4 lg:px-0 owl-carousel owl-theme grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 slider py-20">
+            class="grid grid-cols-2 px-4 py-20 lg:px-0 owl-carousel owl-theme sm:grid-cols-2 lg:grid-cols-4 slider">
             @foreach ($posts as $post)
-                <a class="group
-            rounded-lg overflow-hidden dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                <a data-aos="zoom-in" data-aos-duration="1000" class="overflow-hidden rounded-lg group dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                     href="{{ route('singleblog', $post->slug) }}">
                     <div class="relative pt-[50%] sm:pt-[70%] rounded-lg overflow-hidden">
-                        <img class="w-full h-full absolute top-0 start-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-lg"
+                        <img class="absolute top-0 object-cover w-full h-full transition-transform duration-500 ease-in-out rounded-lg start-0 group-hover:scale-105"
                             src="{{ asset('uploads/post/' . $post->thumbnail) }}" alt="Image Description">
                     </div>
 
                     <div class="mt-7">
                         <h3
-                            class="text-md lg:text-2xl font-semibold text-gray-800 dark:text-gray-200 group-hover:text-brand">
+                            class="font-semibold text-gray-800 text-md lg:text-2xl dark:text-gray-200 group-hover:text-brand">
                             {{ $post->title }}
                         </h3>
                     </div>

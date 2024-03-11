@@ -4,8 +4,8 @@
 
     <div>
         <div>
-            <h3 class="font-bold text-2xl py-2">{{ $post->title }}</h3>
-            <div class="flex space-x-3 py-2">
+            <h3 class="py-2 text-2xl font-bold">{{ $post->title }}</h3>
+            <div class="flex py-2 space-x-3">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -21,11 +21,11 @@
             </div>
         </div>
         <div>
-            <img src="{{ asset('uploads/blog/' . $post->thumbnail) }}" class="w-full max-h-80 object-cover " alt="">
+            <img src="{{ asset('uploads/blog/' . $post->thumbnail) }}" class="object-cover w-full max-h-80 " alt="">
         </div>
         <div class="flex justify-center mx-auto space-x-14 mt-[90px] ">
 
-            <div class="space-y-5 hidden lg:flex flex-col  ">
+            <div class="flex-col hidden space-y-5 lg:flex ">
                 <a href="https://www.behance.net/monodeepsamanta"
                     class="inline-flex  justify-center items-center w-14  h-14 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800">
                     <svg xmlns="http://www.w3.org/2000/svg" class=""w-6 h-6 lg:w-8 lg:h-8" width="20"
@@ -56,16 +56,16 @@
                 </a>
             </div>
 
-            <div class=" max-w-2xl">
+            <div class="max-w-2xl ">
                 {!! $post->description !!}
                 <div>
-                    <p class="text-lg py-4">Published: {{ $post->created_at->format('d M Y') }}</p>
+                    <p class="py-4 text-lg">Published: {{ $post->created_at->format('d M Y') }}</p>
                     <p class="py-6">Written by:</p>
                     <div class="flex space-x-4">
                         <img class="w-20 h-20" src="{{asset('img/pic.png')}}" alt="">
                         <div>
                             <h2>Monoedeep Samanta</h2>
-                            <p class=" leading-6 text-lg">Monodeep Samanta, the leading UI/UX designer from UK. I am really good at what I do. Through design, I love to solve complex problems and build beautiful & relevant interfaces.</p>
+                            <p class="text-lg leading-6 ">Monodeep Samanta, the leading UI/UX designer from UK. I am really good at what I do. Through design, I love to solve complex problems and build beautiful & relevant interfaces.</p>
                         </div>
                     </div>
                 </div>

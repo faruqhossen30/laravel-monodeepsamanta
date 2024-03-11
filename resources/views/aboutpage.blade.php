@@ -6,7 +6,7 @@
         <x-section-chat />
     </div>
     <x-section-portfolio islink="true"  />
-    <div class="py-4 lg:py-14"></div>
+    {{-- <div class="py-4 lg:py-14"></div> --}}
 
 @endsection
 

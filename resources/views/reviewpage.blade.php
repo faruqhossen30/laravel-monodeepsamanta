@@ -13,7 +13,7 @@
 @extends('layouts.app')
 @section('title', 'Dashboard & UX/UI Designer | Reviews')
 @section('content')
-    <div class="flex flex-row justify-between items-center py-3 lg:py-10">
+    <div class="flex flex-row items-center justify-between py-3 lg:py-10" data-aos="fade-down" data-aos-duration="1000">
         <div class="flex items-center space-x-2">
             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                 fill="none">
@@ -30,13 +30,13 @@
 
     <section class="p-2 md:p-0">
         @foreach ($reviews as $review)
-            <div class="md:flex justify-between py-6 lg:py-12">
-                <div class="flex space-x-3">
-                    <div class="flex justify-center items-center p-6 bg-zinc-200 w-8 h-8 rounded-full">
+            <div class="justify-between py-6 md:flex lg:py-12">
+                <div class="flex space-x-3" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="flex items-center justify-center w-8 h-8 p-6 rounded-full bg-zinc-200">
                         <span class="font-bold">{{acronym($review->name)}}</span>
                     </div>
                     <div class="space-y-2">
-                        <h3 class="font-bold text-lg">{{ $review->name }}</h3>
+                        <h3 class="text-lg font-bold">{{ $review->name }}</h3>
                         <div class="flex items-center space-x-2 font-bold">
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16"
                                 height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -49,7 +49,7 @@
                         <div>
                             <p class="text-[18px] leading-[26px] max-w-4xl">{{ $review->review }}</p>
                         </div>
-                        <div class="flex space-x-2 py-4 items-center">
+                        <div class="flex items-center py-4 space-x-2">
                             <p class="text-sm">Originally Posted on:</p>
                             <a href="{{ $review->review_url ?? '#' }}" target="_blank"
                                 class="flex text-sm leading-[18px] text-primary font-bold items-center space-x-2">
@@ -65,13 +65,13 @@
                     </div>
                 </div>
 
-                <div>
+                <div data-aos="fade-left" data-aos-duration="1000">
                     <div class="flex justify-center">
                         <img src="{{ asset('uploads/review/' . $review->thumbnail) }}"
                             class="lg:max-w-[194px] min-w-[176px]" alt="{{$review->category->slug}}">
                     </div>
-                    <div class="text-center py-3 flex items-center space-x-2 justify-center group ">
-                        <a href="{{route('portfoliopage', ['category'=>$review->category->slug])}}" class="text-primary font-bold text-center group-hover:text-black">Similar Works
+                    <div class="flex items-center justify-center py-3 space-x-2 text-center group ">
+                        <a href="{{route('portfoliopage', ['category'=>$review->category->slug])}}" class="font-bold text-center text-primary group-hover:text-black">Similar Works
                         </a>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" data-slot="icon"
@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </div>
-            <hr>
+            <hr data-aos="fade-up" data-aos-duration="1000">
 
         @endforeach
         <div class="pt-5">
@@ -93,8 +93,8 @@
     {{-- <div class="lg:py-6"></div> --}}
     <div>
         <x-section-service islink="true" />
-        <div class="flex justify-center py-5 lg:py-10">
-            <a href="{{ route('servicepage') }}" class="text-primary font-bold flex items-center space-x-2">
+        <div class="flex justify-center py-5 lg:py-10" data-aos="fade-up" data-aos-duration="1000">
+            <a href="{{ route('servicepage') }}" class="flex items-center space-x-2 font-bold text-primary">
                 <span class="text-[15px] leading-[15px]">See All Services</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">

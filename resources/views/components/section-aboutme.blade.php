@@ -1,18 +1,18 @@
 <div class="">
-    <div class="flex flex-row justify-between items-center py-3 lg:py-10">
+    <div class="flex flex-row justify-between items-center py-3 lg:pt-[60px] lg:pb-6" data-aos="fade-right" data-aos-duration="1000">
         <div class="flex items-center space-x-2">
-            <svg class="text-primary w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
             </svg>
-            <h3 class="text-lg lg:text-[26px] font-bold">About Me</h3>
+            <h2 class="text-lg lg:text-[26px] font-bold">About Me</h2>
         </div>
     </div>
 
     <section class="grid grid-cols-12 gap-4">
-        <div class="col-span-12 lg:col-span-8 order-2 lg:order-1">
-            <div class="space-y-2 text-lg mb-5 lg:mb-14 md:mb-0 pr-12">
+        <div class="order-2 col-span-12 lg:col-span-8 lg:order-1" data-aos="fade-right" data-aos-duration="1000">
+            <div class="pr-12 mb-5 space-y-2 text-lg lg:mb-14 md:mb-0">
                 <p class="leading-[26px]">I am Monodeep Samanta, the leading UI/UX designer. I create designs that help your website turn
                     visitors into loyal customers. So your business can increase margins. One call with me will change
                     your UX/UI ideas forever. 15-30 minutes of consultation will take your business to the next level.
@@ -25,14 +25,14 @@
             </div>
             <div class="hidden md:block">
 
-                <div class="flex flex-row justify-between items-center py-3 lg:py-10">
+                <div class="flex flex-row items-center justify-between py-3 lg:pt-8 lg:pb-6">
                     <div class="flex items-center space-x-2">
-                        <svg class="text-primary h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                     </svg>
-                        <span class="text-lg lg:text-[26px] font-bold">I’m Expert In</span>
+                        <h3 class="text-lg lg:text-[26px] font-bold">I’m Expert In</h3>
                     </div>
                 </div>
 
@@ -52,23 +52,23 @@
                 <button class="btn" style="font-size: 14px">Digital Marketing</button>
                 <button class="btn" style="font-size: 14px">UX Design</button>
             </div>
-            {{-- <div class="hidden lg:block h-24"></div> --}}
+            {{-- <div class="hidden h-24 lg:block"></div> --}}
         </div>
-        <div class="col-span-12 lg:col-span-4 order-1 lg:order-2">
-            <div class="w-full border p-4 rounded-md">
+        <div class="order-1 col-span-12 lg:col-span-4 lg:order-2" data-aos="fade-left" data-aos-duration="1000">
+            <div class="w-full p-4 border rounded-md">
                 <div class="space-y-5">
-                    <div class="flex items-center space-x-2 py-2">
+                    <div class="flex items-center py-2 space-x-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                           </svg>
 
                         <span class="text-md">15 Years of Experience</span>
                     </div>
-                    <p class="font-bold text-lg">I speak</p>
+                    <p class="text-lg font-bold">I speak</p>
                     <P class="leading-[14px] pb-2"><span class="text-[#aaaaaa] text-sm font-semibold leading-[14px]">English
                         </span> <span class="text-primary font-bold leading-[14px]">Fluent</span></P>
                     <h3 class="text-[18px] leading-[18px] font-semibold py-2 pt-2">My Online presence</h3>
-                    <div class="mt-3 space-x-6 inline-flex items-center">
+                    <div class="inline-flex items-center mt-3 space-x-6">
                         <a href="https://www.behance.net/monodeepsamanta" target="_blank" class="inline-flex justify-center items-center w-10 h-10 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
                             >
                             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -87,11 +87,11 @@
                         </a>
                         <a href="https://www.flickr.com/photos/monodeepsamanta/" target="_blank" class="inline-flex justify-center items-center w-10 h-10 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
                             >
-                            <img class="h-6 w-6" src="{{ asset('img/icon/flickr.png') }}" alt="">
+                            <img class="w-6 h-6" src="{{ asset('img/icon/flickr.png') }}" alt="">
                         </a>
                         <a target="_blank" class="inline-flex justify-center items-center w-10 h-10 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
                             href="#">
-                            <img class="h-6 w-6" src="{{ asset('img/icon/500px-monogramwhite.png') }}" alt="">
+                            <img class="w-6 h-6" src="{{ asset('img/icon/500px-monogramwhite.png') }}" alt="">
                         </a>
                         <a href="https://www.linkedin.com/in/monodeepsamanta/" target="_blank" class="inline-flex justify-center items-center w-10 h-10 text-center text-white hover:bg-primary bg-black hover:text-white hover:bg-[#FF003A] rounded-full focus:outline-none focus:ring-2  focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800"
                             >
@@ -102,7 +102,7 @@
                             </svg>
                         </a>
                     </div>
-                    <p class="font-medium text-lg">Contact Me On</p>
+                    <p class="text-lg font-medium">Contact Me On</p>
                 </div>
                 <a class="block w-full bg-black hover:bg-[#FF003A] text-white text-center text-base py-2 rounded-md my-3"
                 href="https://wa.me/+447810293819">Via What's App</a>

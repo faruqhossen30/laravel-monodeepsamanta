@@ -1,7 +1,7 @@
-<a href="{{ route('singleportfolio', $portfolio->slug) }}"
+<a href="{{ route('singleportfolio', $portfolio->slug) }}" data-aos="zoom-in" data-aos-duration="1000"
     class="group col-span-12 sm:col-span-6 lg:col-span-4 font-bold relative overflow-hidden text-white rounded-sm shadow cursor-pointer mix {{ $portfolio->category->slug }}">
     <!--layer start-->
-    <div class="w-full h-full absolute top-0 left-0 bg-black opacity-50 hidden  group-hover:block transition z-10">
+    <div class="absolute top-0 left-0 z-10 hidden w-full h-full transition bg-black opacity-50 group-hover:block">
     </div>
     <!--layer end-->
     @if ($portfolio->video)
@@ -9,12 +9,12 @@
             <source src="{{ asset('uploads/portfolio/' . $portfolio->video) }}" type="video/mp4">
         </video>
     @else
-        <img class="w-full h-full max-h-80 object-cover group-hover:scale-110 group-hover:rotate-3 transition duration-500"
+        <img class="object-cover w-full h-full transition duration-500 max-h-80 group-hover:scale-110 group-hover:rotate-3"
             src="{{ asset('uploads/portfolio/' . $portfolio->thumbnail) }}" alt="">
     @endif
 
 
-    <div class="absolute group-hover:bottom-6 group-hover:left-6 hidden group-hover:block bottom-0 z-10  space-y-2">
+    <div class="absolute bottom-0 z-10 hidden space-y-2 group-hover:bottom-6 group-hover:left-6 group-hover:block">
         <h1 class="text-2xl">{{ $portfolio->title }}</h1>
 
         <span class="hover:text-[#FF003A] transition flex items-center space-x-2">
