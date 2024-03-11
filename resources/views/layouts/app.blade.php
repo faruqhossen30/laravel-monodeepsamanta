@@ -82,6 +82,7 @@
     </style>
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
 </head>
 
 <body class="bg-white">
@@ -109,6 +110,12 @@
             }); //win func.
         }); //ready func.
     </script>
+    <script src="{{ asset('js/aos.js') }}"></script>
+    @stack('scripts')
+    <script>
+        AOS.init();
+    </script>
+
     <script>
         (function() {
             function onTidioChatApiReady() {

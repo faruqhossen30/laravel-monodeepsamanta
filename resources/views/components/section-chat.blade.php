@@ -1,4 +1,4 @@
-<div class="max-w-[1260px] h-full rounded-md mx-auto py-5 lg:py-10 my-5 lg:my-4 space-y-2 text-white text-center"
+<div  data-aos="zoom-in" data-aos-duration="1000" class="max-w-[1260px] h-full rounded-md mx-auto py-5 lg:py-10 my-5 lg:my-4 space-y-2 text-white text-center"
     style="background-image: url('{{ asset('img/action-bg.webp') }}')">
     <h5 class="font-black text-3xl lg:text-[40px] lg:leading-[50px] mt-2">HAVE A PROJECT</h5>
     <h5 class="text-lg lg:text-[24px]  lg:leading-[28px] font-black">THAT NEEDS SOME SOME</h5>
