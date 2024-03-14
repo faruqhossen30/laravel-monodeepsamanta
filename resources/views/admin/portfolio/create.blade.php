@@ -2,7 +2,7 @@
 @section('title', 'Home Page')
 @section('content')
     <x-dashboard.breadcrumb title="Portfolio List" route="portfolio.index" />
-    <div class="bg-white dark:bg-gray-800 dark:text-slate-400 p-2">
+    <div class="p-2 bg-white dark:bg-gray-800 dark:text-slate-400">
         @if ($errors->any())
             <div class="alert alert-danger">
                 <p><strong>Opps Something went wrong</strong></p>
@@ -28,7 +28,7 @@
                             Thumbnail Section</div>
                         <div class="grid grid-cols-2 gap-10">
                             <div class="col-span-2 lg:col-span-1">
-                                <div class="md:flex my-2">
+                                <div class="my-2 md:flex">
                                     <div class="w-full">
                                         <label for="photoThubnail" class="py-2">Photo Thumbnail</label>
                                         <input class="photoThumbnail" type="file" id="photoThubnail" name="thumbnail">
@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                             <div class="col-span-2 lg:col-span-1">
-                                <div class="md:flex my-2">
+                                <div class="my-2 md:flex">
                                     <div class="w-full">
                                         <label for="videoThumbnail" class="py-2">Video Thumbnail</label>
                                         <input class="videoThumbnail" type="file" id="videoThumbnail" name="video">
@@ -50,7 +50,6 @@
                         <div class="">
                             <div class="grid grid-cols-2 gap-5" id="portfolioImageSection">
 
-
                             </div>
                         </div>
 
@@ -58,7 +57,7 @@
                             <x-form.submit-button />
                             <div>
                                 <button type="button" id="addVideoButton"
-                                    class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                    class="inline-flex items-center justify-center gap-2 px-3 py-1 my-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -68,7 +67,7 @@
                                     Add Video
                                 </button>
                                 <button type="button" id="addImageButton"
-                                    class="py-1 my-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
+                                    class="inline-flex items-center justify-center gap-2 px-3 py-1 my-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -105,9 +104,9 @@
             $(document).on('click', '#addImageButton', function() {
                 $('#portfolioImageSection').append(
                     `
-                    <div class="col-span-2 lg:col-span-1 border p-4">
+                    <div class="col-span-2 p-4 border lg:col-span-1">
                         <input class="imagePortfolio" type="file" id="imagePortfolio" name="portfolio_image[]">
-                        <input type="text" name="captions[]" class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Caption">
+                        <input type="text" name="captions[]" class="block w-full px-4 py-3 text-sm border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Caption">
                     </div>
                 `
                 );
@@ -117,10 +116,10 @@
             $(document).on('click', '#addVideoButton', function() {
                 $('#portfolioImageSection').append(
                     `
-                    <div class="col-span-2 lg:col-span-1 border p-4">
+                    <div class="col-span-2 p-4 border lg:col-span-1">
                         <input class="videoPortfolio" type="file" id="videoPortfolio" name="portfolio_video[]">
                         <input type="text" name="video_caption[]"
-                            class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                            class="block w-full px-4 py-3 text-sm border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                             placeholder="Caption">
                     </div>
                 `
