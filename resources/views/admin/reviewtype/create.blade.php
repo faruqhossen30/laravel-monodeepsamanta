@@ -9,7 +9,7 @@
                     <form action="{{ route('reviewtype.store') }}" method="POST">
                         @csrf
                         <x-form.input label="Review Type Name" title="name" />
-                        <x-form.submit_button/>
+                        <x-form.submit-button/>
                     </form>
                 </div>
             </div>

@@ -10,7 +10,7 @@
                         @csrf
                         <x-form.input label="Feature title" title="title" />
                         <x-form.input label="Default Value" title="value" />
-                        <x-form.submit_button/>
+                        <x-form.submit-button/>
                     </form>
                 </div>
             </div>

@@ -47,7 +47,7 @@
 
                         </div>
 
-                        <x-form.submit_button />
+                        <x-form.submit-button />
                     </form>
                 </div>
             </div>

@@ -59,7 +59,7 @@
 
 
 
-            <x-form.submit_button title="Update" />
+            <x-form.submit-button title="Update" />
         </form>
         @if ($photos->count())
             <div>
@@ -110,7 +110,7 @@
                 $('#portfolioImageSection').append(
                     `
                     <div class="col-span-2 lg:col-span-1 border p-4">
-                        <input class="dropify" type="file" id="myDropify" name="portfolio_image[]">
+                        <input class="dropify" type="file" id="myDropify" name="thumbnails[]">
                         <input type="text" name="captions[]" class="py-3 px-4 block w-full border-gray-200 text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Caption">
                     </div>
                 `

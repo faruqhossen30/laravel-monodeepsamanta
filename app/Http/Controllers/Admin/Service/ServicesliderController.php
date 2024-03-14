@@ -16,14 +16,15 @@ class ServicesliderController extends Controller
     {
         $service = Service::firstWhere('id', $id);
         $photos = ServiceSlider::where('service_id', $id)->get();
-        // return $package;
+        // return $service;
         return view('admin.service.slider.create', compact('service','photos'));
     }
     public function store(Request $request, $id)
     {
+        // return $request->all();
 
         $request->validate([
-            'thumbnails' => 'required'
+            'thumbnails' => 'required|array'
         ]);
 
         if(!empty($request->file('thumbnails'))){

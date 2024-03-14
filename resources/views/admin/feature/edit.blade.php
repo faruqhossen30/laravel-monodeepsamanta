@@ -12,7 +12,7 @@
                         {{-- <x-form.input label="feature Name" title="name" :value="$feature->name"/> --}}
                         <x-form.input label="Feature title" title="title" :value="$feature->title" />
                         <x-form.input label="Default Value" title="value" :value="$feature->value" />
-                        <x-form.submit_button />
+                        <x-form.submit-button />
                     </form>
                 </div>
             </div>
