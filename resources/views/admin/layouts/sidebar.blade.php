@@ -248,6 +248,34 @@
                         </li>
                     </ul>
                 </li>
+                {{-- <li>
+                    <button type="button"
+                        class="flex items-center w-full p-2 text-base transition duration-75 rounded-lg text-slate-700 group hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-gray-700"
+                        aria-controls="dropdown-category-gallery" data-collapse-toggle="dropdown-category-gallery">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                          </svg>
+
+                        <span class="flex-1 text-left ms-3 rtl:text-right whitespace-nowrap">Gallary</span>
+                        <svg class="block w-3 h-3 ml-auto text-gray-600 hs-accordion-active:hidden group-hover:text-gray-500 dark:text-gray-400"
+                            width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 5L8.16086 10.6869C8.35239 10.8637 8.64761 10.8637 8.83914 10.6869L15 5"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        </svg>
+                    </button>
+                    <ul id="dropdown-category-gallery" class="hidden py-2 space-y-2">
+                        <li>
+                            <a href="{{ route('gallery-category.index') }}"
+                                class="flex items-center w-full p-2 transition duration-75 rounded-lg text-slate-700 pl-11 group hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-gray-700">All
+                                 Category</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('gallery-category.create') }}"
+                                class="flex items-center w-full p-2 transition duration-75 rounded-lg text-slate-700 pl-11 group hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-gray-700">Add Category</a>
+                        </li>
+                    </ul>
+                </li> --}}
 
                 <li>
                     <a href="{{ route('settingpage') }}"

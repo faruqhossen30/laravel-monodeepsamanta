@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\Service\ServicepackageController;
 use App\Http\Controllers\Admin\Service\ServicesliderController;
 use App\Http\Controllers\Admin\Setting\PageSectionSetting;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Gallery\GalleryCategoryController;
+use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\ServicepageController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +35,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::resource('reviewtype', ReviewtypeController::class);
     Route::resource('feature', FeatureController::class);
     Route::resource('portfolio', PortfolioController::class);
+    Route::resource('gallery', GalleryController::class);
+    Route::resource('gallery-category', GalleryCategoryController::class);
+
     Route::get('portfolio/{id}/delete',[ PortfolioController::class, 'removeImage'])->name('removeportfolionimage');
 
     Route::resource('service', ServiceController::class);
@@ -49,7 +54,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::group(['prefix' => 'setting'], function () {
         Route::get('/', [SettingController::class, 'index'])->name('settingpage');
-        Route::get('/chat-section', [PageSectionSetting::class, 'chatSection'])->name('setting.chatsection');
+        Route::get('/chat-section', [PageSectionSetting::class, 'chatSectionCreate'])->name('setting.chatsection');
+        Route::post('/chat-section', [PageSectionSetting::class, 'chatSectionStore'])->name('setting.chatsection.store');
         Route::get('/profile-setting', function(){
             return view('admin.setting.profilesetting');
         })->name('profile.setting');

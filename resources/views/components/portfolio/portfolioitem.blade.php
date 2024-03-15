@@ -1,5 +1,5 @@
 <a href="{{ route('singleportfolio', $portfolio->slug) }}" data-aos="zoom-in" data-aos-duration="1000"
-    class="group col-span-12 sm:col-span-6 lg:col-span-4 font-bold relative overflow-hidden text-white rounded-sm shadow cursor-pointer mix {{ $portfolio->category->slug }}">
+    class="group col-span-12 sm:col-span-6 lg:col-span-4 font-bold relative overflow-hidden text-white rounded-sm shadow cursor-pointer mix">
     <!--layer start-->
     <div class="absolute top-0 left-0 z-10 hidden w-full h-full transition bg-black opacity-50 group-hover:block">
     </div>

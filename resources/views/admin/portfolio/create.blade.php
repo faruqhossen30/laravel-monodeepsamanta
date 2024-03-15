@@ -90,7 +90,6 @@
         .dropify-message p {
             font-size: 24px
         }
-
     </style>
 @endpush
 

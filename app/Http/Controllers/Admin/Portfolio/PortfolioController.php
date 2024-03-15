@@ -65,13 +65,13 @@ class PortfolioController extends Controller
         }
 
         $data = [
-            'title' => $request->title,
-            'slug' => Str::slug($request->title, '-'),
-            'user_id' => Auth::user()->id,
+            'title'       => $request->title,
+            'slug'        => Str::slug($request->title, '-'),
+            'user_id'     => Auth::user()->id,
             'category_id' => $request->category_id,
-            'thumbnail' => $thumbnailname,
-            'video' => $video,
-            'status' => $request->status,
+            'thumbnail'   => $thumbnailname,
+            'video'       => $video,
+            'status'      => $request->status,
         ];
 
         $porfolio = Portfolio::create($data);
@@ -86,8 +86,8 @@ class PortfolioController extends Controller
 
                 PortfolioImage::create([
                     'portfolio_id' => $porfolio->id,
-                    'image' => $thumbnailname,
-                    'caption' => $captions[$index],
+                    'image'        => $thumbnailname,
+                    'caption'      => $captions[$index],
                 ]);
             }
         }
@@ -102,8 +102,8 @@ class PortfolioController extends Controller
 
                 PortfolioImage::create([
                     'portfolio_id' => $porfolio->id,
-                    'video' => $videoName,
-                    'caption' => $captions[$index],
+                    'video'        => $videoName,
+                    'caption'      => $captions[$index],
                 ]);
             }
         }
@@ -147,10 +147,10 @@ class PortfolioController extends Controller
 
         $thumbnailname = null;
         $data = [
-            'title' => $request->title,
-            'slug' => Str::slug($request->title, '-'),
+            'title'       => $request->title,
+            'slug'        => Str::slug($request->title, '-'),
             'category_id' => $request->category_id,
-            'status' => $request->status,
+            'status'      => $request->status,
         ];
 
         if ($request->file('thumbnail')) {
@@ -176,8 +176,8 @@ class PortfolioController extends Controller
 
                 PortfolioImage::create([
                     'portfolio_id' => $id,
-                    'image' => $thumbnailname,
-                    'caption' => $captions[$index],
+                    'image'        => $thumbnailname,
+                    'caption'      => $captions[$index],
                 ]);
             }
         }
@@ -192,8 +192,8 @@ class PortfolioController extends Controller
 
                 PortfolioImage::create([
                     'portfolio_id' => $id,
-                    'video' => $videoName,
-                    'caption' => $captions[$index],
+                    'video'        => $videoName,
+                    'caption'      => $captions[$index],
                 ]);
             }
         }
