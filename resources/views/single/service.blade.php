@@ -12,7 +12,7 @@
                         <div class="item mx-auto" data-hash="{{ $key }}" style="width: calc(100% - 50px)">
                             <a href="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" class="cwa-lightbox-image"
                                 data-desc="{{ $service->title }}">
-                                <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""">
+                                <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt="">
                             </a>
                         </div>
                     @endforeach
@@ -31,7 +31,6 @@
             <span class="block lg:hidden">
                 <x-service.mobilepackagetab :service="$service" />
             </span>
-
             {{-- Slider Start --}}
             <div class="py-8 prose">
                 {!! $service->description !!}

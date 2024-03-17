@@ -36,6 +36,9 @@
                 <div class="w-full">
                     <input class="dropify" type="file" id="myDropify" name="thumbnail">
                 </div>
+                <div class="w-full">
+                    <input class="dropifyVideo" type="file" id="myDropifyVideo" name="video">
+                </div>
             </div>
             <hr>
 
@@ -146,8 +149,16 @@
         $(document).ready(function() {
             $('.dropify').dropify({
                 messages: {
-                    'default': 'Drag and drop a file here or click',
-                    'replace': 'Drag and drop or click to replace',
+                    'default': 'Drag a Image file here or click',
+                    'replace': 'Drag or click to replace',
+                    'remove': 'Remove',
+                    'error': 'Ooops, something wrong happended.'
+                }
+            });
+            $('.dropifyVideo').dropify({
+                messages: {
+                    'default': 'Drag a Video file here or click',
+                    'replace': 'Drag or click to replace',
                     'remove': 'Remove',
                     'error': 'Ooops, something wrong happended.'
                 }

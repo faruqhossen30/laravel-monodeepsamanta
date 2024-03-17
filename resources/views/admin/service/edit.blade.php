@@ -50,6 +50,10 @@
                     <input class="dropify" type="file" id="myDropify" name="thumbnail"
                         data-default-file="{{ asset('uploads/service/' . $service->thumbnail) }}">
                 </div>
+                <div class="w-full">
+                    <input class="dropifyVideo" type="file" id="myDropifyVideo" name="video"
+                        data-default-file="{{ asset('uploads/service/video' . $service->video) }}">
+                </div>
             </div>
             <hr>
             <div>
@@ -150,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            <x-form.submit-button />
+            <x-form.submit-button title="Update" />
         </form>
     </div>
 
@@ -189,6 +193,14 @@
                 messages: {
                     'default': 'Drag and drop a file here or click',
                     'replace': 'Drag and drop or click to replace',
+                    'remove': 'Remove',
+                    'error': 'Ooops, something wrong happended.'
+                }
+            });
+            $('.dropifyVideo').dropify({
+                messages: {
+                    'default': 'Drag a Video file here or click',
+                    'replace': 'Drag or click to replace',
                     'remove': 'Remove',
                     'error': 'Ooops, something wrong happended.'
                 }

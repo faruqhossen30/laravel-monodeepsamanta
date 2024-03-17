@@ -12,22 +12,19 @@ use Image;
 
 class ServicesliderController extends Controller
 {
-    public function create($id): View
+    public function create($id)
     {
         $service = Service::firstWhere('id', $id);
         $photos = ServiceSlider::where('service_id', $id)->get();
-        // return $service;
-        return view('admin.service.slider.create', compact('service','photos'));
+        // return $photos;
+        return view('admin.service.slider.create', compact('service', 'photos'));
     }
     public function store(Request $request, $id)
     {
         // return $request->all();
 
-        $request->validate([
-            'thumbnails' => 'required|array'
-        ]);
 
-        if(!empty($request->file('thumbnails'))){
+        if (!empty($request->file('thumbnails'))) {
 
             // ServiceSlider::where('service_id', $id)->delete();
 
@@ -38,8 +35,25 @@ class ServicesliderController extends Controller
                 Image::make($imagethumbnail)->save('uploads/service/slider/' . $thumbnailname);
 
                 ServiceSlider::create([
-                    'service_id'=> $id,
-                    'thumbnail'=> $thumbnailname
+                    'service_id' => $id,
+                    'thumbnail' => $thumbnailname
+                ]);
+            }
+        }
+
+
+        if (!empty($request->file('video'))) {
+            $captions = $request->video_caption;
+            foreach ($request->file('video') as $index => $videofile) {
+                $videohumbnail = $videofile;
+                $extension = $videohumbnail->getClientOriginalExtension();
+                $videoName = Str::uuid() . '.' . $extension;
+                $request->file('video')[$index]->move(public_path('uploads/service/video/'), $videoName);
+
+                ServiceSlider::create([
+                    'service_id' => $id,
+                    'video'        => $videoName,
+                    'caption'      => $captions[$index],
                 ]);
             }
         }
@@ -57,14 +71,25 @@ class ServicesliderController extends Controller
         $slider = ServiceSlider::firstWhere('id', $id);
 
         // return $slider;
-        $path = 'uploads/service/slider/'.$slider->thumbnail;
+        if ($slider->thumbnail) {
+            $path = 'uploads/service/slider/' . $slider->thumbnail;
 
-        // return $path;
-
-        if (file_exists($path)) {
-            unlink($path);
-            // echo 'File ' . $image->image . ' has been deleted';
+            if (file_exists($path)) {
+                unlink($path);
+                // echo 'File ' . $image->image . ' has been deleted';
+            }
         }
+
+        if ($slider->video) {
+            $path = 'uploads/service/video/' . $slider->video;
+
+            if (file_exists($path)) {
+                unlink($path);
+                // echo 'File ' . $image->image . ' has been deleted';
+            }
+        }
+
+
 
         $slider->delete();
 
