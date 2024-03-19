@@ -10,10 +10,17 @@
                 <div id="singleServiceCarousel" class="owl-carousel owl-theme slider bg-gray-100 mx-5">
                     @foreach ($service->sliders as $key => $slider)
                         <div class="item mx-auto" data-hash="{{ $key }}" style="width: calc(100% - 50px)">
-                            <a href="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" class="cwa-lightbox-image"
-                                data-desc="{{ $service->title }}">
-                                <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt="">
-                            </a>
+                            @if ($slider->video)
+                                <video controls loop muted class="w-full h-full">
+                                    <source src="{{ asset('uploads/service/video/' . $service->video) }}" type="video/mp4">
+                                </video>
+                            @else
+                                <a href="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}"
+                                    class="cwa-lightbox-image" data-desc="{{ $service->title }}">
+                                    <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt="">
+                                </a>
+                            @endif
+
                         </div>
                     @endforeach
 
@@ -21,6 +28,11 @@
                 <div class="flex space-x-2 py-2">
                     @foreach ($service->sliders as $key => $slider)
                         <a href="#{{ $key }}" class="" data-slider="{{ $key }}">
+                            @if ($slider->video)
+
+                            @else
+
+                            @endif
                             <img src="{{ asset('uploads/service/slider/' . $slider->thumbnail) }}" alt=""
                                 class="w-32 custompacity sliderlinkimage{{ $key }}">
                         </a>
@@ -302,8 +314,8 @@
         }
 
         /* .owl-nav .owl-next span{
-                                            font-size: 30px;
-                                        } */
+                                                    font-size: 30px;
+                                                } */
 
         .owl-nav .owl-prev {
             position: absolute;
