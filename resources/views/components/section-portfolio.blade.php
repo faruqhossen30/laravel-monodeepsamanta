@@ -3,12 +3,12 @@
     $categories = Category::get();
 @endphp
 <div class="flex flex-row items-center justify-between py-3 lg:py-[60px]">
-    <div class="flex items-center space-x-2" data-aos="fade-right" data-aos-duration="1000">
+    <div class="flex items-center space-x-2" data-aos="fade" data-aos-duration="3000">
         <x-icon.thumbnail />
         <h1 class="text-lg lg:text-[26px] font-bold">Check Out My Portfolio</h1>
     </div>
     @isset($islink)
-        <a href="{{ route('portfoliopage') }}" class="flex items-center space-x-2 font-bold text-brand" data-aos="fade-left" data-aos-duration="1000">
+        <a href="{{ route('portfoliopage') }}" class="flex items-center space-x-2 font-bold text-brand" data-aos="fade" data-aos-duration="3000">
             <span class="text-[15px] leading-[15px]">See All Portfolios</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 data-slot="icon" class="w-4 h-4 font-bold">
