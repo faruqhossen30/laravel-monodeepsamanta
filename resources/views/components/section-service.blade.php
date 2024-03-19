@@ -24,12 +24,12 @@
 </div> --}}
 
 <div class="flex flex-row items-center justify-between py-3 lg:pt-[60px] lg:pb-8">
-    <div class="flex items-center space-x-2" data-aos="fade-right" data-aos-duration="1000">
+    <div class="flex items-center space-x-2" data-aos="fade" data-aos-duration="2000">
         <x-icon.listcheck />
         <h2 class="text-lg lg:text-[26px] font-bold">See My Services</h2>
     </div>
     @isset($islink)
-        <a href="{{ route('servicepage') }}" class="flex items-center space-x-2 font-bold text-brand" data-aos="fade-left" data-aos-duration="1000">
+        <a href="{{ route('servicepage') }}" class="flex items-center space-x-2 font-bold text-brand" data-aos="fade" data-aos-duration="2000">
             <span class="text-[15px] leading-[15px]">See All Services</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 data-slot="icon" class="w-4 h-4 font-bold">

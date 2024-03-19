@@ -23,8 +23,7 @@
                         <x-form.select label="Select Category" name="category_id" :data="$categories" />
                         <x-form.select-status />
 
-                        <div
-                            class="py-3 font-extrabold flex items-center text-lg text-gray-800 before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-gray-600 dark:after:border-gray-600">
+                        <div class="py-3 font-extrabold flex items-center text-lg text-gray-800 before:flex-[1_1_0%] before:border-t before:border-gray-200 before:me-6 after:flex-[1_1_0%] after:border-t after:border-gray-200 after:ms-6 dark:text-white dark:before:border-gray-600 dark:after:border-gray-600">
                             Thumbnail Section</div>
                         <div class="grid grid-cols-2 gap-10">
                             <div class="col-span-2 lg:col-span-1">

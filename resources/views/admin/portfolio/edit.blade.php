@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('title', 'Home Page')
 @section('content')
-    <x-dashboard.breadcrumb title="Blog Category" route="blogcategory.index" />
+    <x-dashboard.breadcrumb title=" Edit Portfolio" route="blogcategory.index" />
     <div class="bg-white dark:bg-gray-800 dark:text-slate-400 p-2">
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -143,7 +143,7 @@
                                             <div class="relative p-2">
                                                 <a href="{{ route('removeportfolionimage', $image->id) }}"
                                                     onclick="if (confirm('Delete selected item?')){return true;}else{event.stopPropagation(); event.preventDefault();};"
-                                                    class="absolute right-0 p-2 mr-2 bg-red-600 rounded-2xl">
+                                                    class="absolute right-0 p-2 mr-2 bg-red-600 rounded-2xl z-10">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                         class="w-4 h-4 text-white">
@@ -156,6 +156,7 @@
                                                         type="video/mp4">
                                                 </video>
                                             </div>
+
                                         @endif
                                     @endforeach
                                 </div>
@@ -218,8 +219,8 @@
                     messages: {
                         'default': 'Image file drop here or click',
                         'replace': 'Drag and drop or click to replace',
-                        'remove': 'Remove',
-                        'error': 'Ooops, something wrong happended.'
+                        'remove' : 'Remove',
+                        'error'  : 'Ooops, something wrong happended.'
                     }
                 });
             }
@@ -229,8 +230,8 @@
                     messages: {
                         'default': 'Video file drop here or click',
                         'replace': 'Drag and drop or click to replace',
-                        'remove': 'Remove',
-                        'error': 'Ooops, something wrong happended.'
+                        'remove' : 'Remove',
+                        'error'  : 'Ooops, something wrong happended.'
                     }
                 });
             }
@@ -240,8 +241,8 @@
                     messages: {
                         'default': 'Video file drop here or click',
                         'replace': 'Drag and drop or click to replace',
-                        'remove': 'Remove',
-                        'error': 'Ooops, something wrong happended.'
+                        'remove' : 'Remove',
+                        'error'  : 'Ooops, something wrong happended.'
                     }
                 });
             }
@@ -251,8 +252,8 @@
                     messages: {
                         'default': 'Image file drop here or click',
                         'replace': 'Drag and drop or click to replace',
-                        'remove': 'Remove',
-                        'error': 'Ooops, something wrong happended.'
+                        'remove' : 'Remove',
+                        'error'  : 'Ooops, something wrong happended.'
                     }
                 });
             }

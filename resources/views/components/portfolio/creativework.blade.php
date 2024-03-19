@@ -1,9 +1,9 @@
 <div class="justify-between p-4 space-y-10 lg:p-0 md:flex lg:mt-16 md:space-x-10" id="lightgallery">
     <!--FEATURED WORK section start from here-->
-    <div class="space-y-4 md:w-7/12" data-aos="fade-right" data-aos-duration="1000">
+    <div class="space-y-4 md:w-7/12" >
         {{-- <p class="hidden lg:block text-primary font-black text-[14px] leading-[14px] tracking-widest">FEATURED WORK</p> --}}
-        <h2 class="pt-4 pb-2 text-2xl font-bold">Creativity by Monodeep Samanta</h2>
-        <p class="hidden text-lg lg:block">Explore a Gallery of Creativity by Monodeep Samanta: Unveil a collection of exquisite UI/UX
+        <h2 class="pt-4 pb-2 text-2xl font-bold"  data-aos="fade" data-aos-duration="2000">Creativity by Monodeep Samanta</h2>
+        <p class="hidden text-lg lg:block" data-aos="fade" data-aos-duration="2000">Explore a Gallery of Creativity by Monodeep Samanta: Unveil a collection of exquisite UI/UX
             design Portfolios. Immerse in a journey of innovation, aesthetics, and User-centric excellence. Discover the
             power of design That inspires, engages, and transforms digital experiences. People love my designs because
             they are easy to use with satisfying layouts. Let’s make your website amazing. Contact me today, and have a
@@ -11,7 +11,7 @@
 
 
         <a href="{{ route('servicepage') }}"
-            class="items-center hidden space-x-2 font-bold transition lg:flex text-primary hover:text-black">See All
+            class="items-center hidden space-x-2 font-bold transition lg:flex text-primary hover:text-black" data-aos="fade" data-aos-duration="2000">See All
             <span>Service</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="#FF003A" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" data-slot="icon" class="w-4 h-4 font-bold">

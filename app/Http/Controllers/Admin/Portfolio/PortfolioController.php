@@ -208,7 +208,7 @@ class PortfolioController extends Controller
     public function destroy(string $id)
     {
         $portfolio = Portfolio::with('images')->firstWhere('id', $id);
-        return $portfolio;
+        // return $portfolio;
 
         if ($portfolio->thumbnail) {
             $portfoliothumb = 'uploads/portfolio/' . $portfolio->thumbnail;

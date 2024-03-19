@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('service_sliders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
-            $table->string('thumbnail');
+            $table->string('thumbnail')->nullable();
+            $table->string('video')->nullable();
             $table->timestamps();
         });
     }

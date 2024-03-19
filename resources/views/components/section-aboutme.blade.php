@@ -1,6 +1,6 @@
 <div class="">
-    <div class="flex flex-row justify-between items-center py-3 lg:pt-[60px] lg:pb-6" data-aos="fade-right" data-aos-duration="1000">
-        <div class="flex items-center space-x-2">
+    <div class="flex flex-row justify-between items-center py-3 lg:pt-[60px] lg:pb-6" >
+        <div class="flex items-center space-x-2" data-aos="fade" data-aos-duration="2000">
             <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -11,8 +11,8 @@
     </div>
 
     <section class="grid grid-cols-12 gap-4">
-        <div class="order-2 col-span-12 lg:col-span-8 lg:order-1" data-aos="fade-right" data-aos-duration="1000">
-            <div class="pr-12 mb-5 space-y-2 text-lg lg:mb-14 md:mb-0">
+        <div class="order-2 col-span-12 lg:col-span-8 lg:order-1" >
+            <div class="pr-12 mb-5 space-y-2 text-lg lg:mb-14 md:mb-0" data-aos="fade-up" data-aos-duration="1000">
                 <p class="leading-[26px]">I am Monodeep Samanta, the leading UI/UX designer. I create designs that help your website turn
                     visitors into loyal customers. So your business can increase margins. One call with me will change
                     your UX/UI ideas forever. 15-30 minutes of consultation will take your business to the next level.
@@ -23,7 +23,7 @@
                     your products and services. I can handle big projects and make your business grow. Let’s make your
                     website amazing. Contact me today, and have a flying start!</p>
             </div>
-            <div class="hidden md:block">
+            <div class="hidden md:block" data-aos="fade-up" data-aos-duration="1000">
 
                 <div class="flex flex-row items-center justify-between py-3 lg:pt-8 lg:pb-6">
                     <div class="flex items-center space-x-2">
@@ -54,7 +54,7 @@
             </div>
             {{-- <div class="hidden h-24 lg:block"></div> --}}
         </div>
-        <div class="order-1 col-span-12 lg:col-span-4 lg:order-2" data-aos="fade-left" data-aos-duration="1000">
+        <div class="order-1 col-span-12 lg:col-span-4 lg:order-2" data-aos="fade-up" data-aos-duration="1000">
             <div class="w-full p-4 border rounded-md">
                 <div class="space-y-5">
                     <div class="flex items-center py-2 space-x-2">

@@ -53,11 +53,21 @@ class ServiceController extends Controller
             $thumbnailname = Str::uuid() . '.' . $extension;
             Image::make($imagethumbnail)->save('uploads/service/' . $thumbnailname);
         }
+
+        $video = null;
+        if ($request->file('video')) {
+            $imagethumbnail = $request->file('video');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $video = Str::uuid() . '.' . $extension;
+            // Image::make($imagethumbnail)->save('uploads/portfolio/' . $video);
+            $request->file('video')->move(public_path('uploads/service/video'), $video);
+        }
         $data = [
             'title' => $request->title,
             'slug' => Str::slug($request->title, '-'),
             'description' => $request->description,
             'thumbnail' => $thumbnailname,
+            'video'       => $video,
             'category_id' => $request->category_id,
             'user_id' => Auth::user()->id,
             'status' => $request->status,
@@ -138,8 +148,17 @@ class ServiceController extends Controller
             $imagethumbnail = $request->file('thumbnail');
             $extension = $imagethumbnail->getClientOriginalExtension();
             $thumbnailname = Str::uuid() . '.' . $extension;
-            Image::make($imagethumbnail)->save('uploads/service/' . $thumbnailname);
+            $request->file('thumbnail')->move(public_path('uploads/service/'), $thumbnailname);
             $data['thumbnail'] = $thumbnailname;
+        }
+
+        if ($request->file('video')) {
+            $imagethumbnail = $request->file('video');
+            $extension = $imagethumbnail->getClientOriginalExtension();
+            $video = Str::uuid() . '.' . $extension;
+            // Image::make($imagethumbnail)->save('uploads/portfolio/' . $video);
+            $request->file('video')->move(public_path('uploads/service/video'), $video);
+            $data['video'] = $video;
         }
 
         $update = Service::firstWhere('id', $id)->update($data);
