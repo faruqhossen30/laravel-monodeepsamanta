@@ -34,7 +34,7 @@
                 @enderror
             </div>
 
-            <textarea name="description" id="editor" cols="30" rows="10">{{ $service->description }}</textarea>
+            <textarea name="description" class="ckeditor" id="editor" cols="30" rows="10">{{ $service->description }}</textarea>
             @error('description')
                 <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
             @enderror
@@ -119,7 +119,8 @@
                                                 <input type="hidden" name="featuredetails[]"
                                                     value="{{ $feature->feature }}">
                                                 <input type="hidden" name="starter[]" value="{{ $feature->starter }}">
-                                                <input type="hidden" name="standard[]" value="{{ $feature->standard }}">
+                                                <input type="hidden" name="standard[]"
+                                                    value="{{ $feature->standard }}">
                                                 <input type="hidden" name="advanced[]"
                                                     value="{{ $feature->advanced }}">
                                                 <td
@@ -157,18 +158,8 @@
 @endsection
 
 @push('style')
-    <script src="{{ asset('js/ckeditor.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('css/ckeditor.css') }}">
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/dropify.min.css') }}">
-    <style>
-        .ck-editor__editable_inline {
-            height: 300px;
-        }
-
-        .dropify-message p {
-            font-size: 24px
-        }
-    </style>
 @endpush
 
 @push('script')
@@ -176,13 +167,7 @@
     <script src="{{ asset('plugin/Sortable.min.js') }}"></script>
     <script src="{{ asset('js/sortablejs.js') }}"></script>
     <script src="{{ asset('js/dropify.min.js') }}"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+
     <script>
         $(document).ready(function() {
             $('.dropify').dropify({
